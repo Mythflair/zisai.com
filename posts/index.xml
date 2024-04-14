@@ -1,0 +1,8 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - 紫塞 zisai.com</title>
+        <link>https://zisai.com/posts/</link>
+        <description>All Posts | 紫塞 zisai.com</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>mythflair@hotmail.com (ZISAI.COM)</managingEditor>
+            <webMaster>mythflair@hotmail.com (ZISAI.COM)</webMaster><lastBuildDate>Sun, 14 Apr 2024 10:14:43 &#43;0800</lastBuildDate><atom:link href="https://zisai.com/posts/" rel="self" type="application/rss+xml" /></channel>
+</rss>
