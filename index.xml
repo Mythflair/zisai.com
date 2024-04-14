@@ -6,5 +6,13 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>mythflair@hotmail.com (ZISAI.COM)</managingEditor>
             <webMaster>mythflair@hotmail.com (ZISAI.COM)</webMaster><lastBuildDate>Sun, 14 Apr 2024 10:14:43 &#43;0800</lastBuildDate>
             <atom:link href="https://zisai.com/index.xml" rel="self" type="application/rss+xml" />
-        </channel>
+        <item>
+    <title>Zisai.com</title>
+    <link>https://zisai.com/posts/zisai.com/</link>
+    <pubDate>Sun, 14 Apr 2024 10:14:43 &#43;0800</pubDate>
+    <author>ZISAI.COM</author>
+    <guid>https://zisai.com/posts/zisai.com/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>
