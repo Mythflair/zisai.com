@@ -4,6 +4,6 @@ menu:
   main:
     name: "📚 文章"
     weight: -90
-    params:
-      icon: "fas fa-book"
+    #params:
+    #  icon: "fas fa-book"
 ---

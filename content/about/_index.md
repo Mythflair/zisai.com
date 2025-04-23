@@ -4,6 +4,6 @@ menu:
   main:
     name: "👤 关于"
     weight: -60
-    params:
-      icon: "fas fa-user"
+    #params:
+    #  icon: "fas fa-user"
 ---

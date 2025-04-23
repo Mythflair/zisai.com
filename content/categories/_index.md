@@ -4,6 +4,6 @@ menu:
   main:
     name: "🗂️ 分类"
     weight: -70
-    params:
-      icon: "fas fa-folder"
+    #params:
+    #  icon: "fas fa-folder"
 ---
