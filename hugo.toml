@@ -1,65 +1,79 @@
 baseURL = "https://zisai.com/"
-
-# Change the default theme to be use when building the site with Hugo
 theme = "stack"
-
-# website title
 title = "紫塞 zisai.com"
-
-# language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "zh-CN"
-# language name ["English", "简体中文", "Français", "Polski", ...]
 languageName = "简体中文"
+enableRobotsTXT = true  # 启用机器人协议
+enableGitInfo = true    # 显示Git提交信息（可选）
+builddrafts = false
 
-# Author config
 [author]
   name = "SHENNAN"
   email = "mythflair@hotmail.com"
   link = "https://baike.baidu.com/item/%E6%B2%88%E6%A5%A0/49988317"
+  avatar = "/images/avatar.jpg"  # 新增头像路径
 
-builddrafts = false
+# 首页优化配置
+[params.home]
+  subtitle = "记录技术与思考的角落"  # 首页副标题
+  recentPosts = 10           # 显示最新文章数量
+  showFeatured = true        # 显示精选文章
+  showCategories = true      # 显示分类云
+  showTags = true            # 显示标签云
 
-# Menu config
+# 新增SEO优化
+[params.seo]
+  image = "/images/og-image.png"  # Open Graph默认图片
+  twitter = "@Mythflair"          # Twitter账号（可选）
+
+# 新增评论系统（使用Utterances）
+[params.comments]
+  enabled = true
+  repo = "Mythflair/zisai.com"  # 替换为你的仓库
+  issueTerm = "pathname"
+
+# 新增分析统计
+[params.analytics]
+  google = "G-XXXXXX"  # 替换为你的GA4 ID
+
+# 菜单优化（增加图标支持）
 [menu]
   [[menu.main]]
     weight = 1
     identifier = "posts"
-    # you can add extra information before the name (HTML format is supported), such as icons
-    pre = ""
-    # you can add extra information after the name (HTML format is supported), such as icons
-    post = ""
-    name = "文章"
+    name = "📚 文章"
     url = "/posts/"
-    # title will be shown when you hover on this menu link
-    title = ""
+    pre = "<i class='fas fa-book'></i>"  # Font Awesome图标
   [[menu.main]]
     weight = 2
     identifier = "tags"
-    pre = ""
-    post = ""
-    name = "标签"
+    name = "🏷️ 标签"
     url = "/tags/"
-    title = ""
   [[menu.main]]
     weight = 3
     identifier = "categories"
-    pre = ""
-    post = ""
-    name = "分类"
+    name = "🗂️ 分类"
     url = "/categories/"
-    title = ""
   [[menu.main]]
     weight = 4
     identifier = "about"
-    pre = ""
-    post = ""
-    name = "关于"
+    name = "👤 关于"
     url = "/about/"
-    title = ""
 
-# # Markup related configuration in Hugo
-# [markup]
-#   # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
-#   [markup.highlight]
-#     # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
-#     noClasses = false
+# 新增社交链接
+[params.social]
+  github = "Mythflair"
+  email = "mythflair@hotmail.com"
+  zhihu = "shen-nan-74"  # 知乎账号
+
+# 新增文章目录配置
+[params.toc]
+  enabled = true    # 自动生成目录
+  depth = 3         # 目录层级深度
+  sticky = true     # 浮动目录
+
+# 新增打赏功能（按需启用）
+[params.reward]
+  enable = true
+  wechat = "/images/wechat-reward.jpg"
+  alipay = "/images/alipay-reward.jpg"
