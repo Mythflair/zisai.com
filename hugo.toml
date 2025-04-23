@@ -1,79 +1,118 @@
+# 基本站点配置
 baseURL = "https://zisai.com/"
 theme = "stack"
 title = "紫塞 zisai.com"
 languageCode = "zh-CN"
 languageName = "简体中文"
-enableRobotsTXT = true  # 启用机器人协议
-enableGitInfo = true    # 显示Git提交信息（可选）
-builddrafts = false
+defaultContentLanguage = "zh-CN"  # 明确指定默认语言
+enableRobotsTXT = true           # 启用 robots.txt
+enableGitInfo = true             # 显示 Git 提交信息
+buildDrafts = false              # 不构建草稿
 
+# 作者信息
 [author]
   name = "SHENNAN"
   email = "mythflair@hotmail.com"
   link = "https://baike.baidu.com/item/%E6%B2%88%E6%A5%A0/49988317"
-  avatar = "/images/avatar.jpg"  # 新增头像路径
+  avatar = "/images/avatar.jpg"
 
 # 首页优化配置
 [params.home]
-  subtitle = "记录技术与思考的角落"  # 首页副标题
+  subtitle = "记录技术与思考的角落"
   recentPosts = 10           # 显示最新文章数量
   showFeatured = true        # 显示精选文章
   showCategories = true      # 显示分类云
   showTags = true            # 显示标签云
 
-# 新增SEO优化
+# SEO 优化
 [params.seo]
-  image = "/images/og-image.png"  # Open Graph默认图片
-  twitter = "@Mythflair"          # Twitter账号（可选）
+  image = "/images/og-image.png"  # Open Graph 默认图片
+  twitter = "@Mythflair"          # Twitter 账号
+  description = "紫塞 zisai.com - 分享技术、思考与生活"  # 站点描述，增强 SEO
 
-# 新增评论系统（使用Utterances）
+# 评论系统（Utterances）
 [params.comments]
   enabled = true
-  repo = "Mythflair/zisai.com"  # 替换为你的仓库
+  repo = "Mythflair/zisai.com"
   issueTerm = "pathname"
+  theme = "github-light"  # 可选：评论框主题
 
-# 新增分析统计
+# 分析统计
 [params.analytics]
-  google = "G-XXXXXX"  # 替换为你的GA4 ID
+  google = "G-XXXXXX"  # 替换为你的 GA4 ID
+  enable = true        # 明确启用分析
 
-# 菜单优化（增加图标支持）
+# 菜单配置（适配 stack 主题，修复 pre 字段）
 [menu]
   [[menu.main]]
     weight = 1
     identifier = "posts"
     name = "📚 文章"
     url = "/posts/"
-    pre = "<i class='fas fa-book'></i>"  # Font Awesome图标
+    [params]
+      icon = "fas fa-book"  # 替换 pre，使用 Font Awesome 类名
   [[menu.main]]
     weight = 2
     identifier = "tags"
     name = "🏷️ 标签"
     url = "/tags/"
+    [params]
+      icon = "fas fa-tags"  # 添加图标
   [[menu.main]]
     weight = 3
     identifier = "categories"
     name = "🗂️ 分类"
     url = "/categories/"
+    [params]
+      icon = "fas fa-folder"  # 添加图标
   [[menu.main]]
     weight = 4
     identifier = "about"
     name = "👤 关于"
     url = "/about/"
+    [params]
+      icon = "fas fa-user"  # 添加图标
 
-# 新增社交链接
+# 社交链接
 [params.social]
   github = "Mythflair"
   email = "mythflair@hotmail.com"
-  zhihu = "shen-nan-74"  # 知乎账号
+  zhihu = "shen-nan-74"
+  twitter = "Mythflair"  # 与 SEO 的 Twitter 保持一致
 
-# 新增文章目录配置
+# 文章目录配置
 [params.toc]
-  enabled = true    # 自动生成目录
-  depth = 3         # 目录层级深度
-  sticky = true     # 浮动目录
+  enabled = true
+  depth = 3
+  sticky = true
 
-# 新增打赏功能（按需启用）
+# 打赏功能
 [params.reward]
   enable = true
   wechat = "/images/wechat-reward.jpg"
   alipay = "/images/alipay-reward.jpg"
+
+# 输出格式（增强 SEO 和分享）
+[outputs]
+  home = ["HTML", "RSS", "JSON"]  # 支持 JSON 搜索索引
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
+
+# 缓存优化
+[caches]
+  [caches.get]
+    dir = ":cacheDir/:project"
+    maxAge = "24h"
+  [caches.assets]
+    dir = ":cacheDir/:project"
+    maxAge = "168h"
+
+# Markdown 渲染配置
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # 允许 HTML 渲染（如 Font Awesome 图标）
+  [markup.highlight]
+    style = "monokai"  # 代码高亮主题
+    lineNumbers = true  # 显示代码行号
