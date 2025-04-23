@@ -1,29 +1,29 @@
-name: Deploy Hugo Site
+name: Deploy
 
 on:
   push:
-    branches: [ "master" ]  # 触发分支（根据你的分支名调整）
+    branches: [main]
 
 jobs:
-  build-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          submodules: recursive  # 如果主题是 Git 子模块需要此行
+          submodules: recursive
 
-      - name: Install Hugo (Extended)
+      - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "latest"
+          hugo-version: '0.146.5' # 改为你的Hugo版本
           extended: true
 
-      - name: Build Site
-        run: hugo -D --minify
+      - name: Build
+        run: hugo --minify
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          force_orphan: true # 确保 gh-pages 分支只保留最新提交
