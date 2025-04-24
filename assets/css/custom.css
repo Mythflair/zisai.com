@@ -2,7 +2,7 @@
   position: relative;
   text-align: center;
   padding: 50px 20px;
-  background-color: #212529; /* 深灰色背景，与边栏一致 */
+  background-color: #424242; /* 深灰色背景，与边栏一致 */
   min-height: 400px;
 }
 /* 移除背景图和遮罩 */
