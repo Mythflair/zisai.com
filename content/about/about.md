@@ -1,8 +1,8 @@
-+++
-title = 'About'
-date = 2024-04-14T13:06:25+08:00
-draft = false
-+++
+---
+title: 'About'
+date: 2024-04-14T13:06:25+08:00
+draft: false
+---
 ## **沈楠（Shen Nan）**
 ###  Master of Science in Computer Science.
 ###  J. F. Oberlin University,Tokyo,Japan
