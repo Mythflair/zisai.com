@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{ with .Params.hero }}
-    <div class="hero">
+    <div class="hero" style="background-image: url('{{ .image }}');">
       <h1>{{ .title }}</h1>
       <p>{{ .content | safeHTML }}</p>
       <div class="hero-buttons">
