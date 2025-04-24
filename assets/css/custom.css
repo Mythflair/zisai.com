@@ -18,6 +18,25 @@
   z-index: 1;
 }
 */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #212529;
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 37, 41, 0.8); /* 使用深灰色遮罩，透明度 0.8 */
+  z-index: 1;
+}
 .hero h1, .hero p, .hero-buttons {
   position: relative;
   z-index: 2;
