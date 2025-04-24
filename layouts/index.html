@@ -1,19 +1,20 @@
 {{ define "main" }}
-    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-    {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
-    {{ $filtered := ($pages | intersect $notHidden) }}
-    {{ $pag := .Paginate ($filtered) }}
-
-    <section class="article-list">
-        {{ range $index, $element := $pag.Pages }}
-            {{ partial "article-list/default" . }}
+  {{ with .Params.hero }}
+    <div class="hero">
+      <h1>{{ .title }}</h1>
+      <p>{{ .content | safeHTML }}</p>
+      <div class="hero-buttons">
+        {{ range .buttons }}
+          <a href="{{ .link }}">{{ .text }}</a>
         {{ end }}
-    </section>
-
-    {{- partial "pagination.html" . -}}
-    {{- partial "footer/footer" . -}}
-{{ end }}
-
-{{ define "right-sidebar" }}
-    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
+      </div>
+    </div>
+  {{ end }}
+  {{ .Content }}
+  <h2>最近文章</h2>
+  <ul>
+    {{ range first 10 (where .Site.RegularPages "Type" "posts") }}
+      <li><a href="{{ .Permalink }}">{{ .Title }}</a> - {{ .Date.Format "2006-01-02" }}</li>
+    {{ end }}
+  </ul>
 {{ end }}
