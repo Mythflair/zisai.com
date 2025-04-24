@@ -2,11 +2,11 @@
   position: relative;
   text-align: center;
   padding: 50px 20px;
-  background-color: #212529;
-  background-size: cover;
-  background-position: center;
+  background-color: #212529; /* 深灰色背景，与边栏一致 */
   min-height: 400px;
 }
+/* 移除背景图和遮罩 */
+/*
 .hero::before {
   content: "";
   position: absolute;
@@ -17,6 +17,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
+*/
 .hero h1, .hero p, .hero-buttons {
   position: relative;
   z-index: 2;
@@ -44,20 +45,24 @@
 .hero-buttons a:hover {
   background-color: #495057;
 }
-/* 新增：调整正文和文章列表的文字颜色 */
 main {
-  color: #FFFFFF; /* 白色文字 */
+  color: #FFFFFF;
 }
 main h2 {
-  color: #FFFFFF; /* 标题“最近文章” */
+  color: #FFFFFF;
 }
 main ul li {
-  color: #FFFFFF; /* 文章列表 */
+  color: #FFFFFF;
+  line-height: 1.2; /* 缩短文章列表行间距 */
 }
 main ul li a {
-  color: #FFFFFF; /* 文章链接 */
+  color: #FFFFFF;
   text-decoration: none;
 }
 main ul li a:hover {
-  color: #CCCCCC; /* 链接悬停时略浅的灰白色 */
+  color: #CCCCCC;
+}
+/* 缩短正文部分行间距 */
+main p, main ul {
+  line-height: 1.2; /* 缩短正文和列表的行间距 */
 }
