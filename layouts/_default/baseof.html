@@ -3,6 +3,7 @@
     <head>
         {{- partial "head/head.html" . -}}
         {{- block "head" . -}}{{ end }}
+        {{ partial "custom-css.html" . }}
     </head>
     <body class="{{ block `body-class` . }}{{ end }}">
         {{- partial "head/colorScheme" . -}}
