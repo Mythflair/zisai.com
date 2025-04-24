@@ -2,8 +2,8 @@
 title = 'TMT是什么？'
 date = 2024-05-05T14:47:50+08:00
 draft = false
-categories: ["技术"]
-tags: ["科技"]
+categories = ["技术"]
+tags = ["科技"]
 +++
 
 ### TMT是什么？
