@@ -2,6 +2,7 @@
 title: '如何将Windows11的中文用户名改为英文？'
 date: 2025-04-24T16:29:25+08:00
 draft: false
+thumbnail: "/images/windows11.jpg"
 categories: ["技术"]
 tags: ["科技"]
 ---

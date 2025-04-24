@@ -3,147 +3,60 @@ module:
         extended: true
         min: "0.87.0"
 
+baseURL: "https://zisai.com/"
+languageCode: "zh-cn"
+title: "紫塞 zisai.com"
+theme: "hugo-theme-stack"
+
 params:
     mainSections:
-        - post
-    featuredImageField: image
-    rssFullContent: true
-    favicon:
+        - posts  # 文章列表显示 posts 目录内容
+    featuredImageField: "thumbnail"  # 文章封面图字段
+    rssFullContent: true  # RSS 全文输出
+    favicon: "/favicon.ico"  # 之前已添加 favicon.ico
 
     footer:
-        since:
-        customText:
+        since: 2024  # 页脚显示起始年份
+        customText: "© 2025 紫塞 zisai.com"  # 自定义页脚文本
 
     dateFormat:
-        published: Jan 02, 2006
-        lastUpdated: Jan 02, 2006 15:04 MST
+        published: "2006-01-02"  # 日期格式
+        lastUpdated: "2006-01-02 15:04 MST"
 
     sidebar:
-        compact: false
-        emoji:
-        subtitle:
+        compact: false  # 侧边栏非紧凑模式
+        emoji: "📝"  # 侧边栏标题前的图标
+        subtitle: "记录技术与思考的角落"  # 侧边栏副标题
         avatar:
             enabled: true
             local: true
-            src: img/avatar.png
+            src: "/images/avatar.png"  # 侧边栏头像，确保文件存在
 
     article:
-        headingAnchor: false
-        math: false
-        toc: true
-        readingTime: true
+        headingAnchor: true  # 文章标题锚点
+        math: false  # 不启用数学公式
+        toc: true  # 文章目录
+        readingTime: true  # 阅读时间
         license:
-            enabled: false
-            default: Licensed under CC BY-NC-SA 4.0
-
-    comments:
-        enabled: false
-        provider: disqus
-
-        disqusjs:
-            shortname:
-            apiUrl:
-            apiKey:
-            admin:
-            adminLabel:
-
-        utterances:
-            repo:
-            issueTerm: pathname
-            label:
-
-        beaudar:
-            repo:
-            issueTerm: pathname
-            label:
-            theme: hugo-theme-stack
-
-        remark42:
-            host:
-            site:
-            locale:
-
-        vssue:
-            platform:
-            owner:
-            repo:
-            clientId:
-            clientSecret:
-            autoCreateIssue: false
-
-        # Waline client configuration see: https://waline.js.org/en/reference/client/props.html
-        waline:
-            serverURL:
-            lang:
-            visitor:
-            avatar:
-            emoji:
-                - https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo
-            requiredMeta:
-                - nick
-                - mail
-            locale:
-                admin: Admin
-                placeholder:
-
-        twikoo:
-            envId:
-            region:
-            path:
-            lang:
-
-        giscus:
-            repo:
-            repoID:
-            category:
-            categoryID:
-            mapping:
-            strict:
-            lightTheme:
-            darkTheme:
-            reactionsEnabled: 1
-            emitMetadata: 0
-            inputPosition:
-            lang:
-
-        gitalk:
-            owner:
-            admin:
-            repo:
-            clientID:
-            clientSecret:
-
-        cusdis:
-            host:
-            id:
+            enabled: true
+            default: "Licensed under CC BY-NC-SA 4.0"  # 文章版权声明
 
     widgets:
-        homepage: []
-        page: []
-
-    opengraph:
-        twitter:
-            # Your Twitter username
-            site:
-
-            # Available values: summary, summary_large_image
-            card: summary_large_image
-
-    defaultImage:
-        opengraph:
-            enabled: false
-            local: false
-            src:
+        homepage:
+            - search  # 首页显示搜索框
+            - categories  # 分类
+            - tags  # 标签
+        page:
+            - search  # 文章页显示搜索框
+            - categories  # 分类
+            - tags  # 标签
 
     colorScheme:
-        # Display toggle
-        toggle: true
-
-        # Available values: auto, light, dark
-        default: auto
+        toggle: true  # 显示主题切换按钮
+        default: dark  # 默认深色主题，与当前样式一致
 
     imageProcessing:
         cover:
-            enabled: true
+            enabled: true  # 封面图处理
         content:
-            enabled: true
+            enabled: true  # 内容图片处理
