@@ -1,1 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>分类 on 紫塞 zisai.com</title><link>https://zisai.com/categories/</link><description>Recent content in 分类 on 紫塞 zisai.com</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><atom:link href="https://zisai.com/categories/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>分类 on 紫塞 zisai.com</title>
+        <link>https://zisai.com/categories/</link>
+        <description>Recent content in 分类 on 紫塞 zisai.com</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-CN</language><atom:link href="https://zisai.com/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>技术</title>
+        <link>https://zisai.com/categories/%E6%8A%80%E6%9C%AF/</link>
+        <pubDate>Thu, 24 Apr 2025 16:29:25 +0800</pubDate>
+        
+        <guid>https://zisai.com/categories/%E6%8A%80%E6%9C%AF/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>思考</title>
+        <link>https://zisai.com/categories/%E6%80%9D%E8%80%83/</link>
+        <pubDate>Mon, 06 May 2024 11:46:35 +0800</pubDate>
+        
+        <guid>https://zisai.com/categories/%E6%80%9D%E8%80%83/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>
