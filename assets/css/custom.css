@@ -7,17 +7,7 @@
 }
 /* 移除背景图和遮罩 */
 /*
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-*/
+
 .hero {
   position: relative;
   text-align: center;
@@ -27,6 +17,9 @@
   background-position: center;
   min-height: 400px;
 }
+*/
+/* 使用深灰色遮罩，透明度 0.8 */
+/*
 .hero::before {
   content: "";
   position: absolute;
@@ -34,9 +27,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(33, 37, 41, 0.8); /* 使用深灰色遮罩，透明度 0.8 */
+  background-color: rgba(33, 37, 41, 0.8); 
   z-index: 1;
 }
+*/
+
 .hero h1, .hero p, .hero-buttons {
   position: relative;
   z-index: 2;
