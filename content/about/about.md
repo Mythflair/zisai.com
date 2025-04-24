@@ -1,5 +1,5 @@
 ---
-title: 'About'
+title: '关于作者'
 date: 2024-04-14T13:06:25+08:00
 draft: false
 ---
