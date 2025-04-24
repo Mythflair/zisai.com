@@ -92,3 +92,8 @@ buildDrafts = false
   [markup.highlight]
     style = "monokai"
     lineNumbers = true
+
+# 分类和标签配置
+[taxonomies]
+  category = "categories"
+  tag = "tags"
