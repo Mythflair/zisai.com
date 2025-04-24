@@ -1,6 +1,6 @@
 ---
-title: "欢迎来到紫塞"
-subtitle: "记录技术与思考的角落"
+title: "紫塞"
+subtitle: "思考与探索"
 date: 2024-05-20
 draft: false
 
