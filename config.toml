@@ -17,7 +17,7 @@ rssFullContent = true  # RSS 是否输出全文（true 为全文，false 为摘�
 favicon = "/favicon.ico"  # 站点图标路径（位于 static/favicon.ico）
 
 # 页脚设置
-[params.footer]
+[Params.Footer]
 since = 1998  # 页脚显示的起始年份（例如 "© 2024-2025"）
 customText = "© 2025 紫塞 zisai.com"  # 页脚自定义文本
 
