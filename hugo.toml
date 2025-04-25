@@ -1,99 +1,155 @@
-# 基本站点配置
-baseURL = "https://zisai.com/"
-theme = "stack"
-title = "紫塞 zisai.com"
-languageCode = "zh-CN"
-languageName = "简体中文"
-defaultContentLanguage = "zh-CN"
-enableRobotsTXT = true
-enableGitInfo = true
-buildDrafts = false
+# Hugo 站点基础配置
+baseURL = "https://zisai.com/"  # 站点根 URL，用于生成绝对链接
+languageCode = "zh-cn"  # 站点语言，zh-cn 表示中文（简体）
+title = "紫塞 zisai.com"  # 站点标题，显示在页面标题和导航中
+theme = "hugo-theme-stack"  # 使用的主题名称
 
-# 语言定义
-[languages]
-  [languages.zh-CN]
-    languageCode = "zh-CN"
-    languageName = "简体中文"
-    weight = 1
-    title = "紫塞 zisai.com"
+# Hugo 模块和版本要求
+[module.hugoVersion]
+  extended = true  # 是否需要 Hugo extended 版本（支持 SCSS 和 TypeScript）
+  min = "0.87.0"  # 最低 Hugo 版本要求
 
-# 作者信息
-[author]
-  name = "SHENNAN"
-  email = "mythflair@hotmail.com"
-  link = "https://baike.baidu.com/item/%E6%B2%88%E6%A5%A0/49988317"
-  avatar = "/images/avatar.jpg"
-
-# 所有 params 配置合并在一个 [params] 表下
+# 主题参数配置
 [params]
-  # 首页优化配置
-  [params.home]
-    subtitle = "记录技术与思考的角落"
-    recentPosts = 10
-    showFeatured = true
-    showCategories = true
-    showTags = true
+  homeShowPosts = true   # 控制文章列表
+  homeProfile = true      # 控制个人简介模块
+  homeHero = true         # 控制顶部大标题区域
+  mainSections = ["posts"]  # 文章列表显示的目录（例如 posts 目录下的文章）
+  featuredImageField = "thumbnail"  # 文章 Front Matter 中用于封面图的字段名
+  rssFullContent = true  # RSS 是否输出全文（true 为全文，false 为摘要）
+  favicon = "/favicon.ico"  # 站点图标路径（位于 static/favicon.ico）
 
-  # SEO 优化
-  [params.seo]
-    image = "/images/og-image.png"
-    twitter = "@Mythflair"
-    description = "紫塞 zisai.com - 分享技术、思考与生活"
+# 页脚设置
+  [Params.Footer]
+    since = 1998  # 页脚显示的起始年份（例如 "© 2024-2025"）
+    customText = "这些年 那些事"  # 页脚自定义文本
 
-  # 评论系统（Utterances）
+# 日期格式设置
+  [params.dateFormat]
+    published = "2006-01-02"  # 文章发布日期格式
+    lastUpdated = "2006-01-02 15:04 MST"  # 文章更新日期格式
+
+# 侧边栏设置
+  [params.sidebar]
+    compact = false  # 是否使用紧凑模式（false 为宽松模式）
+    emoji = "📝"  # 侧边栏标题前的 emoji 图标
+    subtitle = "记录技术与思考的角落"  # 侧边栏副标题
+  [params.sidebar.avatar]
+    enabled = true  # 是否显示头像
+    local = true  # 头像是否为本地文件（true 表示本地，false 表示外部链接）
+    src = "/images/avatar.png"  # 头像路径（位于 static/images/avatar.png）
+
+# 文章页面设置
+  [params.article]
+    headingAnchor = true  # 是否为文章标题生成锚点（便于跳转）
+    math = false  # 是否启用数学公式支持（需要 MathJax）
+    toc = true  # 是否显示文章目录
+    readingTime = true  # 是否显示阅读时间
+  [params.article.license]
+    enabled = true  # 是否显示文章版权声明
+    default = "Licensed under CC BY-NC-SA 4.0"  # 默认版权声明
+
+  # 评论系统设置
   [params.comments]
-    enabled = true
-    repo = "Mythflair/zisai.com"
-    issueTerm = "pathname"
-    theme = "github-light"
+    enabled = false  # 是否启用评论功能
+    provider = "disqus"  # 评论系统提供者（可选：disqus, utterances, giscus 等）
+  # Disqus 评论系统配置
+  [params.comments.disqusjs]
+    shortname = ""  # Disqus 短名称
+    apiUrl = ""  # Disqus API URL
+    apiKey = ""  # Disqus API 密钥
+    admin = ""  # 管理员用户名
+    adminLabel = ""  # 管理员标签
+  # Utterances 评论系统配置（基于 GitHub Issues）
+  [params.comments.utterances]
+    repo = ""  # GitHub 仓库（格式：username/repo）
+    issueTerm = "pathname"  # Issue 关联方式（例如 pathname、title）
+    label = ""  # Issue 标签
+  # Beaudar 评论系统配置（类似 Utterances）
+  [params.comments.beaudar]
+    repo = ""  # GitHub 仓库
+    issueTerm = "pathname"  # Issue 关联方式
+    label = ""  # Issue 标签
+    theme = "hugo-theme-stack"  # Beaudar 主题
+  # Remark42 评论系统配置
+  [params.comments.remark42]
+    host = ""  # Remark42 服务器地址
+    site = ""  # 站点 ID
+    locale = ""  # 语言
+  # Vssue 评论系统配置（基于 GitHub/Vue）
+  [params.comments.vssue]
+    platform = ""  # 平台（例如 github）
+    owner = ""  # 仓库所有者
+    repo = ""  # 仓库名称
+    clientId = ""  # OAuth 客户端 ID
+    clientSecret = ""  # OAuth 客户端密钥
+    autoCreateIssue = false  # 是否自动创建 Issue
+  # Waline 评论系统配置
+  [params.comments.waline]
+    serverURL = ""  # Waline 服务器地址
+    lang = ""  # 语言
+    visitor = false  # 是否启用访问统计
+    avatar = ""  # 头像样式
+    emoji = ["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"]  # Emoji 资源
+    requiredMeta = ["nick", "mail"]  # 必填字段（昵称、邮箱）
+  [params.comments.waline.locale]
+    admin = "Admin"  # 管理员名称
+    placeholder = ""  # 评论框占位文本
+  # Twikoo 评论系统配置
+  [params.comments.twikoo]
+    envId = ""  # Twikoo 环境 ID
+    region = ""  # 区域
+    path = ""  # 路径
+    lang = ""  # 语言
+  # Giscus 评论系统配置（基于 GitHub Discussions）
+  [params.comments.giscus]
+    repo = ""  # GitHub 仓库
+    repoID = ""  # 仓库 ID
+    category = ""  # 分类
+    categoryID = ""  # 分类 ID
+    mapping = ""  # 映射方式
+    strict = 0  # 是否严格映射
+    lightTheme = ""  # 亮色主题
+    darkTheme = ""  # 暗色主题
+    reactionsEnabled = 1  # 是否启用反应
+    emitMetadata = 0  # 是否输出元数据
+    inputPosition = ""  # 输入框位置
+    lang = ""  # 语言
+  # Gitalk 评论系统配置
+  [params.comments.gitalk]
+    owner = ""  # GitHub 用户名
+    admin = []  # 管理员列表
+    repo = ""  # 仓库名称
+    clientID = ""  # OAuth 客户端 ID
+    clientSecret = ""  # OAuth 客户端密钥
+  # Cusdis 评论系统配置
+  [params.comments.cusdis]
+    host = ""  # Cusdis 服务器地址
+    id = ""  # 站点 ID
 
-  # 分析统计
-  [params.analytics]
-    google = "G-XXXXXX"
-    enable = true
+  # 侧边栏小部件设置
+  [params.widgets]
+    homepage = ["search", "categories", "tags"]  # 首页显示的小部件
+    page = ["search", "categories", "tags"]  # 文章页面显示的小部件
 
-  # 社交链接
-  [params.social]
-    github = "Mythflair"
-    email = "mythflair@hotmail.com"
-    zhihu = "shen-nan-74"
-    twitter = "Mythflair"
+  # OpenGraph 设置（用于社交媒体分享）
+  [params.opengraph.twitter]
+    site = ""  # Twitter 用户名（例如 "zisai"）
+    card = "summary_large_image"  # 分享卡片类型（summary 或 summary_large_image）
 
-  # 文章目录配置
-  [params.toc]
-    enabled = true
-    depth = 3
-    sticky = true
+  # 默认图片设置（用于 OpenGraph 分享）
+  [params.defaultImage.opengraph]
+    enabled = false  # 是否启用默认图片
+    local = false  # 是否使用本地图片
+    src = ""  # 图片路径
 
-  # 打赏功能
-  [params.reward]
-    enable = true
-    wechat = "/images/wechat-reward.jpg"
-    alipay = "/images/alipay-reward.jpg"
+  # 主题颜色设置
+  [params.colorScheme]
+    toggle = true  # 是否显示主题切换按钮
+    default = "auto"  # 默认主题（auto、light、dark）
 
-# 输出格式（移除 JSON 以避免警告）
-[outputs]
-  home = ["HTML", "RSS"]
-  section = ["HTML", "RSS"]
-  taxonomy = ["HTML", "RSS"]
-  term = ["HTML", "RSS"]
-
-# 缓存优化
-[caches]
-  [caches.assets]
-    dir = ":cacheDir/:project"
-    maxAge = "168h"
-
-# Markdown 渲染配置
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
-  [markup.highlight]
-    style = "monokai"
-    lineNumbers = true
-
-# 分类和标签配置
-[taxonomies]
-  category = "categories"
-  tag = "tags"
+  # 图片处理设置
+  [params.imageProcessing.cover]
+    enabled = true  # 是否处理封面图
+  [params.imageProcessing.content]
+    enabled = true  # 是否处理内容图片
