@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=12770&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="修改Windows 11用户目录名教程\rWindows 11新装时，若用户目录名使用了中文（Unicode编码），可能会导致软件不支持、乱码或莫名错误等问题，尤其在开发场景下，中文目录名可能引发诸多不便。以下是简化和优化后的修改方法，核心分为三部分：\n更改 C:\\Users\\你的目录名； 修改注册表中的核心项指向； 更新软件的目录指向信息。 操作步骤\r1. 修改注册表\r按 Win + R，输入 regedit，打开注册表编辑器。 导航到以下路径： HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\ProfileList 在 ProfileList 下逐项检查，找到名为 ProfileImagePath 的字符串值。 如果值中包含你要修改的目录名（例如 C:\\Users\\旧目录名），将其改为新目录名（例如 C:\\Users\\新目录名）。 2. 使用WinCE U盘引导修改目录名\r准备一个Windows CE（WinPE）U盘引导盘，启动电脑进入WinPE环境。 在WinPE中，直接将 C:\\Users\\旧目录名 重命名为 C:\\Users\\新目录名。 修改完成后，重启系统。 3. 批量更新软件目录指向\r使用 Registry Workshop 软件，批量搜索旧目录全路径（例如 C:\\Users\\旧目录名）。 搜索完成后，批量替换为新目录全路径（例如 C:\\Users\\新目录名）。 注意：若某些项无法修改（例如被Windows Defender锁定的键值），通常可忽略，对使用影响不大。 注意事项\r操作顺序：必须按上述步骤顺序操作，先改注册表，再改目录名，避免注册表加载时找不到目录导致错误。 后续调整：桌面、文档、音乐、影片等快捷方式可能需手动更新，右键调整指向即可。 风险提示：系统修改有风险，操作需谨慎，若不熟悉操作，建议寻求专业人士协助。 总结\r通过以上三步（修改注册表、WinPE改目录名、批量更新指向），即可快速解决Windows 11用户目录名问题。方法简单直接，适合有一定动手能力的用户。\n个人记录，仅供参考。\n">
 <title>如何将Windows11的中文用户名改为英文？</title>
 
-<link rel='canonical' href='http://localhost:12770/posts/windows11changeusername/'>
+<link rel='canonical' href='https://zisai.com/posts/windows11changeusername/'>
 
 <link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="如何将Windows11的中文用户名改为英文？">
 <meta property='og:description' content="修改Windows 11用户目录名教程\rWindows 11新装时，若用户目录名使用了中文（Unicode编码），可能会导致软件不支持、乱码或莫名错误等问题，尤其在开发场景下，中文目录名可能引发诸多不便。以下是简化和优化后的修改方法，核心分为三部分：\n更改 C:\\Users\\你的目录名； 修改注册表中的核心项指向； 更新软件的目录指向信息。 操作步骤\r1. 修改注册表\r按 Win + R，输入 regedit，打开注册表编辑器。 导航到以下路径： HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\ProfileList 在 ProfileList 下逐项检查，找到名为 ProfileImagePath 的字符串值。 如果值中包含你要修改的目录名（例如 C:\\Users\\旧目录名），将其改为新目录名（例如 C:\\Users\\新目录名）。 2. 使用WinCE U盘引导修改目录名\r准备一个Windows CE（WinPE）U盘引导盘，启动电脑进入WinPE环境。 在WinPE中，直接将 C:\\Users\\旧目录名 重命名为 C:\\Users\\新目录名。 修改完成后，重启系统。 3. 批量更新软件目录指向\r使用 Registry Workshop 软件，批量搜索旧目录全路径（例如 C:\\Users\\旧目录名）。 搜索完成后，批量替换为新目录全路径（例如 C:\\Users\\新目录名）。 注意：若某些项无法修改（例如被Windows Defender锁定的键值），通常可忽略，对使用影响不大。 注意事项\r操作顺序：必须按上述步骤顺序操作，先改注册表，再改目录名，避免注册表加载时找不到目录导致错误。 后续调整：桌面、文档、音乐、影片等快捷方式可能需手动更新，右键调整指向即可。 风险提示：系统修改有风险，操作需谨慎，若不熟悉操作，建议寻求专业人士协助。 总结\r通过以上三步（修改注册表、WinPE改目录名、批量更新指向），即可快速解决Windows 11用户目录名问题。方法简单直接，适合有一定动手能力的用户。\n个人记录，仅供参考。\n">
-<meta property='og:url' content='http://localhost:12770/posts/windows11changeusername/'>
+<meta property='og:url' content='https://zisai.com/posts/windows11changeusername/'>
 <meta property='og:site_name' content='紫塞 zisai.com'>
 <meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='科技' /><meta property='article:published_time' content='2025-04-24T16:29:25&#43;08:00'/><meta property='article:modified_time' content='2025-04-24T16:29:25&#43;08:00'/>
 <meta name="twitter:title" content="如何将Windows11的中文用户名改为英文？">
@@ -403,7 +403,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.9ec98a8bb931d1635027015807105324f52a30f2d0f89930af9a6001a4ab71fb.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

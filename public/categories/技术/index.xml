@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>技术 on 紫塞 zisai.com</title>
-        <link>http://localhost:12770/categories/%E6%8A%80%E6%9C%AF/</link>
+        <link>https://zisai.com/categories/%E6%8A%80%E6%9C%AF/</link>
         <description>Recent content in 技术 on 紫塞 zisai.com</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Thu, 24 Apr 2025 16:29:25 +0800</lastBuildDate><atom:link href="http://localhost:12770/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 24 Apr 2025 16:29:25 +0800</lastBuildDate><atom:link href="https://zisai.com/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何将Windows11的中文用户名改为英文？</title>
-        <link>http://localhost:12770/posts/windows11changeusername/</link>
+        <link>https://zisai.com/posts/windows11changeusername/</link>
         <pubDate>Thu, 24 Apr 2025 16:29:25 +0800</pubDate>
         
-        <guid>http://localhost:12770/posts/windows11changeusername/</guid>
+        <guid>https://zisai.com/posts/windows11changeusername/</guid>
         <description>&lt;h1 id=&#34;修改windows-11用户目录名教程&#34;&gt;修改Windows 11用户目录名教程
 &lt;/h1&gt;&lt;p&gt;Windows 11新装时，若用户目录名使用了中文（Unicode编码），可能会导致软件不支持、乱码或莫名错误等问题，尤其在开发场景下，中文目录名可能引发诸多不便。以下是简化和优化后的修改方法，核心分为三部分：&lt;/p&gt;
 &lt;ol&gt;
@@ -54,10 +54,10 @@
         </item>
         <item>
         <title>TMT是什么？</title>
-        <link>http://localhost:12770/posts/tmt/</link>
+        <link>https://zisai.com/posts/tmt/</link>
         <pubDate>Sun, 05 May 2024 14:47:50 +0800</pubDate>
         
-        <guid>http://localhost:12770/posts/tmt/</guid>
+        <guid>https://zisai.com/posts/tmt/</guid>
         <description>&lt;h3 id=&#34;tmt是什么&#34;&gt;TMT是什么？
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;TMT 指的是科技（Technology）、媒体（Media）和电信（Telecom）这三个产业。它们有一个共同点，就是边际成本非常低，增加一个新用户，几乎不带来额外的成本。&lt;/li&gt;
