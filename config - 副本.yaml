@@ -16,7 +16,7 @@ params:
     favicon: "/favicon.ico"  # 之前已添加 favicon.ico
 
     footer:
-        since: 2024  # 页脚显示起始年份
+        since: 1998  # 页脚显示起始年份
         customText: "© 2025 紫塞 zisai.com"  # 自定义页脚文本
 
     dateFormat:
