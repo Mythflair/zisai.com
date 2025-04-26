@@ -37,11 +37,11 @@ theme = "PaperMod"  # 使用的主题名称
       name = "📝 文章"
       url = "/posts/"
       weight = 10
-#    [[menu.main]]
-#      identifier = "archive"
-#      name = "🗂️ 归档"
-#      url = "/archive/"
-#      weight = 20
+   [[menu.main]]
+     identifier = "archive"
+     name = "🗂️ 归档"
+     url = "/archive/"
+     weight = 20
     [[menu.main]]
       identifier = "about"
       name = "ℹ️ 关于"
