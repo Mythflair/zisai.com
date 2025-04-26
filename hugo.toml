@@ -56,7 +56,7 @@ pygmentsUseClasses = true
     imageHeight = 120
     [[params.profileMode.buttons]]
       name = "🙈 物哀"
-      url = "posts/Mononoaware"
+      url = "posts/mononoaware"
     [[params.profileMode.buttons]]
       name = "🙉 幽玄"
       url = "posts/yuugen"
