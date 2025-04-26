@@ -1,51 +1,131 @@
-# Hugo 站点基础配置
-baseURL = "https://zisai.com/"  # 站点根 URL，用于生成绝对链接
-languageCode = "zh-cn"  # 站点语言，zh-cn 表示中文（简体）
-title = "紫塞 zisai.com"  # 站点标题，显示在页面标题和导航中
-theme = "PaperMod"  # 使用的主题名称
+# 基础全局配置
+baseURL = "https://zisai.com/"
+title = "紫塞 zisai.com"
+theme = "PaperMod"
+languageCode = "zh-cn"
+defaultContentLanguage = "zh-cn"
+hasCJKLanguage = true
+enableInlineShortcodes = true
+enableEmoji = true
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+pygmentsUseClasses = true
 
+# 分页配置
+[pagination]
+  pagerSize = 10
+
+# 输出优化配置
+[minify]
+  disableXML = true
+
+[permalinks]
+  post = "/:title/"
+
+# 输出格式配置
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# 主题参数配置
 [params]
-  ShowReadingTime = true
+  env = "production"
+  description = "紫塞 zisai.com - 记录技术、阅读和生活的个人博客"
+  keywords = ["技术博客", "个人博客", "紫塞", "Shen Nan"]
+  author = "Shen Nan"
+  defaultTheme = "auto"
+  DateFormat = "2006-01-02"
   ShowShareButtons = true
+  ShowReadingTime = true
   ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCounts = true
+  ShowLastMod = true
+  ShowToc = true
+  TocOpen = true
 
   [params.profileMode]
     enabled = true
-    title = "紫塞" # 可选，默认使用站点标题
-    subtitle = "忠于技术，追寻理想" # 可选，默认使用站点副标题
-    description = "记录技术与思考的角落" # 可选，默认使用站点描述
-    imageUrl = "/images/shennan.jpg" # 替换为你的图片路径
+    title = "紫塞"
+    subtitle = "短暂无常与朴素深邃之美"
+    imageUrl = "/images/shennan.jpg"
     imageTitle = "SHENNAN"
     imageWidth = 120
     imageHeight = 120
     [[params.profileMode.buttons]]
-      name = "文章归档"
-      url = "/archive"
+      name = "🙈 物哀"
+      url = "posts/Mononoaware"
     [[params.profileMode.buttons]]
-      name = "GitHub"
-      url = "https://github.com/mythflair"
+      name = "🙉 幽玄"
+      url = "posts/yuugen"
+    [[params.profileMode.buttons]]
+      name = "🙊 侘寂"
+      url = "posts/wabisabi"
 
-    [[params.socialIcons]]
-      name = "email"
-      url = "mailto:mythflair@hotmail.com"
-    [[params.socialIcons]]
-      name = "GitHub"
-      url = "https://github.com/mythflair"
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/mythflair"
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:mythflair@hotmail.com"
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
 
-    [[menu.main]]
-      identifier = "posts"
-      name = "📝 文章"
-      url = "/posts/"
-      weight = 10
-    [[menu.main]]
-     identifier = "archive"
-     name = "🗂️ 故事"
-     url = "/archives/"
-     weight = 20
-    [[menu.main]]
-      identifier = "about"
-      name = "ℹ️ 关于"
-      url = "/about/"
-      weight = 30
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 1
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary"]
+
+# 导航菜单配置
+# [[menu.main]]
+#   identifier = "home"
+#   name = "🏠 主页"
+#   url = "/"
+#   weight = 10
+[[menu.main]]
+  identifier = "search"
+  name = "🔍 搜索"
+  url = "/search/"
+  weight = 20
+# [[menu.main]]
+#   identifier = "posts"
+#   name = "📚 文章"
+#   url = "/posts/"
+#   weight = 30
+# [[menu.main]]
+#   identifier = "archive"
+#   name = "🗂️ 故事"
+#   url = "/archives/"
+#   weight = 40
+# [[menu.main]]
+#   identifier = "tags"
+#   name = "🔖 标签"
+#   url = "/tags/"
+#   weight = 50
+[[menu.main]]
+  identifier = "about"
+  name = "ℹ️ 关于"
+  url = "/about/"
+  weight = 60
+
+# 分类法配置
+[taxonomies]
+  series = "series"
+
+# Markdown 渲染配置
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    style = "darcula"

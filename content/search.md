@@ -1,6 +1,6 @@
 +++
 layout = 'search'
-placeholder = 'placeholder text in search input box'
+placeholder = '请输入关键词'
 summary = 'search'
-title = 'Search'
+title = '🔍 搜索'
 +++
