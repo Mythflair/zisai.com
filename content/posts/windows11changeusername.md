@@ -1,11 +1,8 @@
----
-title: '如何将Windows11的中文用户名改为英文？'
-date: 2025-04-24T16:29:25+08:00
-draft: false
-thumbnail: "/images/windows11.jpg"
-categories: ["技术"]
-tags: ["科技"]
----
++++
+date = '2025-04-24T16:29:25+08:00'
+draft = false
+title = '如何将Windows11的中文用户名改为英文？'
++++
 # 修改Windows 11用户目录名教程
 
 Windows 11新装时，若用户目录名使用了中文（Unicode编码），可能会导致软件不支持、乱码或莫名错误等问题，尤其在开发场景下，中文目录名可能引发诸多不便。以下是简化和优化后的修改方法，核心分为三部分：

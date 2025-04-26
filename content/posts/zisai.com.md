@@ -1,7 +1,8 @@
----
-title: '紫塞 zisai.com'
-date: 2024-04-14T10:14:43+08:00
-draft: false
----
++++
+date = '2024-04-14T10:14:43+08:00'
+draft = false
+title = '紫塞 zisai.com'
+archived = true
++++
 
 ### 紫塞网（www.zisai.com）SINCE 1998

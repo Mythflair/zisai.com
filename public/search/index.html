@@ -5,12 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Categories | 紫塞 zisai.com</title>
+<title>Search | 紫塞 zisai.com</title>
 <meta name="keywords" content="">
-<meta name="description" content="">
+<meta name="description" content="search">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:8554/categories/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6da9a63d25a9608bca2f7f907a030e887a7dd3c3f3918e4cc113129361414bda.css" integrity="sha256-bammPSWpYIvKL3&#43;QegMOiHp908PzkY5MwRMSk2FBS9o=" rel="preload stylesheet" as="style">
+<link rel="canonical" href="http://localhost:8554/search/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6da9a63d25a9608bca2f7f907a030e887a7dd3c3f3918e4cc113129361414bda.css" integrity="sha256-bammPSWpYIvKL3&#43;QegMOiHp908PzkY5MwRMSk2FBS9o=" rel="preload stylesheet" as="style"><link crossorigin="anonymous" rel="preload" as="fetch" href="../index.json">
+<script defer crossorigin="anonymous" src="/assets/js/search.0cb52d6b1628dc11278c9d7d1418939954e1ba118f5e2c29f43a3c0b14d5a8e4.js" integrity="sha256-DLUtaxYo3BEnjJ19FBiTmVThuhGPXiwp9Do8CxTVqOQ="></script>
 <link rel="icon" href="http://localhost:8554/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8554/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8554/favicon-32x32.png">
@@ -18,8 +19,7 @@
 <link rel="mask-icon" href="http://localhost:8554/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:8554/categories/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:8554/categories/">
+<link rel="alternate" hreflang="en" href="http://localhost:8554/search/">
 <noscript>
     <style>
         #theme-toggle,
@@ -113,12 +113,22 @@
     </nav>
 </header>
 <main class="main">
+
 <header class="page-header">
-    <h1>Categories</h1>
+    <h1>Search <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+    </h1>
+    <div class="post-meta"></div>
 </header>
 
-<ul class="terms-tags">
-</ul>
+<div id="searchbox">
+    <input id="searchInput" autofocus placeholder="placeholder text in search input box"
+        aria-label="search" type="search" autocomplete="off" maxlength="64">
+    <ul id="searchResults" aria-label="search results"></ul>
+</div>
     </main>
     
 <footer class="footer">

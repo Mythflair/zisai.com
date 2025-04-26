@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>紫塞 on 紫塞 zisai.com</title>
-        <link>https://zisai.com/</link>
-        <description>Recent content in 紫塞 on 紫塞 zisai.com</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <lastBuildDate>Thu, 24 Apr 2025 16:29:25 +0800</lastBuildDate><atom:link href="https://zisai.com/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>如何将Windows11的中文用户名改为英文？</title>
-        <link>https://zisai.com/posts/windows11changeusername/</link>
-        <pubDate>Thu, 24 Apr 2025 16:29:25 +0800</pubDate>
-        
-        <guid>https://zisai.com/posts/windows11changeusername/</guid>
-        <description>&lt;h1 id=&#34;修改windows-11用户目录名教程&#34;&gt;修改Windows 11用户目录名教程
-&lt;/h1&gt;&lt;p&gt;Windows 11新装时，若用户目录名使用了中文（Unicode编码），可能会导致软件不支持、乱码或莫名错误等问题，尤其在开发场景下，中文目录名可能引发诸多不便。以下是简化和优化后的修改方法，核心分为三部分：&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>紫塞 zisai.com</title>
+    <link>http://localhost:8554/</link>
+    <description>Recent content on 紫塞 zisai.com</description>
+    <generator>Hugo -- 0.146.7</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 24 Apr 2025 16:29:25 +0800</lastBuildDate>
+    <atom:link href="http://localhost:8554/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何将Windows11的中文用户名改为英文？</title>
+      <link>http://localhost:8554/posts/windows11changeusername/</link>
+      <pubDate>Thu, 24 Apr 2025 16:29:25 +0800</pubDate>
+      <guid>http://localhost:8554/posts/windows11changeusername/</guid>
+      <description>&lt;h1 id=&#34;修改windows-11用户目录名教程&#34;&gt;修改Windows 11用户目录名教程&lt;/h1&gt;
+&lt;p&gt;Windows 11新装时，若用户目录名使用了中文（Unicode编码），可能会导致软件不支持、乱码或莫名错误等问题，尤其在开发场景下，中文目录名可能引发诸多不便。以下是简化和优化后的修改方法，核心分为三部分：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;更改 &lt;code&gt;C:\Users\你的目录名&lt;/code&gt;；&lt;/li&gt;
 &lt;li&gt;修改注册表中的核心项指向；&lt;/li&gt;
 &lt;li&gt;更新软件的目录指向信息。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;操作步骤&#34;&gt;操作步骤
-&lt;/h2&gt;&lt;h3 id=&#34;1-修改注册表&#34;&gt;1. 修改注册表
-&lt;/h3&gt;&lt;ul&gt;
+&lt;h2 id=&#34;操作步骤&#34;&gt;操作步骤&lt;/h2&gt;
+&lt;h3 id=&#34;1-修改注册表&#34;&gt;1. 修改注册表&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;按 &lt;code&gt;Win + R&lt;/code&gt;，输入 &lt;code&gt;regedit&lt;/code&gt;，打开注册表编辑器。&lt;/li&gt;
 &lt;li&gt;导航到以下路径：
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList
@@ -29,38 +30,36 @@
 &lt;li&gt;在 &lt;code&gt;ProfileList&lt;/code&gt; 下逐项检查，找到名为 &lt;code&gt;ProfileImagePath&lt;/code&gt; 的字符串值。&lt;/li&gt;
 &lt;li&gt;如果值中包含你要修改的目录名（例如 &lt;code&gt;C:\Users\旧目录名&lt;/code&gt;），将其改为新目录名（例如 &lt;code&gt;C:\Users\新目录名&lt;/code&gt;）。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;2-使用wince-u盘引导修改目录名&#34;&gt;2. 使用WinCE U盘引导修改目录名
-&lt;/h3&gt;&lt;ul&gt;
+&lt;h3 id=&#34;2-使用wince-u盘引导修改目录名&#34;&gt;2. 使用WinCE U盘引导修改目录名&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;准备一个Windows CE（WinPE）U盘引导盘，启动电脑进入WinPE环境。&lt;/li&gt;
 &lt;li&gt;在WinPE中，直接将 &lt;code&gt;C:\Users\旧目录名&lt;/code&gt; 重命名为 &lt;code&gt;C:\Users\新目录名&lt;/code&gt;。&lt;/li&gt;
 &lt;li&gt;修改完成后，重启系统。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;3-批量更新软件目录指向&#34;&gt;3. 批量更新软件目录指向
-&lt;/h3&gt;&lt;ul&gt;
+&lt;h3 id=&#34;3-批量更新软件目录指向&#34;&gt;3. 批量更新软件目录指向&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;使用 &lt;code&gt;Registry Workshop&lt;/code&gt; 软件，批量搜索旧目录全路径（例如 &lt;code&gt;C:\Users\旧目录名&lt;/code&gt;）。&lt;/li&gt;
 &lt;li&gt;搜索完成后，批量替换为新目录全路径（例如 &lt;code&gt;C:\Users\新目录名&lt;/code&gt;）。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;注意&lt;/strong&gt;：若某些项无法修改（例如被Windows Defender锁定的键值），通常可忽略，对使用影响不大。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;注意事项&#34;&gt;注意事项
-&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&#34;注意事项&#34;&gt;注意事项&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;操作顺序&lt;/strong&gt;：必须按上述步骤顺序操作，先改注册表，再改目录名，避免注册表加载时找不到目录导致错误。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;后续调整&lt;/strong&gt;：桌面、文档、音乐、影片等快捷方式可能需手动更新，右键调整指向即可。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;风险提示&lt;/strong&gt;：系统修改有风险，操作需谨慎，若不熟悉操作，建议寻求专业人士协助。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;总结&#34;&gt;总结
-&lt;/h2&gt;&lt;p&gt;通过以上三步（修改注册表、WinPE改目录名、批量更新指向），即可快速解决Windows 11用户目录名问题。方法简单直接，适合有一定动手能力的用户。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;个人记录，仅供参考。&lt;/strong&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>没有是非观的人，可能会更成功。</title>
-        <link>https://zisai.com/posts/constellation/</link>
-        <pubDate>Mon, 06 May 2024 11:46:35 +0800</pubDate>
-        
-        <guid>https://zisai.com/posts/constellation/</guid>
-        <description>&lt;h3 id=&#34;没有是非观的人可能会更成功&#34;&gt;没有是非观的人，可能会更成功。
-&lt;/h3&gt;&lt;h3 id=&#34;因为他们在意的不是与非而是最终的目标&#34;&gt;因为他们在意的不是与非，而是最终的目标。
-&lt;/h3&gt;&lt;ul&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;通过以上三步（修改注册表、WinPE改目录名、批量更新指向），即可快速解决Windows 11用户目录名问题。方法简单直接，适合有一定动手能力的用户。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人记录，仅供参考。&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>没有是非观的人，可能会更成功。</title>
+      <link>http://localhost:8554/posts/constellation/</link>
+      <pubDate>Mon, 06 May 2024 11:46:35 +0800</pubDate>
+      <guid>http://localhost:8554/posts/constellation/</guid>
+      <description>&lt;h3 id=&#34;没有是非观的人可能会更成功&#34;&gt;没有是非观的人，可能会更成功。&lt;/h3&gt;
+&lt;h3 id=&#34;因为他们在意的不是与非而是最终的目标&#34;&gt;因为他们在意的不是与非，而是最终的目标。&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;比如，我觉得星座对性格行为评价很准确，能够预见、评价一个人的性格轮廓，进而对其是否是一个很好的评测工具产生了兴趣。&lt;/li&gt;
 &lt;li&gt;通过查阅资料，发现星座可以解释为几个心理学现象。&lt;/li&gt;
 &lt;li&gt;一是&amp;rsquo;&amp;lsquo;巴纳姆效应&amp;rsquo;&amp;rsquo;：人们往往倾向于接受对他们个人而言似乎特别准确的一般性陈述。而星座的描述通常是相当模糊和泛泛而谈的。以至于几乎可以适用于任何人。人们很容易认为这些描述与自己的经历相符，即视这些描述本质上是适用于大多数人的；&lt;/li&gt;
@@ -69,50 +68,44 @@
 &lt;li&gt;对于存在是非观的人，看了上述解释后，天然抵触了这些不科学的评价方法，认为是错的，没有依据的。&lt;/li&gt;
 &lt;li&gt;而把星座测算当作生意看的人，反而会认为，既然人们普遍都是这样认为的，那么显然存在巨大的星座测算市场，进而展开业务，获取利益。&lt;/li&gt;
 &lt;li&gt;观察思考后，会发现社会中的这种现象比比皆是。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>如何达到自己的预期目标？</title>
-        <link>https://zisai.com/posts/goals/</link>
-        <pubDate>Sun, 05 May 2024 16:11:12 +0800</pubDate>
-        
-        <guid>https://zisai.com/posts/goals/</guid>
-        <description>&lt;h3 id=&#34;朋友问如何达到自己的预期目标避免错误&#34;&gt;朋友问，如何达到自己的预期目标？避免错误？
-&lt;/h3&gt;&lt;ul&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>如何达到自己的预期目标？</title>
+      <link>http://localhost:8554/posts/goals/</link>
+      <pubDate>Sun, 05 May 2024 16:11:12 +0800</pubDate>
+      <guid>http://localhost:8554/posts/goals/</guid>
+      <description>&lt;h3 id=&#34;朋友问如何达到自己的预期目标避免错误&#34;&gt;朋友问，如何达到自己的预期目标？避免错误？&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;这个我不知道，因为正确的成功道路有千万种，每个人的路都不一样。&lt;/li&gt;
 &lt;li&gt;但是，避免失误的方式，只有一种，就是专注自己，做好自己，日积月累。&lt;/li&gt;
 &lt;li&gt;做好自己，躲避对自己的伤害，尽可能的避免自己的错误，长此以往，就是成功喽。&lt;/li&gt;
 &lt;li&gt;人生是场长跑，不必计较一时得失。&lt;/li&gt;
 &lt;li&gt;耐力型选手，才能笑到最后。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>TMT是什么？</title>
-        <link>https://zisai.com/posts/tmt/</link>
-        <pubDate>Sun, 05 May 2024 14:47:50 +0800</pubDate>
-        
-        <guid>https://zisai.com/posts/tmt/</guid>
-        <description>&lt;h3 id=&#34;tmt是什么&#34;&gt;TMT是什么？
-&lt;/h3&gt;&lt;ul&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>TMT是什么？</title>
+      <link>http://localhost:8554/posts/tmt/</link>
+      <pubDate>Sun, 05 May 2024 14:47:50 +0800</pubDate>
+      <guid>http://localhost:8554/posts/tmt/</guid>
+      <description>&lt;h3 id=&#34;tmt是什么&#34;&gt;TMT是什么？&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;TMT 指的是科技（Technology）、媒体（Media）和电信（Telecom）这三个产业。它们有一个共同点，就是边际成本非常低，增加一个新用户，几乎不带来额外的成本。&lt;/li&gt;
 &lt;li&gt;正是由于这个经济共性，这三个产业逐渐融合发展在一起是毫不奇怪的。&lt;/li&gt;
 &lt;li&gt;&amp;ndash; 《TMT 为何存在？》&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>关于作者</title>
-        <link>https://zisai.com/about/about/</link>
-        <pubDate>Sun, 14 Apr 2024 13:06:25 +0800</pubDate>
-        
-        <guid>https://zisai.com/about/about/</guid>
-        <description>&lt;h2 id=&#34;沈楠shen-nan&#34;&gt;&lt;strong&gt;沈楠（Shen Nan）&lt;/strong&gt;
-&lt;/h2&gt;&lt;h3 id=&#34;master-of-science-in-computer-science&#34;&gt;Master of Science in Computer Science.
-&lt;/h3&gt;&lt;h3 id=&#34;j-f-oberlin-universitytokyojapan&#34;&gt;J. F. Oberlin University,Tokyo,Japan
-&lt;/h3&gt;&lt;h2 id=&#34;成果-achievements&#34;&gt;&lt;strong&gt;成果 (Achievements)&lt;/strong&gt;
-&lt;/h2&gt;&lt;blockquote&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>关于作者</title>
+      <link>http://localhost:8554/about/</link>
+      <pubDate>Sun, 14 Apr 2024 13:06:25 +0800</pubDate>
+      <guid>http://localhost:8554/about/</guid>
+      <description>&lt;h2 id=&#34;沈楠shen-nan&#34;&gt;&lt;strong&gt;沈楠（Shen Nan）&lt;/strong&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;master-of-science-in-computer-science&#34;&gt;Master of Science in Computer Science.&lt;/h3&gt;
+&lt;h3 id=&#34;j-f-oberlin-universitytokyojapan&#34;&gt;J. F. Oberlin University,Tokyo,Japan&lt;/h3&gt;
+&lt;h2 id=&#34;成果-achievements&#34;&gt;&lt;strong&gt;成果 (Achievements)&lt;/strong&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;早期&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;1994年 单边带SSB、双边带DSB通信和计算机通信&lt;/li&gt;
@@ -149,77 +142,14 @@
 &lt;li&gt;2013年 分管移动网业务运营&lt;/li&gt;
 &lt;/ul&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;宽广集团&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;2014年 宽广购线上购物&lt;/li&gt;
-&lt;li&gt;2015年 储值卡管理系统&lt;/li&gt;
-&lt;li&gt;2016年 BI商业智能体系&lt;/li&gt;
-&lt;li&gt;2016年 澄湖超融合架构体系&lt;/li&gt;
-&lt;li&gt;2016年 团购券防伪系统&lt;/li&gt;
-&lt;li&gt;2017年 电子储值卡系统&lt;/li&gt;
-&lt;li&gt;2018年 慧云体系&lt;/li&gt;
-&lt;li&gt;2019年 北师大、日本两年硕士&lt;/li&gt;
-&lt;li&gt;2020年 ESRS疫情检录系统&lt;/li&gt;
-&lt;li&gt;2021年 福云体系、硕士毕业&lt;/li&gt;
-&lt;li&gt;2021年 二维码储值卡体系及核心加密算法&lt;/li&gt;
-&lt;li&gt;2022年 人脸识别体系建设&lt;/li&gt;
-&lt;li&gt;2023年 集团物联网体系&lt;/li&gt;
-&lt;li&gt;2023年 基于微信生态的服务小程序集群&lt;/li&gt;
-&lt;li&gt;2023年 集团网络信息安全架构体系建设&lt;/li&gt;
-&lt;li&gt;2024年 集团核心数据灾备体系建设&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
-&lt;h2 id=&#34;历程-course&#34;&gt;&lt;strong&gt;历程 (Course)&lt;/strong&gt;
-&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;1993年 51404&lt;/li&gt;
-&lt;li&gt;1994年 ~ 1998年 51406 台长等&lt;/li&gt;
-&lt;li&gt;1998年 ~ 2014年 通信运营商 历任职员、主管、主任、市公司团委书记等职务&lt;/li&gt;
-&lt;li&gt;2014年 ~ 2024年 宽广集团 VP、CIO、团委书记；市互联网行业协会主席等职务&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
-&lt;h2 id=&#34;一些荣誉-honor&#34;&gt;&lt;strong&gt;一些荣誉 (Honor)&lt;/strong&gt;
-&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;中国通信行业级QC小组活动诊断师&lt;/li&gt;
-&lt;li&gt;全国优秀CIO&lt;/li&gt;
-&lt;li&gt;省级“知识型员工”&lt;/li&gt;
-&lt;li&gt;市级“沈楠创新工作室”&lt;/li&gt;
-&lt;li&gt;市级“优秀青年岗位能手”&lt;/li&gt;
-&lt;li&gt;市级“最美科技工作者”&lt;/li&gt;
-&lt;li&gt;市级“商务发展专家”&lt;/li&gt;
-&lt;li&gt;市级“十佳科普工作者”&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
-&lt;h2 id=&#34;一些重要节点-moments&#34;&gt;&lt;strong&gt;一些重要节点 (Moments)&lt;/strong&gt;
-&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;1993年 参军&lt;/li&gt;
-&lt;li&gt;1996年 入党&lt;/li&gt;
-&lt;li&gt;1998年 央企委培&lt;/li&gt;
-&lt;li&gt;1999年 环境监控&lt;/li&gt;
-&lt;li&gt;2001年 数据分局&lt;/li&gt;
-&lt;li&gt;2003年 父亲去世&lt;/li&gt;
-&lt;li&gt;2004年 第一辆车&lt;/li&gt;
-&lt;li&gt;2006年 步入婚姻&lt;/li&gt;
-&lt;li&gt;2007年 儿子出生&lt;/li&gt;
-&lt;li&gt;2008年 准备留学&lt;/li&gt;
-&lt;li&gt;2011年 公司任职&lt;/li&gt;
-&lt;li&gt;2014年 裸辞央企&lt;/li&gt;
-&lt;li&gt;2015年 完成半马&lt;/li&gt;
-&lt;li&gt;2016年 女儿出生&lt;/li&gt;
-&lt;li&gt;2017年 完成全马&lt;/li&gt;
-&lt;li&gt;2019年 日本留学&lt;/li&gt;
-&lt;li&gt;2021年 硕士学位&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
-</description>
-        </item>
-        <item>
-        <title>紫塞 zisai.com</title>
-        <link>https://zisai.com/posts/zisai.com/</link>
-        <pubDate>Sun, 14 Apr 2024 10:14:43 +0800</pubDate>
-        
-        <guid>https://zisai.com/posts/zisai.com/</guid>
-        <description>&lt;h3 id=&#34;紫塞网wwwzisaicomsince-1998&#34;&gt;紫塞网（www.zisai.com）SINCE 1998
-&lt;/h3&gt;</description>
-        </item>
-        
-    </channel>
+&lt;p&gt;&lt;strong&gt;宽广集团&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>紫塞 zisai.com</title>
+      <link>http://localhost:8554/posts/zisai.com/</link>
+      <pubDate>Sun, 14 Apr 2024 10:14:43 +0800</pubDate>
+      <guid>http://localhost:8554/posts/zisai.com/</guid>
+      <description>&lt;h3 id=&#34;紫塞网wwwzisaicomsince-1998&#34;&gt;紫塞网（www.zisai.com）SINCE 1998&lt;/h3&gt;</description>
+    </item>
+  </channel>
 </rss>
