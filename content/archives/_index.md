@@ -1,8 +1,8 @@
 ---
-title: "历史"
+title: "故事"
 menu:
   main:
-    name: "🏷️ 历史"
+    name: "🏷️故事"
     weight: 40
     #params:
     #SS  icon: "fas fa-tags"
