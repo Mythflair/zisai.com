@@ -38,9 +38,9 @@ theme = "PaperMod"  # 使用的主题名称
       url = "/posts/"
       weight = 10
     [[menu.main]]
-     identifier = "story"
+     identifier = "archive"
      name = "🗂️ 故事"
-     url = "/story/"
+     url = "/archives/"
      weight = 20
     [[menu.main]]
       identifier = "about"

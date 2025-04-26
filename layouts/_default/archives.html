@@ -1,0 +1,12 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<p>{{ .Content }}</p>
+<ul>
+  {{ range where .Site.RegularPages "Params.archived" true }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      ({{ .Date.Format "2006-01-02" }})
+    </li>
+  {{ end }}
+</ul>
+{{ end }}
