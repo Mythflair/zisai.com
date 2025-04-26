@@ -31,8 +31,8 @@ pygmentsUseClasses = true
 # 主题参数配置
 [params]
   env = "production"
-  description = "紫塞 zisai.com - 记录技术、阅读和生活的个人博客"
-  keywords = ["技术博客", "个人博客", "紫塞", "Shen Nan"]
+  description = "紫塞 zisai.com - 短暂无常与朴素深邃之美"
+  keywords = ["沈楠", "紫塞", "ShenNan", "Hugo", "Go", "Blog", "宽广", "联通", "物哀", "幽玄", "侘寂", "热河", "承德", "承德人", "承德博客", "承德个人博客", "承德技术博客", "承德生活博客"]
   author = "Shen Nan"
   defaultTheme = "auto"
   DateFormat = "2006-01-02"
@@ -49,7 +49,7 @@ pygmentsUseClasses = true
   [params.profileMode]
     enabled = true
     title = "紫塞"
-    subtitle = "短暂无常与朴素深邃之美"
+    subtitle = "1998 ~ 2025"
     imageUrl = "/images/shennan.jpg"
     imageTitle = "SHENNAN"
     imageWidth = 120
