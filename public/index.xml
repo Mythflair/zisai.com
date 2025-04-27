@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>紫塞 zisai.com</title>
-    <link>https://zisai.com/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on 紫塞 zisai.com</description>
     <generator>Hugo -- 0.146.7</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 24 Apr 2025 16:29:25 +0800</lastBuildDate>
-    <atom:link href="https://zisai.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何将Windows11的中文用户名改为英文？</title>
-      <link>https://zisai.com/posts/windows11changeusername/</link>
+      <link>http://localhost:1313/posts/windows11changeusername/</link>
       <pubDate>Thu, 24 Apr 2025 16:29:25 +0800</pubDate>
-      <guid>https://zisai.com/posts/windows11changeusername/</guid>
+      <guid>http://localhost:1313/posts/windows11changeusername/</guid>
       <description>&lt;h1 id=&#34;修改windows-11用户目录名教程&#34;&gt;修改Windows 11用户目录名教程&lt;/h1&gt;
 &lt;p&gt;Windows 11新装时，若用户目录名使用了中文（Unicode编码），可能会导致软件不支持、乱码或莫名错误等问题，尤其在开发场景下，中文目录名可能引发诸多不便。以下是简化和优化后的修改方法，核心分为三部分：&lt;/p&gt;</description>
     </item>
     <item>
       <title>没有是非观的人，可能会更成功。</title>
-      <link>https://zisai.com/posts/constellation/</link>
+      <link>http://localhost:1313/posts/constellation/</link>
       <pubDate>Mon, 06 May 2024 11:46:35 +0800</pubDate>
-      <guid>https://zisai.com/posts/constellation/</guid>
+      <guid>http://localhost:1313/posts/constellation/</guid>
       <description>&lt;h3 id=&#34;没有是非观的人可能会更成功&#34;&gt;没有是非观的人，可能会更成功。&lt;/h3&gt;
 &lt;h3 id=&#34;因为他们在意的不是与非而是最终的目标&#34;&gt;因为他们在意的不是与非，而是最终的目标。&lt;/h3&gt;
 &lt;ul&gt;
@@ -36,9 +36,9 @@
     </item>
     <item>
       <title>如何达到自己的预期目标？</title>
-      <link>https://zisai.com/posts/goals/</link>
+      <link>http://localhost:1313/posts/goals/</link>
       <pubDate>Sun, 05 May 2024 16:11:12 +0800</pubDate>
-      <guid>https://zisai.com/posts/goals/</guid>
+      <guid>http://localhost:1313/posts/goals/</guid>
       <description>&lt;h3 id=&#34;朋友问如何达到自己的预期目标避免错误&#34;&gt;朋友问，如何达到自己的预期目标？避免错误？&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;这个我不知道，因为正确的成功道路有千万种，每个人的路都不一样。&lt;/li&gt;
@@ -50,9 +50,9 @@
     </item>
     <item>
       <title>TMT是什么？</title>
-      <link>https://zisai.com/posts/tmt/</link>
+      <link>http://localhost:1313/posts/tmt/</link>
       <pubDate>Sun, 05 May 2024 14:47:50 +0800</pubDate>
-      <guid>https://zisai.com/posts/tmt/</guid>
+      <guid>http://localhost:1313/posts/tmt/</guid>
       <description>&lt;h3 id=&#34;tmt是什么&#34;&gt;TMT是什么？&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;TMT 指的是科技（Technology）、媒体（Media）和电信（Telecom）这三个产业。它们有一个共同点，就是边际成本非常低，增加一个新用户，几乎不带来额外的成本。&lt;/li&gt;
@@ -62,9 +62,9 @@
     </item>
     <item>
       <title>关于作者</title>
-      <link>https://zisai.com/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Sun, 14 Apr 2024 13:06:25 +0800</pubDate>
-      <guid>https://zisai.com/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;h2 id=&#34;沈楠shen-nan&#34;&gt;&lt;strong&gt;沈楠（Shen Nan）&lt;/strong&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;master-of-science-in-computer-science&#34;&gt;Master of Science in Computer Science.&lt;/h3&gt;
 &lt;h3 id=&#34;j-f-oberlin-universitytokyojapan&#34;&gt;J. F. Oberlin University,Tokyo,Japan&lt;/h3&gt;
@@ -84,9 +84,9 @@
     </item>
     <item>
       <title>紫塞 zisai.com</title>
-      <link>https://zisai.com/posts/zisai.com/</link>
+      <link>http://localhost:1313/posts/zisai.com/</link>
       <pubDate>Sun, 14 Apr 2024 10:14:43 +0800</pubDate>
-      <guid>https://zisai.com/posts/zisai.com/</guid>
+      <guid>http://localhost:1313/posts/zisai.com/</guid>
       <description>&lt;h3 id=&#34;紫塞网wwwzisaicomsince-1998&#34;&gt;紫塞网（www.zisai.com）SINCE 1998&lt;/h3&gt;</description>
     </item>
   </channel>

@@ -2,44 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://zisai.com/posts/windows11changeusername/</loc>
+    <loc>http://localhost:1313/posts/windows11changeusername/</loc>
     <lastmod>2025-04-24T16:29:25+08:00</lastmod>
   </url><url>
-    <loc>https://zisai.com/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-04-24T16:29:25+08:00</lastmod>
   </url><url>
-    <loc>https://zisai.com/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-04-24T16:29:25+08:00</lastmod>
   </url><url>
-    <loc>https://zisai.com/posts/constellation/</loc>
+    <loc>http://localhost:1313/posts/constellation/</loc>
     <lastmod>2024-05-06T11:46:35+08:00</lastmod>
   </url><url>
-    <loc>https://zisai.com/posts/goals/</loc>
+    <loc>http://localhost:1313/posts/goals/</loc>
     <lastmod>2024-05-05T16:11:12+08:00</lastmod>
   </url><url>
-    <loc>https://zisai.com/posts/tmt/</loc>
+    <loc>http://localhost:1313/posts/tmt/</loc>
     <lastmod>2024-05-05T14:47:50+08:00</lastmod>
   </url><url>
-    <loc>https://zisai.com/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2024-04-14T13:06:25+08:00</lastmod>
   </url><url>
-    <loc>https://zisai.com/posts/zisai.com/</loc>
+    <loc>http://localhost:1313/posts/zisai.com/</loc>
     <lastmod>2024-04-14T10:14:43+08:00</lastmod>
   </url><url>
-    <loc>https://zisai.com/archives/</loc>
+    <loc>http://localhost:1313/archives/</loc>
   </url><url>
-    <loc>https://zisai.com/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
   </url><url>
-    <loc>https://zisai.com/posts/mononoaware/</loc>
+    <loc>http://localhost:1313/posts/mononoaware/</loc>
   </url><url>
-    <loc>https://zisai.com/posts/yuugen/</loc>
+    <loc>http://localhost:1313/posts/yuugen/</loc>
   </url><url>
-    <loc>https://zisai.com/posts/wabisabi/</loc>
+    <loc>http://localhost:1313/posts/wabisabi/</loc>
   </url><url>
-    <loc>https://zisai.com/series/</loc>
+    <loc>http://localhost:1313/series/</loc>
   </url><url>
-    <loc>https://zisai.com/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
   </url><url>
-    <loc>https://zisai.com/archives/</loc>
+    <loc>http://localhost:1313/archives/</loc>
   </url>
 </urlset>
