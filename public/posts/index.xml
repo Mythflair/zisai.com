@@ -75,5 +75,12 @@
       <guid>http://localhost:1313/posts/zisai.com/</guid>
       <description>&lt;h3 id=&#34;紫塞网wwwzisaicomsince-1998&#34;&gt;紫塞网（www.zisai.com）SINCE 1998&lt;/h3&gt;</description>
     </item>
+    <item>
+      <title>2023：人生里程碑的回响</title>
+      <link>http://localhost:1313/posts/2023_reflections/</link>
+      <pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2023_reflections/</guid>
+      <description>回望2023，串联起三十年的人生节点，感叹得失循环，珍惜当下，期盼未来。</description>
+    </item>
   </channel>
 </rss>
