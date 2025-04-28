@@ -1,0 +1,480 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宽广食品消费者调查问卷</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f4e6;
+      color: #333;
+    }
+    .progress-bar {
+      width: 100%;
+      background-color: #e0e0e0;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .progress {
+      height: 100%;
+      background-color: #f4a261;
+      transition: width 0.3s ease;
+    }
+    .food-bg {
+      background-image: url('https://via.placeholder.com/800x200?text=宽广食品');
+      background-size: cover;
+      background-position: center;
+    }
+    .hidden {
+      display: none;
+    }
+    .star {
+      cursor: pointer;
+      font-size: 24px;
+      color: #ccc;
+    }
+    .star.selected {
+      color: #f4a261;
+    }
+    .draw-result {
+      animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .qr-code {
+      width: 150px;
+      height: 150px;
+      background-color: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <!-- 头部 -->
+  <header class="food-bg h-32 flex items-center justify-center text-white text-2xl font-bold">
+    宽广食品消费者调查
+  </header>
+
+  <!-- 进度条 -->
+  <div class="p-4">
+    <div class="progress-bar">
+      <div class="progress" style="width: 0%"></div>
+    </div>
+    <p class="text-sm text-gray-600 mt-2">已完成 <span id="progress-text">0%</span></p>
+  </div>
+
+  <!-- 问卷表单 -->
+  <div class="flex-1 p-4">
+    <div id="welcome" class="bg-white rounded-lg shadow p-6 mb-4">
+      <h2 class="text-xl font-bold mb-4">欢迎参与！</h2>
+      <p class="text-gray-600 mb-4">感谢您支持宽广食品！本问卷约需3-5分钟，提交后可参与抽奖，赢取优惠券或免费产品！</p>
+      <button onclick="nextSection('welcome', 'age')" class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">开始填写</button>
+    </div>
+
+    <!-- 1. 年龄段 -->
+    <div id="age" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">1. 您的年龄段是？（选填）</h2>
+      <select id="age-select" class="w-full p-2 border rounded">
+        <option value="">请选择</option>
+        <option value="18-25">18-25</option>
+        <option value="26-35">26-35</option>
+        <option value="36-45">36-45</option>
+        <option value="46-55">46-55</option>
+        <option value="55+">55以上</option>
+      </select>
+      <button onclick="nextSection('age', 'region')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600">下一题</button>
+    </div>
+
+    <!-- 2. 地区 -->
+    <div id="region" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">2. 您所在的地区是？（选填）</h2>
+      <select id="region-select" class="w-full p-2 border rounded">
+        <option value="">请选择</option>
+        <option value="华北">华北</option>
+        <option value="华东">华东</option>
+        <option value="华南">华南</option>
+        <option value="华中">华中</option>
+        <option value="西北">西北</option>
+        <option value="西南">西南</option>
+        <option value="其他">其他</option>
+      </select>
+      <button onclick="nextSection('region', 'pastry-purchase')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600">下一题</button>
+    </div>
+
+    <!-- 3. 糕点购买 -->
+    <div id="pastry-purchase" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">3. 您是否购买过宽广食品的糕点（如无水蛋糕、桃酥）？</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="radio" name="pastry-purchase" value="frequent" onclick="togglePastryRating(true)"> 经常购买</label>
+        <label><input type="radio" name="pastry-purchase" value="occasional" onclick="togglePastryRating  onclick="togglePastryRating(true)"> 偶尔购买</label>
+        <label><input type="radio" name="pastry-purchase" value="rare" onclick="togglePastryRating(false)"> 几乎不购买</label>
+      </div>
+      <button onclick="nextSection('pastry-purchase', pastryRatingNext())" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600">下一题</button>
+    </div>
+
+    <!-- 4. 糕点评分 -->
+    <div id="pastry-rating" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">4. 请对宽广食品的糕点进行评分（1=非常不满意，5=非常满意）</h2>
+      <div class="mb-4">
+        <label class="block mb-2">外观</label>
+        <div class="flex gap-2" id="pastry-appearance"></div>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2">气味</label>
+        <div class="flex gap-2" id="pastry-smell"></div>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2">口感</label>
+        <div class="flex gap-2" id="pastry-taste"></div>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2">价格</label>
+        <div class="flex gap-2" id="pastry-price"></div>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2">甜度适中度</label>
+        <div class="flex gap-2" id="pastry-sweetness"></div>
+      </div>
+      <button onclick="nextSection('pastry-rating', 'deli-purchase')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600">下一题</button>
+    </div>
+
+    <!-- 5. 熟食购买 -->
+    <div id="deli-purchase" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">5. 您是否购买过宽广食品的熟食（如烧鸡、猪蹄）？</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="radio" name="deli-purchase" value="frequent" onclick="toggleDeliRating(true)"> 经常购买</label>
+        <label><input type="radio" name="deli-purchase" value="occasional" onclick="toggleDeliRating(true)"> 偶尔购买</label>
+        <label><input type="radio" name="deli-purchase" value="rare" onclick="toggleDeliRating(false)"> 几乎不购买</label>
+      </div>
+      <button onclick="nextSection('deli-purchase', deliRatingNext())" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600">下一题</button>
+    </div>
+
+    <!-- 6. 熟食评分 -->
+    <div id="deli-rating" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">6. 请对宽广食品的熟食进行评分（1=非常不满意，5=非常满意）</h2>
+      <div class="mb-4">
+        <label class="block mb-2">外观</label>
+        <div class="flex gap-2" id="deli-appearance"></div>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2">气味</label>
+        <div class="flex gap-2" id="deli-smell"></div>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2">口感</label>
+        <div class="flex gap-2" id="deli-taste"></div>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2">价格</label>
+        <div class="flex gap-2" id="deli-price"></div>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2">新鲜度</label>
+        <div class="flex gap-2" id="deli-freshness"></div>
+      </div>
+      <button onclick="nextSection('deli-rating', 'overall-taste')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600">下一题</button>
+    </div>
+
+    <!-- 7. 整体口味 -->
+    <div id="overall-taste" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">7. 整体来说，宽广食品好不好吃？</h2>
+      <div class="flex gap-2" id="overall-taste-rating"></div>
+      <button onclick="nextSection('overall-taste', 'flavor')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600">下一题</button>
+    </div>
+
+    <!-- 8. 口味评价 -->
+    <div id="flavor" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">8. 宽广食品的口味整体评价</h2>
+      <div class="mb-4">
+        <label class="block mb-2">咸味适中度（若不适用，请选“不适用”）</label>
+        <div class="flex gap-2" id="flavor-salty"></div>
+        <label class="ml-2"><input type="radio" name="salty" value="na"> 不适用</label>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2">甜味适中度（若不适用，请选“不适用”）</label>
+        <div class="flex gap-2" id="flavor-sweet"></div>
+        <label class="ml-2"><input type="radio" name="sweet" value="na"> 不适用</label>
+      </div>
+      <button onclick="nextSection('flavor', 'pastry-frequency')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600">下一题</button>
+    </div>
+
+    <!-- 9. 糕点购买频次 -->
+    <div id="pastry-frequency" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">9. 您购买宽广食品糕点的周期大概是？</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="radio" name="pastry-frequency" value="1-7"> 1-7天</label>
+        <label><input type="radio" name="pastry-frequency" value="8-15"> 8-15天</label>
+        <label><input type="radio" name="pastry-frequency" value="16-30"> 16-30天</label>
+        <label><input type="radio" name="pastry-frequency" value="occasional"> 偶尔购买（如促销/节日）</label>
+        <label><input type="radio" name="pastry-frequency" value="rare" onclick="togglePastryReason(true)"> 几乎不购买</label>
+      </div>
+      <div id="pastry-reason" class="hidden mt-4">
+        <p class="mb-2">不常购买的原因是？（可多选）</p>
+        <label><input type="checkbox" name="pastry-reason" value="taste"> 口味</label>
+        <label><input type="checkbox" name="pastry-reason" value="price"> 价格</label>
+        <label><input type="checkbox" name="pastry-reason" value="convenience"> 便利性</label>
+        <label><input type="checkbox" name="pastry-reason" value="other"> 其他</label>
+      </div>
+      <button onclick="nextSection('pastry-frequency', 'deli-frequency')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600">下一题</button>
+    </div>
+
+    <!-- 10. 熟食购买频次 -->
+    <div id="deli-frequency" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">10. 您购买宽广食品熟食的周期大概是？</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="radio" name="deli-frequency" value="1-7"> 1-7天</label>
+        <label><input type="radio" name="deli-frequency" value="8-15"> 8-15天</label>
+        <label><input type="radio" name="deli-frequency" value="16-30"> 16-30天</label>
+        <label><input type="radio" name="deli-frequency" value="occasional"> 偶尔购买（如促销/节日）</label>
+        <label><input type="radio" name="deli-frequency" value="rare" onclick="toggleDeliReason(true)"> 几乎不购买</label>
+      </div>
+      <div id="deli-reason" class="hidden mt-4">
+        <p class="mb-2">不常购买的原因是？（可多选）</p>
+        <label><input type="checkbox" name="deli-reason" value="taste"> 口味</label>
+        <label><input type="checkbox" name="deli-reason" value="price"> 价格</label>
+        <label><input type="checkbox" name="deli-reason" value="convenience"> 便利性</label>
+        <label><input type="checkbox" name="deli-reason" value="other"> 其他</label>
+      </div>
+      <button onclick="nextSection('deli-frequency', 'usage')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600">下一题</button>
+    </div>
+
+    <!-- 11. 使用场景 -->
+    <div id="usage" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">11. 您购买宽广食品的主要用途是？（可多选）</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="checkbox" name="usage" value="daily"> 日常食用</label>
+        <label><input type="checkbox" name="usage" value="gift"> 节日送礼</label>
+        <label><input type="checkbox" name="usage" value="party"> 聚会/派对</label>
+        <label><input type="checkbox" name="usage" value="other"> 其他</label>
+      </div>
+      <button onclick="nextSection('usage', 'nps')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600">下一题</button>
+    </div>
+
+    <!-- 12. NPS -->
+    <div id="nps" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">12. 您会将宽广食品推荐给亲朋好友吗？（1=完全不会，10=非常愿意）</h2>
+      <div class="flex gap-2 flex-wrap">
+        <button onclick="setNPS(1)" class="border p-2 rounded">1</button>
+        <button onclick="setNPS(2)" class="border p-2 rounded">2</button>
+        <button onclick="setNPS(3)" class="border p-2 rounded">3</button>
+        <button onclick="setNPS(4)" class="border p-2 rounded">4</button>
+        <button onclick="setNPS(5)" class="border p-2 rounded">5</button>
+        <button onclick="setNPS(6)" class="border p-2 rounded">6</button>
+        <button onclick="setNPS(7)" class="border p-2 rounded">7</button>
+        <button onclick="setNPS(8)" class="border p-2 rounded">8</button>
+        <button onclick="setNPS(9)" class="border p-2 rounded">9</button>
+        <button onclick="setNPS(10)" class="border p-2 rounded">10</button>
+      </div>
+      <button onclick="nextSection('nps', npsNext())" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600">下一题</button>
+    </div>
+
+    <!-- 13. NPS 追问 -->
+    <div id="nps-reason" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">13. 您不愿意推荐的主要原因是什么？（可多选）</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="checkbox" name="nps-reason" value="taste"> 口味不佳</label>
+        <label><input type="checkbox" name="nps-reason" value="price"> 价格偏高</label>
+        <label><input type="checkbox" name="nps-reason" value="packaging"> 包装吸引力不足</label>
+        <label><input type="checkbox" name="nps-reason" value="service"> 门店服务不佳</label>
+        <label><input type="checkbox" name="nps-reason" value="variety"> 产品种类少</label>
+        <label><input type="checkbox" name="nps-reason" value="other"> 其他（请简述）<input type="text" class="border p-1 ml-2"></label>
+      </div>
+      <button onclick="nextSection('nps-reason', 'feedback')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600">下一题</button>
+    </div>
+
+    <!-- 14. 开放反馈 -->
+    <div id="feedback" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">14. 您对宽广食品的糕点、熟食或服务有何建议？（选填）</h2>
+      <textarea class="w-full p-2 border rounded" rows="4" placeholder="例如，您希望我们改进哪些口味、包装、服务或推出新品？"></textarea>
+      <button onclick="nextSection('feedback', 'draw')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600">提交并抽奖</button>
+    </div>
+
+    <!-- 15. 抽奖结果 -->
+    <div id="draw" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4 text-center">抽奖结果</h2>
+      <div id="draw-result" class="draw-result text-center">
+        <p class="text-xl mb-4">正在抽奖...</p>
+      </div>
+      <button onclick="shareSurvey()" class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">分享问卷，获额外抽奖机会</button>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <footer class="bg-gray-800 text-white text-center p-4">
+    <p>&copy; 2025 宽广食品有限公司</p>
+  </footer>
+
+  <script>
+    let currentNPS = 0;
+    const totalSections = 14; // 不含欢迎页和抽奖页
+
+    function nextSection(current, next) {
+      document.getElementById(current).classList.add('hidden');
+      document.getElementById(next).classList.remove('hidden');
+      updateProgress();
+      if (next === 'draw') {
+        showDrawResult();
+      }
+    }
+
+    function updateProgress() {
+      const visibleSections = document.querySelectorAll('.bg-white:not(.hidden)').length - 1; // 减去欢迎页
+      const progress = Math.round((visibleSections / totalSections) * 100);
+      document.querySelector('.progress').style.width = `${progress}%`;
+      document.getElementById('progress-text').textContent = `${progress}%`;
+    }
+
+    function togglePastryRating(show) {
+      document.getElementById('pastry-rating').classList[show ? 'remove' : 'add']('hidden');
+    }
+
+    function toggleDeliRating(show) {
+      document.getElementById('deli-rating').classList[show ? 'remove' : 'add']('hidden');
+    }
+
+    function togglePastryReason(show) {
+      document.getElementById('pastry-reason').classList[show ? 'remove' : 'add']('hidden');
+    }
+
+    function toggleDeliReason(show) {
+      document.getElementById('deli-reason').classList[show ? 'remove' : 'add']('hidden');
+    }
+
+    function pastryRatingNext() {
+      return document.getElementById('pastry-rating').classList.contains('hidden') ? 'deli-purchase' : 'pastry-rating';
+    }
+
+    function deliRatingNext() {
+      return document.getElementById('deli-rating').classList.contains('hidden') ? 'overall-taste' : 'deli-rating';
+    }
+
+    function setNPS(score) {
+      currentNPS = score;
+      document.querySelectorAll('#nps button').forEach(btn => {
+        btn.classList.remove('bg-orange-500', 'text-white');
+        if (parseInt(btn.textContent) === score) {
+          btn.classList.add('bg-orange-500', 'text-white');
+        }
+      });
+    }
+
+    function npsNext() {
+      return currentNPS <= 6 ? 'nps-reason' : 'feedback';
+    }
+
+    function createStars(containerId, name) {
+      const container = document.getElementById(containerId);
+      for (let i = 1; i <= 5; i++) {
+        const star = document.createElement('span');
+        star.classList.add('star');
+        star.innerHTML = '★';
+        star.onclick = () => {
+          document.querySelectorAll(`#${containerId} .star`).forEach((s, idx) => {
+            s.classList[idx < i ? 'add' : 'remove']('selected');
+          });
+          // 模拟存储评分
+          console.log(`${name} 评分: ${i}`);
+        };
+        container.appendChild(star);
+      }
+    }
+
+    // 初始化星级评分
+    ['pastry-appearance', 'pastry-smell', 'pastry-taste', 'pastry-price', 'pastry-sweetness',
+     'deli-appearance', 'deli-smell', 'deli-taste', 'deli-price', 'deli-freshness',
+     'overall-taste-rating', 'flavor-salty', 'flavor-sweet'].forEach(id => {
+      createStars(id, id);
+    });
+
+    function showDrawResult() {
+      // 模拟抽奖逻辑
+      setTimeout(() => {
+        const rand = Math.random();
+        let result = '';
+        if (rand < 0.01) {
+          result = `
+            <p class="text-2xl text-green-600 mb-4">恭喜您获得一等奖！</p>
+            <p>免费无水蛋糕一份</p>
+            <p class="mt-2">请凭以下二维码到门店领取，7天内有效</p>
+            <div class="qr-code mt-4">模拟二维码</div>
+          `;
+        } else if (rand < 0.11) {
+          result = `
+            <p class="text-2xl text-green-600 mb-4">恭喜您获得二等奖！</p>
+            <p>5元优惠券</p>
+            <p class="mt-2">已发送至您的手机，或凭二维码到门店领取</p>
+            <div class="qr-code mt-4">模拟二维码</div>
+          `;
+        } else if (rand < 0.41) {
+          result = `
+            <p class="text-2xl text-green-600 mb-4">恭喜您获得三等奖！</p>
+            <p>小份试吃装</p>
+            <p class="mt-2">请凭以下二维码到门店领取，7天内有效</p>
+            <div class="qr-code mt-4">模拟二维码</div>
+          `;
+        } else {
+          result = `
+            <p class="text-xl mb-4">感谢您的参与！</p>
+            <p>您获得5%折扣券</p>
+            <p class="mt-2">已发送至您的手机，或凭二维码到门店领取</p>
+            <div class="qr-code mt-4">模拟二维码</div>
+          `;
+        }
+        document.getElementById('draw-result').innerHTML = result;
+      }, 1500); // 模拟抽奖动画延迟
+    }
+
+    function shareSurvey() {
+      // 模拟分享逻辑
+      alert('请复制链接分享给好友！额外抽奖机会已记录。');
+    }
+  </script>
+</body>
+</html>
