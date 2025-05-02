@@ -2,7 +2,7 @@
 date = '2025-05-02T12:27:45+08:00'
 draft = false
 title = '100RecommendedBooks'
-tags = [书籍, 阅读, 推荐]
+tags = ["书籍", "阅读", "推荐"]
 +++
 
 ## 100本激发思考的书籍推荐
