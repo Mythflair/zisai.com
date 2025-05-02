@@ -4,6 +4,9 @@ date: 1998-06-01T10:14:43+08:00
 draft: false
 archived: true
 # searchHidden= true
+cover:
+    image: "/images/1714022569778-be9ccd29-434a-4125-867e-6a83a283c2b2.png" 
+    alt: "1998年 紫塞明珠网"
 ---
 
 ## 紫塞明珠网 SINCE 1998 ：从互联网黎明到个人博客的传承
