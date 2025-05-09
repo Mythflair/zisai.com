@@ -4,6 +4,9 @@ date = 2025-05-09T17:00:00+08:00
 draft = false
 tags = ['中年感怀', '生活随想', '内心独白']
 categories = ['人生絮语']
+cover = 
+    image = '/images/middleaged.jpg' 
+    alt = '半山暮色：一程烟雨一程叹'
 +++
 
 ## 半山暮色：一程烟雨一程叹
