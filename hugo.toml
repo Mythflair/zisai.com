@@ -12,6 +12,8 @@ buildDrafts = false
 buildFuture = false
 buildExpired = false
 pygmentsUseClasses = true
+googleAnalytics = "G-WQ5LVXCGRZ"
+# disableAnalytics = false
 
 # 分页配置
 [pagination]
@@ -45,8 +47,6 @@ pygmentsUseClasses = true
   ShowLastMod = true
   ShowToc = true
   TocOpen = true
-  googleAnalytics = "G-WQ5LVXCGRZ"
-  # disableAnalytics = false
 
   [params.profileMode]
     enabled = true
