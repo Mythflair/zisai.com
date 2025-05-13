@@ -25,8 +25,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <main class="main">
         {{- block "main" . }}{{ end }}
     </main>
+<!-- Google Adsense (noscript) -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6505236094995924"
      crossorigin="anonymous"></script>
+<!-- End Google Adsense (noscript) -->
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
 </body>
 
