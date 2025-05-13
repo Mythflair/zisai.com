@@ -5,7 +5,7 @@ draft = false
 tags = ['军旅', '回忆', '战友', '通信技术']
 categories = ['人生絮语']
 [cover] 
-    image = '/images/shennan17.jpg' 
+    image = '/images/shennan17.png' 
     alt = '我的军旅生涯：五年沉甸甸的回忆'
 +++
 
