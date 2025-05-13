@@ -45,6 +45,8 @@ pygmentsUseClasses = true
   ShowLastMod = true
   ShowToc = true
   TocOpen = true
+  googleAnalytics = "GTM-PCVR5FXN"
+  disableAnalytics = false
 
   [params.profileMode]
     enabled = true
