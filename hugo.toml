@@ -46,7 +46,7 @@ pygmentsUseClasses = true
   ShowToc = true
   TocOpen = true
   googleAnalytics = "G-WQ5LVXCGRZ"
-  disableAnalytics = false
+  # disableAnalytics = false
 
   [params.profileMode]
     enabled = true
