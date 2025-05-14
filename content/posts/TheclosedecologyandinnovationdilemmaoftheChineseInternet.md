@@ -6,7 +6,7 @@ tags: [互联网, 技术创新, 大语言模型, 开放式发展]
 categories: [科技观察]
 description: 探讨中文互联网的封闭生态如何导致内容质量下降、技术创新受限，以及对开放式发展的深远影响。
 cover:
-  image: '/images/chinainternet.png'
+  image: '/images/chinaInternet.png'
   alt: '文互联网的封闭生态与创新困境'
 ---
 
