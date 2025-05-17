@@ -47,6 +47,8 @@ googleAnalytics = "G-WQ5LVXCGRZ"
   ShowLastMod = true
   ShowToc = true
   TocOpen = true
+  customCSS = ["css/custom.css"]
+  comments = true
 
   [params.profileMode]
     enabled = true
@@ -126,6 +128,8 @@ googleAnalytics = "G-WQ5LVXCGRZ"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+    [markup.goldmark.extensions]
+      emoji = true
   [markup.highlight]
     codeFences = true
     guessSyntax = true

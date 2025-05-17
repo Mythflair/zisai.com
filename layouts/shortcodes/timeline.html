@@ -1,7 +1,10 @@
 <div class="timeline">
   {{ range split .Inner "\n" }}
     {{ if . }}
-      <div class="timeline-item">{{ . }}</div>
+      <div class="timeline-item">
+        {{ $parts := split . ": " }}
+        <span class="timeline-year">{{ index $parts 0 }}</span>: {{ index $parts 1 }}
+      </div>
     {{ end }}
   {{ end }}
 </div>

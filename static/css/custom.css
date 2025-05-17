@@ -1,3 +1,12 @@
+/* 项目卡片样式 */
+.project-card {
+  border-left: 4px solid #007bff;
+  padding: 1em;
+  margin: 1em 0;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
 /* 时间线样式 */
 .timeline {
   position: relative;
@@ -16,14 +25,9 @@
   color: #007bff;
   font-size: 1.5em;
 }
-
-/* 项目卡片样式 */
-.project-card {
-  border-left: 4px solid #007bff;
-  padding: 1em;
-  margin: 1em 0;
-  background: #f8f9fa;
-  border-radius: 4px;
+.timeline-year {
+  font-weight: bold;
+  color: #007bff;
 }
 
 /* 适配 PaperMod 深色模式 */
