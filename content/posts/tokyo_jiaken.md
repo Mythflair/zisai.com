@@ -1,8 +1,9 @@
 ---
 title: "日本街头乐队的回忆"
 date: 2025-05-15
-featuredImage: "/images/tokyo_jiaken.png"
-description: "Tokyo Jiaken"
+cover:
+  image: "/images/tokyo_jiaken.png"
+  alt: "Tokyo Jiaken"
 ---
 
 # 日本街头乐队的回忆
