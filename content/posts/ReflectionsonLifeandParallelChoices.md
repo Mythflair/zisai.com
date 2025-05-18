@@ -4,7 +4,7 @@ date: 2025-05-18T13:29:00+08:00
 draft: false
 tags: ["人生", "遗憾", "平行宇宙", "选择", "回忆"]
 categories: ["随笔"]
-featuredImage: "/images/shennanarmy18.jpg"
+featuredImage: "/images/shennanarmy18.png"
 description: "回望三十余年，从参军到如今，人生选择与遗憾在岁月中交织。如果有平行宇宙，另一个我又会如何？"
 ---
 
