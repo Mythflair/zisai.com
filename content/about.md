@@ -93,7 +93,7 @@ tags = ["关于", "技术", "职业", "物联网", "网络安全"]
   <div class="timeline-item"><span class="timeline-year">1994</span>: 担任51406台长</div>
   <div class="timeline-item"><span class="timeline-year">1995</span>: 继续在51406任职</div>
   <div class="timeline-item"><span class="timeline-year">1996</span>: 入党</div>
-  <div class="timeline-item"><span class="timeline-year">1997</span>: 在51406积累经验</div>
+  <div class="timeline-item"><span class="timeline-year">1997</span>: 51406计算机和通信</div>
   <div class="timeline-item"><span class="timeline-year">1998</span>: 央企委培，投身通信运营商</div>
   <div class="timeline-item"><span class="timeline-year">1999</span>: 负责环境监控</div>
   <div class="timeline-item"><span class="timeline-year">2001</span>: 进入数据分局</div>
@@ -106,10 +106,10 @@ tags = ["关于", "技术", "职业", "物联网", "网络安全"]
   <div class="timeline-item"><span class="timeline-year">2014</span>: 裸辞央企，加入宽广集团，任VP、CIO</div>
   <div class="timeline-item"><span class="timeline-year">2015</span>: 完成半马</div>
   <div class="timeline-item"><span class="timeline-year">2016</span>: 女儿出生</div>
-  <div class="timeline-item"><span class="timeline-year">2017</span>: 完成全马</div>
+  <div class="timeline-item"><span class="timeline-year">2016</span>: 完成全马</div>
   <div class="timeline-item"><span class="timeline-year">2019</span>: 日本留学，攻读硕士</div>
   <div class="timeline-item"><span class="timeline-year">2021</span>: 硕士毕业</div>
-  <div class="timeline-item"><span class="timeline-year">2024</span>: 担任市互联网行业协会主席</div>
+  <div class="timeline-item"><span class="timeline-year">2022</span>: 担任市互联网行业协会主席</div>
 </div>
 
 ---
@@ -130,8 +130,8 @@ tags = ["关于", "技术", "职业", "物联网", "网络安全"]
 ## 👤 关于我的一点小事
 
 - **最爱的技术**：Go（简洁优雅）、Kubernetes（云原生基石）
-- **生活爱好**：计算机、散步、小圈子聚会、陪孩子
-- **技术信仰**：用最简单的代码解决最复杂的问题
+- **生活爱好**：计算机、音乐、散步、家庭、小圈子聚会
+- **技术信仰**：用最简单的逻辑解决最复杂的问题
 - **2025目标**：处理好牙齿，关注身体健康
 
 ---
@@ -141,8 +141,8 @@ tags = ["关于", "技术", "职业", "物联网", "网络安全"]
 - **博客订阅**：RSS Feed
 - **邮箱**：mythflair@hotmail.com
 
-> 欢迎留言或通过社交媒体与我交流技术、跑步或生活！
+> 欢迎留言或通过社交媒体与我交流技术、运动或生活！
 
 ---
 
-*最后更新：2025年5月17日 电信日
+*最后更新：2025年5月22日 修复一些内容
