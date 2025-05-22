@@ -1,0 +1,555 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宽广食品熟食满意度调查</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f4e6;
+      color: #333;
+    }
+    .progress-bar {
+      width: 100%;
+      background-color: #e0e0e0;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .progress {
+      height: 100%;
+      background-color: #f4a261;
+      transition: width 0.3s ease;
+    }
+    .food-bg {
+      background-image: url('https://via.placeholder.com/800x200?text=宽广熟食');
+      background-size: cover;
+      background-position: center;
+    }
+    .hidden {
+      display: none;
+    }
+    .star {
+      cursor: pointer;
+      font-size: 24px;
+      color: #ccc;
+    }
+    .star.selected {
+      color: #f4a261;
+    }
+    .draw-result {
+      animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .qr-code {
+      width: 150px;
+      height: 150px;
+      background-color: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    input[type="radio"], input[type="checkbox"] {
+      accent-color: #f4a261;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <!-- 头部 -->
+  <header class="food-bg h-32 flex items-center justify-center text-white text-2xl font-bold">
+    宽广食品熟食调查
+  </header>
+
+  <!-- 进度条 -->
+  <div class="p-4">
+    <div class="progress-bar">
+      <div class="progress" style="width: 0%"></div>
+    </div>
+    <p class="text-sm text-gray-600 mt-2">已完成 <span id="progress-text">0%</span></p>
+  </div>
+
+  <!-- 问卷表单 -->
+  <div class="flex-1 p-4">
+    <!-- 欢迎页 -->
+    <div id="welcome" class="bg-white rounded-lg shadow p-6 mb-4">
+      <h2 class="text-xl font-bold mb-4">欢迎参与！</h2>
+      <p class="text-gray-600 mb-4">感谢支持宽广食品熟食！本问卷约需3-5分钟，提交后可参与抽奖，赢取优惠券或免费烧鸡！</p>
+      <button onclick="nextSection('welcome', 'age')" class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 w-full">开始填写</button>
+    </div>
+
+    <!-- 1. 年龄段 -->
+    <div id="age" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">1. 您的年龄段是？（选填）</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="radio" name="age" value="18-25"> 18-25岁</label>
+        <label><input type="radio" name="age" value="26-35"> 26-35岁</label>
+        <label><input type="radio" name="age" value="36-45"> 36-45岁</label>
+        <label><input type="radio" name="age" value="46-55"> 46-55岁</label>
+        <label><input type="radio" name="age" value="55+"> 55岁以上</label>
+        <label><input type="radio" name="age" value="other"> 其他/不愿透露</label>
+      </div>
+      <button onclick="nextSection('age', 'gender')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 2. 性别 -->
+    <div id="gender" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">2. 您的性别是？（选填）</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="radio" name="gender" value="male"> 男</label>
+        <label><input type="radio" name="gender" value="female"> 女</label>
+        <label><input type="radio" name="gender" value="other"> 其他/不愿透露</label>
+      </div>
+      <button onclick="nextSection('gender', 'region')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 3. 地区 -->
+    <div id="region" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">3. 您所在的地区是？（选填）</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="radio" name="region" value="north"> 华北</label>
+        <label><input type="radio" name="region" value="east"> 华东</label>
+        <label><input type="radio" name="region" value="south"> 华南</label>
+        <label><input type="radio" name="region" value="central"> 华中</label>
+        <label><input type="radio" name="region" value="northwest"> 西北</label>
+        <label><input type="radio" name="region" value="southwest"> 西南</label>
+        <label><input type="radio" name="region" value="other"> 其他</label>
+      </div>
+      <button onclick="nextSection('region', 'frequency')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 4. 购买频率 -->
+    <div id="frequency" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">4. 您购买宽广食品熟食的频率是？</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="radio" name="frequency" value="3+"> 每周3次以上</label>
+        <label><input type="radio" name="frequency" value="1-2"> 每周1-2次</label>
+        <label><input type="radio" name="frequency" value="2-3"> 每月2-3次</label>
+        <label><input type="radio" name="frequency" value="occasional"> 偶尔购买（如促销/节日）</label>
+        <label><input type="radio" name="frequency" value="rare" onclick="toggleFrequencyReason(true)"> 几乎不购买</label>
+      </div>
+      <div id="frequency-reason" class="hidden mt-4">
+        <p class="mb-2">不常购买的主要原因是？（可多选）</p>
+        <label><input type="checkbox" name="frequency-reason" value="taste"> 口味</label>
+        <label><input type="checkbox" name="frequency-reason" value="price"> 价格</label>
+        <label><input type="checkbox" name="frequency-reason" value="convenience"> 便利性</label>
+        <label><input type="checkbox" name="frequency-reason" value="variety"> 品种少</label>
+        <label><input type="checkbox" name="frequency-reason" value="other"> 其他 <input type="text" class="border p-1 ml-2 w-32"></label>
+      </div>
+      <button onclick="nextSection('frequency', 'reason')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 5. 购买原因 -->
+    <div id="reason" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">5. 您购买熟食的主要原因是？（可多选）</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="checkbox" name="reason" value="taste"> 口味独特（如酱香、麻辣）</label>
+        <label><input type="checkbox" name="reason" value="fresh"> 食材新鲜</label>
+        <label><input type="checkbox" name="reason" value="price"> 价格合理</label>
+        <label><input type="checkbox" name="reason" value="convenience"> 方便快捷</label>
+        <label><input type="checkbox" name="reason" value="variety"> 品种丰富</label>
+        <label><input type="checkbox" name="reason" value="hygiene"> 健康卫生（如无添加）</label>
+        <label><input type="checkbox" name="reason" value="other"> 其他 <input type="text" class="border p-1 ml-2 w-32"></label>
+      </div>
+      <button onclick="nextSection('reason', 'channel')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 6. 了解渠道 -->
+    <div id="channel" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">6. 您通过什么渠道了解到宽广食品？（可多选）</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="checkbox" name="channel" value="friend"> 朋友/家人推荐</label>
+        <label><input type="checkbox" name="channel" value="store"> 路过门店</label>
+        <label><input type="checkbox" name="channel" value="social"> 社交媒体（抖音、微信等）</label>
+        <label><input type="checkbox" name="channel" value="delivery"> 外卖平台（如美团、饿了么）</label>
+        <label><input type="checkbox" name="channel" value="ad"> 线下广告（如海报、传单）</label>
+        <label><input type="checkbox" name="channel" value="other"> 其他 <input type="text" class="border p-1 ml-2 w-32"></label>
+      </div>
+      <button onclick="nextSection('channel', 'type')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 7. 熟食类型 -->
+    <div id="type" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">7. 您最常购买的熟食类型是？（可多选）</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="checkbox" name="type" value="braised"> 卤味（如猪蹄、卤鸡爪）</label>
+        <label><input type="checkbox" name="type" value="roasted"> 烤制类（如烧鸡、烤鸭）</label>
+        <label><input type="checkbox" name="type" value="steamed"> 蒸煮类（如清蒸排骨）</label>
+        <label><input type="checkbox" name="type" value="fried"> 炸制类（如炸鸡块）</label>
+        <label><input type="checkbox" name="type" value="other"> 其他 <input type="text" class="border p-1 ml-2 w-32"></label>
+      </div>
+      <button onclick="nextSection('type', 'rating')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 8. 熟食评分 -->
+    <div id="rating" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">8. 请对宽广食品熟食进行评分（1=非常不满意，5=非常满意）</h2>
+      <div class="mb-4">
+        <label class="block mb-2">外观（色泽、摆盘）</label>
+        <div class="flex gap-2" id="rating-appearance"></div>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2">气味（香味吸引力）</label>
+        <div class="flex gap-2" id="rating-smell"></div>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2">口感（味道、肉质）</label>
+        <div class="flex gap-2" id="rating-taste"></div>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2">新鲜度（食材品质）</label>
+        <div class="flex gap-2" id="rating-freshness"></div>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2">价格（性价比）</label>
+        <div class="flex gap-2" id="rating-price"></div>
+      </div>
+      <div id="rating-reason" class="hidden mt-4">
+        <p class="mb-2">您对以上维度不满意的原因是？（选填）</p>
+        <textarea class="w-full p-2 border rounded" rows="3"></textarea>
+      </div>
+      <button onclick="nextSection('rating', 'flavor')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 9. 口味偏好 -->
+    <div id="flavor" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">9. 您对熟食口味的整体偏好是？</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="radio" name="flavor" value="salty"> 偏咸适中（酱香/卤味）</label>
+        <label><input type="radio" name="flavor" value="spicy"> 偏辣适中（麻辣/香辣）</label>
+        <label><input type="radio" name="flavor" value="mild"> 偏清淡（清蒸/原味）</label>
+        <label><input type="radio" name="flavor" value="na"> 不适用（无明显偏好）</label>
+      </div>
+      <button onclick="nextSection('flavor', 'improve')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 10. 改进方面 -->
+    <div id="improve" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">10. 您认为熟食哪些方面需要改进？（可多选）</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="checkbox" name="improve" value="taste"> 口味单一（如需更多风味）</label>
+        <label><input type="checkbox" name="improve" value="seasoning"> 咸度/辣度需调整</label>
+        <label><input type="checkbox" name="improve" value="freshness"> 食材新鲜度不足</label>
+        <label><input type="checkbox" name="improve" value="portion"> 分量偏少</label>
+        <label><input type="checkbox" name="improve" value="packaging"> 包装不保温/易漏</label>
+        <label><input type="checkbox" name="improve" value="other"> 其他 <input type="text" class="border p-1 ml-2 w-32"></label>
+      </div>
+      <button onclick="nextSection('improve', 'service')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 11. 服务态度 -->
+    <div id="service" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">11. 您对门店服务态度的评价是？</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="radio" name="service" value="very-friendly"> 非常热情（主动推荐、耐心解答）</label>
+        <label><input type="radio" name="service" value="friendly"> 较为热情（礼貌但不主动）</label>
+        <label><input type="radio" name="service" value="average"> 一般（无明显好坏）</label>
+        <label><input type="radio" name="service" value="cold" onclick="toggleServiceReason(true)"> 冷淡（不耐烦或敷衍）</label>
+      </div>
+      <div id="service-reason" class="hidden mt-4">
+        <p class="mb-2">具体问题是什么？（选填）</p>
+        <textarea class="w-full p-2 border rounded" rows="3"></textarea>
+      </div>
+      <button onclick="nextSection('service', 'hygiene')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 12. 卫生环境 -->
+    <div id="hygiene" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">12. 您对门店卫生环境的评价是？</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="radio" name="hygiene" value="very-clean"> 非常干净（整洁、无异味）</label>
+        <label><input type="radio" name="hygiene" value="clean"> 干净（基本整洁，稍有不足）</label>
+        <label><input type="radio" name="hygiene" value="average"> 一般（有明显卫生问题）</label>
+        <label><input type="radio" name="hygiene" value="poor" onclick="toggleHygieneReason(true)"> 较差（脏乱或异味严重）</label>
+      </div>
+      <div id="hygiene-reason" class="hidden mt-4">
+        <p class="mb-2">具体问题是什么？（选填）</p>
+        <textarea class="w-full p-2 border rounded" rows="3"></textarea>
+      </div>
+      <button onclick="nextSection('hygiene', 'issues')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 13. 服务问题 -->
+    <div id="issues" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">13. 您是否遇到过以下服务问题？（可多选）</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="checkbox" name="issues" value="queue"> 排队时间过长（超过10分钟）</label>
+        <label><input type="checkbox" name="issues" value="stock"> 缺货未提前告知</label>
+        <label><input type="checkbox" name="issues" value="packaging"> 包装破损/渗漏</label>
+        <label><input type="checkbox" name="issues" value="attitude"> 店员态度不佳</label>
+        <label><input type="checkbox" name="issues" value="none"> 无明显问题</label>
+      </div>
+      <button onclick="nextSection('issues', 'price')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 14. 价格评价 -->
+    <div id="price" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">14. 您认为宽广食品熟食的价格如何？</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="radio" name="price" value="very-reasonable"> 非常合理（高性价比）</label>
+        <label><input type="radio" name="price" value="reasonable"> 合理（价格匹配品质）</label>
+        <label><input type="radio" name="price" value="slightly-high"> 略高但可接受</label>
+        <label><input type="radio" name="price" value="high"> 偏高（性价比低）</label>
+      </div>
+      <button onclick="nextSection('price', 'promotion')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 15. 促销偏好 -->
+    <div id="promotion" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">15. 哪些促销活动会吸引您购买？（可多选）</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="checkbox" name="promotion" value="discount"> 满减优惠（如满50减10）</label>
+        <label><input type="checkbox" name="promotion" value="member"> 会员专属折扣</label>
+        <label><input type="checkbox" name="promotion" value="buy-one"> 买一赠一（如买烧鸡赠卤味）</label>
+        <label><input type="checkbox" name="promotion" value="trial"> 新品免费试吃</label>
+        <label><input type="checkbox" name="promotion" value="gift"> 节日礼盒套餐</label>
+        <label><input type="checkbox" name="promotion" value="none"> 无特别偏好</label>
+      </div>
+      <button onclick="nextSection('promotion', 'scene')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 16. 消费场景 -->
+    <div id="scene" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">16. 您通常在什么场景下购买熟食？（可多选）</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="checkbox" name="scene" value="family"> 家庭聚餐（如周末家宴）</label>
+        <label><input type="checkbox" name="scene" value="friends"> 朋友聚会（如烧烤派对）</label>
+        <label><input type="checkbox" name="scene" value="work"> 工作日便餐（如午餐）</label>
+        <label><input type="checkbox" name="scene" value="snack"> 宵夜/零食（如夜宵）</label>
+        <label><input type="checkbox" name="scene" value="gift"> 节日/送礼（如春节礼盒）</label>
+        <label><input type="checkbox" name="scene" value="other"> 其他 <input type="text" class="border p-1 ml-2 w-32"></label>
+      </div>
+      <button onclick="nextSection('scene', 'new-product')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 17. 新品需求 -->
+    <div id="new-product" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">17. 您希望宽广食品增加哪些产品或服务？（可多选）</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="checkbox" name="new-product" value="low-fat"> 低脂/低盐熟食（如健康卤味）</label>
+        <label><input type="checkbox" name="new-product" value="vegan"> 素食/植物基熟食</label>
+        <label><input type="checkbox" name="new-product" value="regional"> 地方特色熟食（如川味/粤味）</label>
+        <label><input type="checkbox" name="new-product" value="ready"> 加热即食套餐（如微波加热）</label>
+        <label><input type="checkbox" name="new-product" value="gift-box"> 定制礼盒（如中秋送礼）</label>
+        <label><input type="checkbox" name="new-product" value="other"> 其他 <input type="text" class="border p-1 ml-2 w-32"></label>
+      </div>
+      <button onclick="nextSection('new-product', 'nps')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 18. NPS -->
+    <div id="nps" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">18. 您会将宽广食品推荐给亲朋好友吗？（1=完全不会，10=非常愿意）</h2>
+      <div class="flex gap-2 flex-wrap">
+        <button onclick="setNPS(1)" class="border p-2 rounded hover:bg-orange-100">1</button>
+        <button onclick="setNPS(2)" class="border p-2 rounded hover:bg-orange-100">2</button>
+        <button onclick="setNPS(3)" class="border p-2 rounded hover:bg-orange-100">3</button>
+        <button onclick="setNPS(4)" class="border p-2 rounded hover:bg-orange-100">4</button>
+        <button onclick="setNPS(5)" class="border p-2 rounded hover:bg-orange-100">5</button>
+        <button onclick="setNPS(6)" class="border p-2 rounded hover:bg-orange-100">6</button>
+        <button onclick="setNPS(7)" class="border p-2 rounded hover:bg-orange-100">7</button>
+        <button onclick="setNPS(8)" class="border p-2 rounded hover:bg-orange-100">8</button>
+        <button onclick="setNPS(9)" class="border p-2 rounded hover:bg-orange-100">9</button>
+        <button onclick="setNPS(10)" class="border p-2 rounded hover:bg-orange-100">10</button>
+      </div>
+      <button onclick="nextSection('nps', npsNext())" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 19. NPS 追问 -->
+    <div id="nps-reason" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">19. 您不愿意推荐的主要原因是？（可多选）</h2>
+      <div class="flex flex-col gap-2">
+        <label><input type="checkbox" name="nps-reason" value="taste"> 口味不佳（如太咸/太辣）</label>
+        <label><input type="checkbox" name="nps-reason" value="price"> 价格偏高</label>
+        <label><input type="checkbox" name="nps-reason" value="packaging"> 包装吸引力不足</label>
+        <label><input type="checkbox" name="nps-reason" value="service"> 门店服务不佳</label>
+        <label><input type="checkbox" name="nps-reason" value="variety"> 产品种类少</label>
+        <label><input type="checkbox" name="nps-reason" value="hygiene"> 卫生问题</label>
+        <label><input type="checkbox" name="nps-reason" value="other"> 其他 <input type="text" class="border p-1 ml-2 w-32"></label>
+      </div>
+      <button onclick="nextSection('nps-reason', 'feedback')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">下一题</button>
+    </div>
+
+    <!-- 20. 开放反馈 -->
+    <div id="feedback" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4">20. 您对宽广食品熟食、门店或服务有何其他建议？（选填）</h2>
+      <textarea class="w-full p-2 border  border rounded" rows="4" placeholder="例如，您希望改进哪些口味、包装、服务，或推出哪些新品？"></textarea>
+      <button onclick="nextSection('feedback', 'draw')" class="bg-orange-500 text-white px-4 py-2 rounded mt-4 hover:bg-orange-600 w-full">提交并抽奖</button>
+    </div>
+
+    <!-- 抽奖结果 -->
+    <div id="draw" class="bg-white rounded-lg shadow p-6 mb-4 hidden">
+      <h2 class="text-lg font-bold mb-4 text-center">抽奖结果</h2>
+      <div id="draw-result" class="draw-result text-center">
+        <p class="text-xl mb-4">正在抽奖...</p>
+      </div>
+      <button onclick="shareSurvey()" class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600 w-full">分享问卷，获额外抽奖机会</button>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <footer class="bg-gray-800 text-white text-center p-4">
+    <p>© 2025 宽广食品有限公司</p>
+  </footer>
+
+  <script>
+    let currentNPS = 0;
+    let ratingScores = {};
+    const totalSections = 20; // 不含欢迎页和抽奖页
+
+    function nextSection(current, next) {
+      document.getElementById(current).classList.add('hidden');
+      document.getElementById(next).classList.remove('hidden');
+      updateProgress();
+      if (next === 'draw') {
+        showDrawResult();
+      }
+    }
+
+    function updateProgress() {
+      const visibleSections = document.querySelectorAll('.bg-white:not(.hidden)').length - 1; // 减去欢迎页
+      const progress = Math.round((visibleSections / totalSections) * 100);
+      document.querySelector('.progress').style.width = `${progress}%`;
+      document.getElementById('progress-text').textContent = `${progress}%`;
+    }
+
+    function toggleFrequencyReason(show) {
+      document.getElementById('frequency-reason').classList[show ? 'remove' : 'add']('hidden');
+    }
+
+    function toggleServiceReason(show) {
+      document.getElementById('service-reason').classList[show ? 'remove' : 'add']('hidden');
+    }
+
+    function toggleHygieneReason(show) {
+      document.getElementById('hygiene-reason').classList[show ? 'remove' : 'add']('hidden');
+    }
+
+    function setNPS(score) {
+      currentNPS = score;
+      document.querySelectorAll('#nps button').forEach(btn => {
+        btn.classList.remove('bg-orange-500', 'text-white');
+        if (parseInt(btn.textContent) === score) {
+          btn.classList.add('bg-orange-500', 'text-white');
+        }
+      });
+    }
+
+    function npsNext() {
+      return currentNPS <= 6 ? 'nps-reason' : 'feedback';
+    }
+
+    function createStars(containerId, name) {
+      const container = document.getElementById(containerId);
+      for (let i = 1; i <= 5; i++) {
+        const star = document.createElement('span');
+        star.classList.add('star');
+        star.innerHTML = '★';
+        star.onclick = () => {
+          document.querySelectorAll(`#${containerId} .star`).forEach((s, idx) => {
+            s.classList[idx < i ? 'add' : 'remove']('selected');
+          });
+          ratingScores[name] = i;
+          checkLowRating();
+          console.log(`${name} 评分: ${i}`);
+        };
+        container.appendChild(star);
+      }
+    }
+
+    function checkLowRating() {
+      const lowRating = Object.values(ratingScores).some(score => score <= 2);
+      document.getElementById('rating-reason').classList[lowRating ? 'remove' : 'add']('hidden');
+    }
+
+    // 初始化星级评分
+    ['rating-appearance', 'rating-smell', 'rating-taste', 'rating-freshness', 'rating-price'].forEach(id => {
+      createStars(id, id);
+    });
+
+    function showDrawResult() {
+      setTimeout(() => {
+        const rand = Math.random();
+        let result = '';
+        if (rand < 0.01) {
+          result = `
+            <p class="text-2xl text-green-600 mb-4">恭喜您获得一等奖！</p>
+            <p>免费烧鸡一份</p>
+            <p class="mt-2">请凭以下二维码到门店领取，7天内有效</p>
+            <div class="qr-code mt-4">模拟二维码</div>
+          `;
+        } else if (rand < 0.11) {
+          result = `
+            <p class="text-2xl text-green-600 mb-4">恭喜您获得二等奖！</p>
+            <p>10元优惠券</p>
+            <p class="mt-2">已发送至您的手机，或凭二维码到门店领取</p>
+            <div class="qr-code mt-4">模拟二维码</div>
+          `;
+        } else if (rand < 0.41) {
+          result = `
+            <p class="text-2xl text-green-600 mb-4">恭喜您获得三等奖！</p>
+            <p>小份试吃装或5元券</p>
+            <p class="mt-2">请凭以下二维码到门店领取，7天内有效</p>
+            <div class="qr-code mt-4">模拟二维码</div>
+          `;
+        } else {
+          result = `
+            <p class="text-xl mb-4">感谢您的参与！</p>
+            <p>您获得5%折扣券</p>
+            <p class="mt-2">已发送至您的手机，或凭二维码到门店领取</p>
+            <div class="qr-code mt-4">模拟二维码</div>
+          `;
+        }
+        document.getElementById('draw-result').innerHTML = result;
+      }, 1500); // 模拟抽奖动画延迟
+    }
+
+    function shareSurvey() {
+      alert('请复制链接分享给好友！额外抽奖机会已记录。');
+    }
+  </script>
+</body>
+</html>
