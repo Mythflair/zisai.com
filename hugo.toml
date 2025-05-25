@@ -122,6 +122,7 @@ googleAnalytics = "G-WQ5LVXCGRZ"
 # 分类法配置
 [taxonomies]
   series = "series"
+  tag = "tags"
 
 # Markdown 渲染配置
 [markup]
