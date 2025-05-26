@@ -34,6 +34,41 @@
 {{- end }}
 {{- if site.Params.analytics.naver.SiteVerificationTag }}
 <meta name="naver-site-verification" content="{{ site.Params.analytics.naver.SiteVerificationTag }}">
+<!-- 微信分享标题 -->
+<meta property="og:title" content="{{ .Title | default .Site.Title }}">
+
+<!-- 微信分享描述 -->
+<meta property="og:description" content="{{ .Description | default .Summary | default .Site.Params.description | truncate 100 }}">
+
+<!-- 微信分享图片 -->
+{{ if .Params.image }}
+<meta property="og:image" content="{{ .Params.image | absURL }}">
+{{ else if .Site.Params.defaultShareImage }}
+<meta property="og:image" content="{{ .Site.Params.defaultShareImage | absURL }}">
+{{ else }}
+<meta property="og:image" content="{{ "/images/shennan.jpg" | absURL }}">
+{{ end }}
+
+<!-- 分享链接 -->
+<meta property="og:url" content="{{ .Permalink }}">
+
+<!-- 分享类型 -->
+<meta property="og:type" content="article">
+
+<!-- 网站名称 -->
+<meta property="og:site_name" content="{{ .Site.Title }}">
+
+<!-- 微信专用标签 -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Title | default .Site.Title }}">
+<meta name="twitter:description" content="{{ .Description | default .Summary | default .Site.Params.description | truncate 100 }}">
+{{ if .Params.image }}
+<meta name="twitter:image" content="{{ .Params.image | absURL }}">
+{{ else if .Site.Params.defaultShareImage }}
+<meta name="twitter:image" content="{{ .Site.Params.defaultShareImage | absURL }}">
+{{ else }}
+<meta name="twitter:image" content="{{ "/images/shennan.jpg" | absURL }}">
+{{ end }}
 {{- end }}
 
 {{- /* Styles */}}
