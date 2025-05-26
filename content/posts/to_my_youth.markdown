@@ -8,7 +8,6 @@ cover:
     image: "/images/shennan20250519.png" 
     alt: "致青春，致那个夏天"
 ---
----
 
 ## 致青春，致那个夏天
 

@@ -33,9 +33,16 @@ googleAnalytics = "G-WQ5LVXCGRZ"
 # 主题参数配置
 [params]
   env = "production"
-  description = "紫塞 zisai.com - 短暂无常与朴素深邃之美"
+  description = "紫塞 zisai.com - SHENNAN 沈楠的个人博客，记录生活、技术与思考。"
   keywords = ["沈楠", "紫塞", "ShenNan", "Hugo", "Go", "Blog", "宽广", "联通", "物哀", "幽玄", "侘寂", "热河", "承德", "承德人", "承德博客", "承德个人博客", "承德技术博客", "承德生活博客"]
-  author = "Shen Nan"
+  author = "SHENNAN 沈楠"
+  authorName = "SHENNAN 沈楠"
+  authorEmail = "mythflair@hotmail.com"
+  authorImage = "/images/shennan.jpg"
+  authorImageTitle = "SHENNAN 沈楠"
+  authorImageWidth = 120
+  authorImageHeight = 120
+  defaultShareImage = "/images/shennan.jpg"
   defaultTheme = "auto"
   DateFormat = "2006-01-02"
   ShowShareButtons = false
@@ -136,3 +143,6 @@ googleAnalytics = "G-WQ5LVXCGRZ"
     guessSyntax = true
     lineNos = true
     style = "darcula"
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 6

@@ -34,41 +34,86 @@
 {{- end }}
 {{- if site.Params.analytics.naver.SiteVerificationTag }}
 <meta name="naver-site-verification" content="{{ site.Params.analytics.naver.SiteVerificationTag }}">
-<!-- 微信分享标题 -->
-<meta property="og:title" content="{{ .Title | default .Site.Title }}">
 
-<!-- 微信分享描述 -->
-<meta property="og:description" content="{{ .Description | default .Summary | default .Site.Params.description | truncate 100 }}">
+{{ $title := .Title | default .Site.Title }}
 
-<!-- 微信分享图片 -->
-{{ if .Params.image }}
-<meta property="og:image" content="{{ .Params.image | absURL }}">
-{{ else if .Site.Params.defaultShareImage }}
-<meta property="og:image" content="{{ .Site.Params.defaultShareImage | absURL }}">
+<!-- 智能获取描述 -->
+{{ $description := "" }}
+{{ if .Params.description }}
+  <!-- 如果有显式描述，直接使用 -->
+  {{ $description = .Params.description }}
+{{ else if .Summary }}
+  <!-- 如果有摘要，使用摘要并清理HTML标签 -->
+  {{ $description = .Summary | plainify | strings.TrimSpace }}
 {{ else }}
-<meta property="og:image" content="{{ "/images/shennan.jpg" | absURL }}">
+  <!-- 如果都没有，提取文章前120个字符作为描述 -->
+  {{ $content := .Content | plainify | strings.TrimSpace }}
+  {{ if gt (len $content) 120 }}
+    {{ $description = substr $content 0 120 | printf "%s..." }}
+  {{ else }}
+    {{ $description = $content }}
+  {{ end }}
 {{ end }}
 
-<!-- 分享链接 -->
-<meta property="og:url" content="{{ .Permalink }}">
+<!-- 如果描述仍为空，使用网站默认描述 -->
+{{ if not $description }}
+  {{ $description = .Site.Params.description | default .Site.Title }}
+{{ end }}
 
-<!-- 分享类型 -->
+<!-- 限制描述长度 -->
+{{ $description = $description | truncate 150 }}
+
+<!-- 智能获取分享图片 -->
+{{ $image := "" }}
+{{ if .Params.cover.image }}
+  <!-- 优先使用封面图片 -->
+  {{ $image = .Params.cover.image | absURL }}
+{{ else if .Params.image }}
+  <!-- 其次使用通用image参数 -->
+  {{ $image = .Params.image | absURL }}
+{{ else if .Site.Params.defaultShareImage }}
+  <!-- 使用网站默认分享图片 -->
+  {{ $image = .Site.Params.defaultShareImage | absURL }}
+{{ else }}
+  <!-- 最后使用fallback图片 -->
+  {{ $image = "/images/default-share.jpg" | absURL }}
+{{ end }}
+
+<!-- 获取封面图片的alt文本用于更好的可访问性 -->
+{{ $imageAlt := "" }}
+{{ if .Params.cover.alt }}
+  {{ $imageAlt = .Params.cover.alt }}
+{{ else }}
+  {{ $imageAlt = $title }}
+{{ end }}
+
+<!-- Open Graph / Facebook -->
 <meta property="og:type" content="article">
-
-<!-- 网站名称 -->
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:image" content="{{ $image }}">
+<meta property="og:image:alt" content="{{ $imageAlt }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
+{{ if .Date }}<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ end }}
+{{ if .Lastmod }}<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">{{ end }}
 
-<!-- 微信专用标签 -->
+<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ .Title | default .Site.Title }}">
-<meta name="twitter:description" content="{{ .Description | default .Summary | default .Site.Params.description | truncate 100 }}">
-{{ if .Params.image }}
-<meta name="twitter:image" content="{{ .Params.image | absURL }}">
-{{ else if .Site.Params.defaultShareImage }}
-<meta name="twitter:image" content="{{ .Site.Params.defaultShareImage | absURL }}">
-{{ else }}
-<meta name="twitter:image" content="{{ "/images/shennan.jpg" | absURL }}">
-{{ end }}
+<meta name="twitter:url" content="{{ .Permalink }}">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ $image }}">
+<meta name="twitter:image:alt" content="{{ $imageAlt }}">
+
+<!-- 通用meta标签 -->
+<meta name="description" content="{{ $description }}">
+<link rel="image_src" href="{{ $image }}">
+
+<!-- 微信专用增强标签 -->
+<meta name="format-detection" content="telephone=no">
+<meta name="applicable-device" content="mobile">
+
 {{- end }}
 
 {{- /* Styles */}}
