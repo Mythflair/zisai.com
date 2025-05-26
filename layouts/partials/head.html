@@ -35,6 +35,8 @@
 {{- if site.Params.analytics.naver.SiteVerificationTag }}
 <meta name="naver-site-verification" content="{{ site.Params.analytics.naver.SiteVerificationTag }}">
 {{ partial "share-meta.html" . }}
+<!-- 微信JS-SDK -->
+<script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
 {{- end }}
 
 {{- /* Styles */}}
