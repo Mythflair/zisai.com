@@ -6,8 +6,10 @@
 <html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
 
 <head>
-    {{- partial "head.html" . }}
+    <meta charset="utf-8">
+    <title>{{ .Title }}</title>
     {{ partial "share-meta.html" . }}
+    {{- partial "head.html" . }}
 </head>
 
 <body class="
