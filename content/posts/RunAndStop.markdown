@@ -4,9 +4,9 @@ date = 2025-05-19T11:29:00+08:00
 draft = false
 tags = ['中年感怀', '生活随想', '内心独白']
 categories = ['人生絮语']
-cover:
-    image: "/images/20200430174653.jpg" 
-    alt: "奔跑与停歇：越来越陌生的城市"
+[cover] 
+    image = '/images/Enoshima-sea-candle.png' 
+    alt = '奔跑与停歇：越来越陌生的城市'
 +++
 
 # 奔跑与停歇：越来越陌生的城市
