@@ -3,6 +3,9 @@ date = '2025-05-02T12:27:45+08:00'
 draft = false
 title = '100本激发思考的书籍推荐'
 tags = ["书籍", "阅读", "推荐"]
+[cover] 
+    image = '/images/0a9bfb9c22a04408a17ccea1d685cac6.jpg' 
+    alt = '优化涉密案件证据数据分析方案'
 +++
 
 ## 100本激发思考的书籍推荐
