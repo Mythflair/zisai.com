@@ -2,6 +2,9 @@
 date = '2024-05-05T14:47:50+08:00'
 draft = false
 title = 'TMT是什么？'
+[cover] 
+    image = '/images/noodls.jpg' 
+    alt = 'TMT是什么？'
 +++
 
 ### TMT是什么？
