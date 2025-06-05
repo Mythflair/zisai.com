@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>企业架构 on 紫塞 zisai.com</title>
+    <link>https://zisai.com/tags/%E4%BC%81%E4%B8%9A%E6%9E%B6%E6%9E%84/</link>
+    <description>Recent content in 企业架构 on 紫塞 zisai.com</description>
+    <generator>Hugo -- 0.146.7</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 25 May 2025 10:00:00 +0800</lastBuildDate>
+    <atom:link href="https://zisai.com/tags/%E4%BC%81%E4%B8%9A%E6%9E%B6%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从简单到复杂：</title>
+      <link>https://zisai.com/posts/galls_law_retail_blog/</link>
+      <pubDate>Sun, 25 May 2025 10:00:00 +0800</pubDate>
+      <guid>https://zisai.com/posts/galls_law_retail_blog/</guid>
+      <description>探讨加尔定律在零售企业系统建设中的实际应用，分享从简单系统演化到复杂生态的实践经验</description>
+    </item>
+  </channel>
+</rss>
