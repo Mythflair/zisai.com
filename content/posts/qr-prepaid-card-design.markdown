@@ -6,7 +6,7 @@ tags: ["支付创新", "二维码", "储值卡", "金融科技"]
 categories: ["产品设计", "技术创新"]
 description: "探索一种低成本、高安全的二维码储值卡设计，结合动态支付码和双重认证，展望零售支付的数字化未来。"
 cover: 
-    image: "/images/chuzhika.png.jpg" 
+    image: "/images/chuzhika.png" 
     alt: "二维码储值卡的设计与未来"
 ---
 
