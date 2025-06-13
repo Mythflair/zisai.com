@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Apple on 紫塞 zisai.com</title>
+    <link>https://zisai.com/tags/apple/</link>
+    <description>Recent content in Apple on 紫塞 zisai.com</description>
+    <generator>Hugo -- 0.146.7</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 12 Jun 2025 11:19:00 +0900</lastBuildDate>
+    <atom:link href="https://zisai.com/tags/apple/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从 iOS 18 到 iOS 26：苹果为何跳过版本号？</title>
+      <link>https://zisai.com/posts/ios_version_jump/</link>
+      <pubDate>Thu, 12 Jun 2025 11:19:00 +0900</pubDate>
+      <guid>https://zisai.com/posts/ios_version_jump/</guid>
+      <description>苹果为何从 iOS 18 直接跳到 iOS 26，跳过了 19、20、21 等版本号？本文深入探讨苹果版本号命名的变化原因与背后的逻辑。</description>
+    </item>
+  </channel>
+</rss>
