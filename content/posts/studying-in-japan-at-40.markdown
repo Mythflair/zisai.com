@@ -5,6 +5,7 @@ draft: false
 tags: ["留学", "日本", "生活感悟", "教育", "中年成长"]
 categories: ["个人故事", "留学经历"]
 description: "记录四十岁赴日留学的点滴，分享学习、工作与家庭平衡的挑战，以及对日本文化与教育的感悟。"
+archived: true
 cover:
     image: "/images/40saiJapan.png" 
     alt: "四十岁赴日留学：学习、历练与人生感悟"
