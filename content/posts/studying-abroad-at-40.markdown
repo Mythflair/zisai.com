@@ -6,7 +6,7 @@ tags: ["留学", "日本", "人生感悟", "中年成长", "教育"]
 categories: ["个人故事", "留学经历"]
 description: "四十岁赴日留学的故事，从童年对日本文化的向往到实现20年梦想，记录了一次意义非凡的再出发。"
 cover:
-  image: "https://94abff761efad89d50ecef0457621f4.jpg"
+  image: "images/94abff761efad89d50ecef0457621f4.jpg"
   alt: "四十岁赴日留学：一次人生的再出发"
 ---
 
