@@ -2,32 +2,170 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>紫塞 zisai.com</title>
-    <link>https://zisai.com/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on 紫塞 zisai.com</description>
     <generator>Hugo -- 0.146.7</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 15 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://zisai.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>宽广集团的软件硬件化实践：基于BBB单板机的金融级储值卡高可用架构设计</title>
+      <link>http://localhost:1313/posts/bbb_hardware_solution/</link>
+      <pubDate>Mon, 16 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/bbb_hardware_solution/</guid>
+      <description>一次由储值卡核心加解密程序授权故障引发的深度思考，探讨如何通过将核心软件功能固化到单板计算机（SBC）中，打造一个稳定、可靠且具备商业潜力的硬件级解决方案。</description>
+    </item>
+    <item>
+      <title>宽广集团信息化体系建设：从传统零售到科技零售的蜕变</title>
+      <link>http://localhost:1313/posts/kuangguang-group-digital-transformation/</link>
+      <pubDate>Sun, 15 Jun 2025 19:09:00 +0900</pubDate>
+      <guid>http://localhost:1313/posts/kuangguang-group-digital-transformation/</guid>
+      <description>回顾宽广集团11年信息化建设历程，探索如何通过顶层设计与技术创新，从传统零售蜕变为科技驱动的现代化企业，并展望人工智能与大数据引领的未来。</description>
+    </item>
+    <item>
+      <title>BeagleBone Black 补充笔记：MicroHDMI 与账号配置</title>
+      <link>http://localhost:1313/posts/beaglebone-black-hdmi-account-tips/</link>
+      <pubDate>Sun, 15 Jun 2025 14:15:00 +0900</pubDate>
+      <guid>http://localhost:1313/posts/beaglebone-black-hdmi-account-tips/</guid>
+      <description>补充 BeagleBone Black 的 MicroHDMI 接口调试和账号配置经验，解决视频输出与 root 远程登录问题。</description>
+    </item>
+    <item>
+      <title>BeagleBone Black 配置 Go 语言环境</title>
+      <link>http://localhost:1313/posts/beaglebone-black-go-setup/</link>
+      <pubDate>Sun, 15 Jun 2025 14:10:00 +0900</pubDate>
+      <guid>http://localhost:1313/posts/beaglebone-black-go-setup/</guid>
+      <description>记录在 BeagleBone Black 的 Debian 10.3 环境中配置 Go 1.20.2 语言环境的完整流程，包含下载、安装和优化国内镜像源。</description>
+    </item>
+    <item>
+      <title>BeagleBone Black 开发笔记：串口 TCP 数据采集与 GPIO 告警控制</title>
+      <link>http://localhost:1313/posts/beaglebone-black-serial-tcp-gpio/</link>
+      <pubDate>Sun, 15 Jun 2025 14:05:00 +0900</pubDate>
+      <guid>http://localhost:1313/posts/beaglebone-black-serial-tcp-gpio/</guid>
+      <description>记录使用 BeagleBone Black 实现串口服务器 TCP 数据采集、屏幕输出及 GPIO 控制红黄绿灯的开发过程，分享踩坑经验与解决方案。</description>
+    </item>
+    <item>
+      <title>从跑步到骑行：意外解决的健康难题</title>
+      <link>http://localhost:1313/posts/from-running-to-cycling/</link>
+      <pubDate>Sun, 15 Jun 2025 13:57:00 +0900</pubDate>
+      <guid>http://localhost:1313/posts/from-running-to-cycling/</guid>
+      <description>从马拉松到骑行的个人经历，意外解决了困扰多年的健康问题，并感悟到放下执着的力量。</description>
+    </item>
+    <item>
+      <title>日本工匠精神与创新之道：从獭祭到企业文化</title>
+      <link>http://localhost:1313/posts/japanese-craftsmanship-and-innovation/</link>
+      <pubDate>Sun, 15 Jun 2025 13:42:00 +0900</pubDate>
+      <guid>http://localhost:1313/posts/japanese-craftsmanship-and-innovation/</guid>
+      <description>通过日本酒‘獭祭’和日本企业文化的视角，探索工匠精神的深度、热爱与创新，以及其在全球化背景下的挑战。</description>
+    </item>
+    <item>
+      <title>有感日本企业的创新：做不一样的事</title>
+      <link>http://localhost:1313/posts/the_essence_of_innovation/</link>
+      <pubDate>Sun, 15 Jun 2025 13:35:00 +0900</pubDate>
+      <guid>http://localhost:1313/posts/the_essence_of_innovation/</guid>
+      <description>通过丰田、茑屋书店和任天堂的案例，探索创新的本质——差异化、前瞻性和适应需求的进化。</description>
+    </item>
+    <item>
+      <title>信息化项目中的标准化与个性化悖论：从运营商到零售集团的思考</title>
+      <link>http://localhost:1313/posts/standardization_vs_personalization/</link>
+      <pubDate>Thu, 12 Jun 2025 18:33:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/standardization_vs_personalization/</guid>
+      <description>探讨信息化项目中标准化与个性化的矛盾，结合运营商与零售集团的经验，提出&amp;#39;打磨&amp;#39;的解决之道。</description>
+    </item>
+    <item>
+      <title>从 iOS 18 到 iOS 26：苹果为何跳过版本号？</title>
+      <link>http://localhost:1313/posts/ios_version_jump/</link>
+      <pubDate>Thu, 12 Jun 2025 11:19:00 +0900</pubDate>
+      <guid>http://localhost:1313/posts/ios_version_jump/</guid>
+      <description>苹果为何从 iOS 18 直接跳到 iOS 26，跳过了 19、20、21 等版本号？本文深入探讨苹果版本号命名的变化原因与背后的逻辑。</description>
+    </item>
+    <item>
+      <title>创新支付体验：二维码储值卡的设计与未来</title>
+      <link>http://localhost:1313/posts/qr-prepaid-card-design/</link>
+      <pubDate>Wed, 11 Jun 2025 17:25:00 +0900</pubDate>
+      <guid>http://localhost:1313/posts/qr-prepaid-card-design/</guid>
+      <description>探索一种低成本、高安全的二维码储值卡设计，结合动态支付码和双重认证，展望零售支付的数字化未来。</description>
+    </item>
+    <item>
+      <title>修复Windows 11下L2TP/IPsec VPN连接失败问题</title>
+      <link>http://localhost:1313/posts/fix-l2tp-windows11/</link>
+      <pubDate>Thu, 05 Jun 2025 21:44:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/fix-l2tp-windows11/</guid>
+      <description>&lt;h1 id=&#34;修复windows-11下l2tpipsec-vpn连接失败问题&#34;&gt;修复Windows 11下L2TP/IPsec VPN连接失败问题&lt;/h1&gt;
+&lt;p&gt;今天晚上，需要连接公司内的数据库处理一些工作。恰巧我的办公电脑处于休眠状态无法唤醒。于是改用VPN连接公司的路由网络。但在配置Windows 11的L2TP/IPsec VPN时遇到了“安全层在初始化与远程计算机的协商时遇到处理错误”的问题。经过排查，发现是Windows更新禁用了关键服务并需要调整注册表配置。以下是我的解决步骤，分享给遇到类似问题的朋友。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>人生的回响：开头与结尾的循环</title>
+      <link>http://localhost:1313/posts/lifes-echoes/</link>
+      <pubDate>Wed, 28 May 2025 10:37:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/lifes-echoes/</guid>
+      <description>从出生到死亡，人生的开头与结尾似乎总有某种神秘的回响。几句话，串起生命的起点与终点，诉说人世间的温暖与无常。</description>
+    </item>
+    <item>
+      <title>树莓派 apt-get upgrade 失败的故障排查：过热问题</title>
+      <link>http://localhost:1313/posts/troubleshooting-raspberry-pi-apt-get-upgrade-failure-due-to-overheating/</link>
+      <pubDate>Sun, 25 May 2025 13:34:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/troubleshooting-raspberry-pi-apt-get-upgrade-failure-due-to-overheating/</guid>
+      <description>树莓派 Upgrade 失败，处理过程</description>
+    </item>
+    <item>
+      <title>从简单到复杂：</title>
+      <link>http://localhost:1313/posts/galls_law_retail_blog/</link>
+      <pubDate>Sun, 25 May 2025 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/galls_law_retail_blog/</guid>
+      <description>探讨加尔定律在零售企业系统建设中的实际应用，分享从简单系统演化到复杂生态的实践经验</description>
+    </item>
+    <item>
+      <title>半百将至，改变从己开始：一则中年随想</title>
+      <link>http://localhost:1313/posts/blog-post-midlife-challenges-zh/</link>
+      <pubDate>Thu, 22 May 2025 12:40:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/blog-post-midlife-challenges-zh/</guid>
+      <description>&lt;h1 id=&#34;半百将至改变从己开始一则中年随想&#34;&gt;半百将至，改变从己开始：一则中年随想&lt;/h1&gt;
+&lt;p&gt;人到中年，常常觉得自己被生活围困，像是站在一张巨大的网中央，四面八方的线都拉扯着，却无从用力。看着身边的人和事，我时常感到一种深深的无力——不是不想改变，而是发现，改变任何事情都远比想象中困难。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>致青春，致那个夏天</title>
+      <link>http://localhost:1313/posts/to_my_youth/</link>
+      <pubDate>Mon, 19 May 2025 23:54:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/to_my_youth/</guid>
+      <description>&lt;h2 id=&#34;致青春致那个夏天&#34;&gt;致青春，致那个夏天&lt;/h2&gt;
+&lt;p&gt;2025年5月19日，深夜。窗外是承德这座小城的霓虹，闪烁着熟悉又陌生的光。我突然想起，那个属于青春的影子。不是因为还执着于什么，而是因为，偶尔午夜梦回，总会想起那个年代的时刻。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>奔跑与停歇：越来越陌生的城市</title>
+      <link>http://localhost:1313/posts/runandstop/</link>
+      <pubDate>Mon, 19 May 2025 11:29:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/runandstop/</guid>
+      <description>&lt;h1 id=&#34;奔跑与停歇越来越陌生的城市&#34;&gt;奔跑与停歇：越来越陌生的城市&lt;/h1&gt;
+&lt;p&gt;夜深了，窗外是城市的微光，从小在这里出生长大，却随着年龄的增长，变得越来越陌生。可能是朋友的减少，或是圈子的缩小，还有一些无力的掌控感。坐在书桌前，手边是一瓶青岛啤酒，耳机里循环着老歌。这样的夜晚，属于我自己，也属于那些在忙碌与安静间徘徊的思绪。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>一程人生，平行选择的风中回响</title>
+      <link>http://localhost:1313/posts/reflectionsonlifeandparallelchoices/</link>
+      <pubDate>Sun, 18 May 2025 13:29:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/reflectionsonlifeandparallelchoices/</guid>
+      <description>&lt;h2 id=&#34;一程人生平行选择的风中回响&#34;&gt;一程人生，平行选择的风中回响&lt;/h2&gt;
+&lt;p&gt;夕阳西下，余晖洒在窗台上，带来一丝温暖，却也勾起心中莫名的伤感。上了年纪，总会不经意间陷入回忆的漩涡，那些未完成的心愿、未尽的选择，像风中的落叶，轻轻飘过，却又无处安放。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>日本街头乐队的回忆</title>
-      <link>https://zisai.com/posts/tokyo_jiaken/</link>
+      <link>http://localhost:1313/posts/tokyo_jiaken/</link>
       <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://zisai.com/posts/tokyo_jiaken/</guid>
+      <guid>http://localhost:1313/posts/tokyo_jiaken/</guid>
       <description>&lt;h1 id=&#34;日本街头乐队的回忆&#34;&gt;日本街头乐队的回忆&lt;/h1&gt;
 &lt;p&gt;在日本留学时，这个乐队是我特别喜欢的街头乐队。他们的音乐总能让我感受到街头的自由和活力。可惜的是，现在线上的视频越来越少了，庆幸的是，我还下载到了一个原声。以后，不知道会不会就消失了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>中文互联网的封闭生态与创新困境</title>
-      <link>https://zisai.com/posts/theclosedecologyandinnovationdilemmaofthechineseinternet/</link>
+      <link>http://localhost:1313/posts/theclosedecologyandinnovationdilemmaofthechineseinternet/</link>
       <pubDate>Wed, 14 May 2025 12:38:00 +0800</pubDate>
-      <guid>https://zisai.com/posts/theclosedecologyandinnovationdilemmaofthechineseinternet/</guid>
+      <guid>http://localhost:1313/posts/theclosedecologyandinnovationdilemmaofthechineseinternet/</guid>
       <description>探讨中文互联网的封闭生态如何导致内容质量下降、技术创新受限，以及对开放式发展的深远影响。</description>
     </item>
     <item>
       <title>论孩子 - 纪伯伦</title>
-      <link>https://zisai.com/posts/on_children/</link>
+      <link>http://localhost:1313/posts/on_children/</link>
       <pubDate>Wed, 14 May 2025 11:38:00 +0800</pubDate>
-      <guid>https://zisai.com/posts/on_children/</guid>
+      <guid>http://localhost:1313/posts/on_children/</guid>
       <description>&lt;h1 id=&#34;论孩子&#34;&gt;论孩子&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;作者：纪伯伦&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;你的孩子，并不是你的孩子。&lt;br&gt;
@@ -37,57 +175,57 @@
     </item>
     <item>
       <title>我的军旅生涯：五年沉甸甸的回忆</title>
-      <link>https://zisai.com/posts/shennanarmy/</link>
+      <link>http://localhost:1313/posts/shennanarmy/</link>
       <pubDate>Mon, 12 May 2025 11:00:00 +0800</pubDate>
-      <guid>https://zisai.com/posts/shennanarmy/</guid>
+      <guid>http://localhost:1313/posts/shennanarmy/</guid>
       <description>&lt;h1 id=&#34;我的军旅生涯五年沉甸甸的回忆&#34;&gt;我的军旅生涯：五年沉甸甸的回忆&lt;/h1&gt;
 &lt;p&gt;1993年12月，我带着一份对军营的朴素向往，踏入了秦皇岛51404部队，开始了五年的军旅生涯。这段岁月，平凡却深刻，塑造了我的性格，也在我心中留下了不可磨灭的印迹。&lt;/p&gt;</description>
     </item>
     <item>
       <title>半山暮色：一程烟雨一程叹</title>
-      <link>https://zisai.com/posts/middleaged/</link>
+      <link>http://localhost:1313/posts/middleaged/</link>
       <pubDate>Fri, 09 May 2025 17:00:00 +0800</pubDate>
-      <guid>https://zisai.com/posts/middleaged/</guid>
+      <guid>http://localhost:1313/posts/middleaged/</guid>
       <description>&lt;h2 id=&#34;半山暮色一程烟雨一程叹&#34;&gt;半山暮色：一程烟雨一程叹&lt;/h2&gt;
 &lt;p&gt;站在半山，暮色四合，身后是走过的崎岖，眼前是雾霭沉沉。风里夹着些许凉意，像是岁月在耳边低语，提醒我时间不曾停步。而我，背着行囊，步履沉重，却不知该走向何方。&lt;/p&gt;</description>
     </item>
     <item>
       <title>优化涉密案件证据数据分析方案</title>
-      <link>https://zisai.com/posts/confirmationandanalysisplanforhigh-contaminationprojects/</link>
+      <link>http://localhost:1313/posts/confirmationandanalysisplanforhigh-contaminationprojects/</link>
       <pubDate>Fri, 02 May 2025 12:38:08 +0800</pubDate>
-      <guid>https://zisai.com/posts/confirmationandanalysisplanforhigh-contaminationprojects/</guid>
+      <guid>http://localhost:1313/posts/confirmationandanalysisplanforhigh-contaminationprojects/</guid>
       <description>&lt;h2 id=&#34;优化涉密案件证据数据分析方案&#34;&gt;优化涉密案件证据数据分析方案&lt;/h2&gt;
 &lt;p&gt;在涉密案件的数据分析中，数据类型复杂且分析需求高，传统方法难以满足精准性和效率要求。本文分析当前挑战，提出基于本地化大模型和多模态分析的优化方案，以提升案件卷宗分析效率。&lt;/p&gt;</description>
     </item>
     <item>
       <title>100本激发思考的书籍推荐</title>
-      <link>https://zisai.com/posts/100recommendedbooks/</link>
+      <link>http://localhost:1313/posts/100recommendedbooks/</link>
       <pubDate>Fri, 02 May 2025 12:27:45 +0800</pubDate>
-      <guid>https://zisai.com/posts/100recommendedbooks/</guid>
+      <guid>http://localhost:1313/posts/100recommendedbooks/</guid>
       <description>&lt;h2 id=&#34;100本激发思考的书籍推荐&#34;&gt;100本激发思考的书籍推荐&lt;/h2&gt;
 &lt;p&gt;读书是深入思考的途径，与短视频的快餐式内容不同，后者往往是他人咀嚼后的产物。这份100本书单涵盖小说、非虚构、哲学、科学等领域，每本都旨在激发反思与成长。潜心阅读，让这些作品塑造你的视野。&lt;/p&gt;</description>
     </item>
     <item>
       <title>从单张照片中窥见个人信息：Google Vision API的多维度分析</title>
-      <link>https://zisai.com/posts/googlevisionapi/</link>
+      <link>http://localhost:1313/posts/googlevisionapi/</link>
       <pubDate>Sun, 27 Apr 2025 21:26:00 +0800</pubDate>
-      <guid>https://zisai.com/posts/googlevisionapi/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;Google Vision API多维度分析示例&#34; loading=&#34;lazy&#34; src=&#34;https://zisai.com/images/GoogleVisionAPIImages.jpg&#34;&gt;&lt;/p&gt;
+      <guid>http://localhost:1313/posts/googlevisionapi/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Google Vision API多维度分析示例&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/GoogleVisionAPIImages.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;在计算机视觉领域，一个突破性进展正在悄然发生：通过&lt;strong&gt;Google Vision API&lt;/strong&gt;，我们首次实现了从&lt;strong&gt;单张照片&lt;/strong&gt;中系统化提取个人特征信息的能力。这种技术突破不仅限于传统的人脸识别，更开辟了更高维度的分析路径。&lt;/p&gt;</description>
     </item>
     <item>
       <title>如何将Windows11的中文用户名改为英文？</title>
-      <link>https://zisai.com/posts/windows11changeusername/</link>
+      <link>http://localhost:1313/posts/windows11changeusername/</link>
       <pubDate>Thu, 24 Apr 2025 16:29:25 +0800</pubDate>
-      <guid>https://zisai.com/posts/windows11changeusername/</guid>
+      <guid>http://localhost:1313/posts/windows11changeusername/</guid>
       <description>&lt;h1 id=&#34;修改windows-11用户目录名教程&#34;&gt;修改Windows 11用户目录名教程&lt;/h1&gt;
 &lt;p&gt;Windows 11新装时，若用户目录名使用了中文（Unicode编码），可能会导致软件不支持、乱码或莫名错误等问题，尤其在开发场景下，中文目录名可能引发诸多不便。以下是简化和优化后的修改方法，核心分为三部分：&lt;/p&gt;</description>
     </item>
     <item>
       <title>没有是非观的人，可能会更成功。</title>
-      <link>https://zisai.com/posts/constellation/</link>
+      <link>http://localhost:1313/posts/constellation/</link>
       <pubDate>Mon, 06 May 2024 11:46:35 +0800</pubDate>
-      <guid>https://zisai.com/posts/constellation/</guid>
+      <guid>http://localhost:1313/posts/constellation/</guid>
       <description>&lt;h3 id=&#34;没有是非观的人可能会更成功&#34;&gt;没有是非观的人，可能会更成功。&lt;/h3&gt;
 &lt;h3 id=&#34;因为他们在意的不是与非而是最终的目标&#34;&gt;因为他们在意的不是与非，而是最终的目标。&lt;/h3&gt;
 &lt;ul&gt;
@@ -103,9 +241,9 @@
     </item>
     <item>
       <title>如何达到自己的预期目标？</title>
-      <link>https://zisai.com/posts/goals/</link>
+      <link>http://localhost:1313/posts/goals/</link>
       <pubDate>Sun, 05 May 2024 16:11:12 +0800</pubDate>
-      <guid>https://zisai.com/posts/goals/</guid>
+      <guid>http://localhost:1313/posts/goals/</guid>
       <description>&lt;h3 id=&#34;朋友问如何达到自己的预期目标避免错误&#34;&gt;朋友问，如何达到自己的预期目标？避免错误？&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;这个我不知道，因为正确的成功道路有千万种，每个人的路都不一样。&lt;/li&gt;
@@ -117,9 +255,9 @@
     </item>
     <item>
       <title>TMT是什么？</title>
-      <link>https://zisai.com/posts/tmt/</link>
+      <link>http://localhost:1313/posts/tmt/</link>
       <pubDate>Sun, 05 May 2024 14:47:50 +0800</pubDate>
-      <guid>https://zisai.com/posts/tmt/</guid>
+      <guid>http://localhost:1313/posts/tmt/</guid>
       <description>&lt;h3 id=&#34;tmt是什么&#34;&gt;TMT是什么？&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;TMT 指的是科技（Technology）、媒体（Media）和电信（Telecom）这三个产业。它们有一个共同点，就是边际成本非常低，增加一个新用户，几乎不带来额外的成本。&lt;/li&gt;
@@ -129,23 +267,53 @@
     </item>
     <item>
       <title>关于沈楠</title>
-      <link>https://zisai.com/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Sun, 14 Apr 2024 13:06:25 +0800</pubDate>
-      <guid>https://zisai.com/about/</guid>
-      <description>沈楠，信息学硕士，30年技术从业经验，专注软件研发、物联网、数据灾备与网络安全。探索我的职业历程、技术项目与人生故事。</description>
+      <guid>http://localhost:1313/about/</guid>
+      <description>沈楠，信息学硕士，30年IT从业经验，专注通信、IDC、ICT、系统集成、软件研发、物联网、大数据与信息化。探索我的职业历程、技术项目与人生故事。</description>
     </item>
     <item>
       <title>2023：人生里程碑的回响</title>
-      <link>https://zisai.com/posts/2023_reflections/</link>
+      <link>http://localhost:1313/posts/2023_reflections/</link>
       <pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://zisai.com/posts/2023_reflections/</guid>
+      <guid>http://localhost:1313/posts/2023_reflections/</guid>
       <description>回望2023，串联起三十年的人生节点，感叹得失循环，珍惜当下，期盼未来。</description>
     </item>
     <item>
+      <title>四十不惑，初心不改：毕业后的中年反思</title>
+      <link>http://localhost:1313/posts/blog-post-midlife-reflection-zh/</link>
+      <pubDate>Sun, 22 May 2022 12:31:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/blog-post-midlife-reflection-zh/</guid>
+      <description>&lt;h1 id=&#34;四十不惑初心不改毕业后的中年反思&#34;&gt;四十不惑，初心不改：毕业后的中年反思&lt;/h1&gt;
+&lt;p&gt;最近和朋友聚会吃饭，觥筹交错间，总免不了聊起生活的点滴。有人感慨现实的顺遂，有人吐槽当下的不如意，但无论好坏，似乎每个人对现状都带着几分遗憾。话题转到自己身上，我静静地听，思绪却飘回了这两年的留学时光。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>四十岁赴日留学：学习、历练与人生感悟</title>
+      <link>http://localhost:1313/posts/studying-in-japan-at-40/</link>
+      <pubDate>Sun, 05 Sep 2021 14:20:00 +0900</pubDate>
+      <guid>http://localhost:1313/posts/studying-in-japan-at-40/</guid>
+      <description>记录四十岁赴日留学的点滴，分享学习、工作与家庭平衡的挑战，以及对日本文化与教育的感悟。</description>
+    </item>
+    <item>
+      <title>毕业之后，拥抱自由：一段人生的回望与展望</title>
+      <link>http://localhost:1313/posts/blog-post-graduation-reflection-zh/</link>
+      <pubDate>Sun, 05 Sep 2021 12:22:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/blog-post-graduation-reflection-zh/</guid>
+      <description>&lt;h1 id=&#34;毕业之后拥抱自由一段人生的回望与展望&#34;&gt;毕业之后，拥抱自由：一段人生的回望与展望&lt;/h1&gt;
+&lt;p&gt;明天就是毕业典礼了。班级群里，同学们聊得热火朝天，有人调侃，有人吐槽，还有人憧憬：“终于可以放飞自我了！” 二十多岁，硕士毕业，站在人生的分水岭上，“放飞自我”这四个字听起来像一阵清风，带着无限可能。每个人都在畅想，摆脱束缚后要如何拥抱自由。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>四十岁赴日留学：一次人生的再出发</title>
+      <link>http://localhost:1313/posts/studying-abroad-at-40/</link>
+      <pubDate>Wed, 20 Nov 2019 23:43:00 +0900</pubDate>
+      <guid>http://localhost:1313/posts/studying-abroad-at-40/</guid>
+      <description>四十岁赴日留学的故事，从童年对日本文化的向往到实现20年梦想，记录了一次意义非凡的再出发。</description>
+    </item>
+    <item>
       <title>紫塞明珠网 SINCE 1998 ：从互联网黎明到个人博客的传承</title>
-      <link>https://zisai.com/posts/zisai.com/</link>
+      <link>http://localhost:1313/posts/zisai.com/</link>
       <pubDate>Mon, 01 Jun 1998 10:14:43 +0800</pubDate>
-      <guid>https://zisai.com/posts/zisai.com/</guid>
+      <guid>http://localhost:1313/posts/zisai.com/</guid>
       <description>&lt;h2 id=&#34;紫塞明珠网-since-1998-从互联网黎明到个人博客的传承&#34;&gt;紫塞明珠网 SINCE 1998 ：从互联网黎明到个人博客的传承&lt;/h2&gt;
 &lt;p&gt;1998年，紫塞明珠网（zisai.com）正式上线，成为中国早期互联网的先锋。作为承德地区的信息门户，它不仅是技术的结晶，更是无数网民青春记忆的载体。创始人沈楠以紫塞明珠网为起点，记录了中国互联网从拨号时代到移动互联的变迁。2015年，移动互联网渐盛，我将网站转型为个人博客，分享其在通信运营商、互联网及 现在所从事的快消品零售 IT 行业的近三十年从业心得。本文通过历史截图回溯紫塞明珠网的演变，展望其作为个人平台的未来。&lt;/p&gt;</description>
     </item>

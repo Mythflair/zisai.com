@@ -73,47 +73,6 @@ description = "一次由储值卡核心加解密程序授权故障引发的深�
 3. **精简高效**：资源配置与业务需求匹配度高，避免资源浪费
 4. **eMMC优势**：板载存储比SD卡更可靠，适合关键应用部署
 
-### 架构设计详解
-
-#### 整体架构图
-
-{{% mermaid %}}
-graph TB
-    subgraph 在线运行层
-        A[BBB-01<br/>主节点]
-        B[BBB-02<br/>从节点]
-    end
-    
-    subgraph 备用保障层
-        C[BBB-03<br/>热备份]
-        D[BBB-04<br/>冷备份]
-    end
-    
-    subgraph 网络层
-        E[网络交换机<br/>故障检测/流量分发]
-        F[负载均衡器<br/>API Gateway]
-    end
-
-    G[业务系统]
-
-    A -.->|心跳监测| B
-    B -.->|故障切换| A
-    A -->|数据同步| C
-    B -->|数据同步| C
-    C -.->|灾备| D
-
-    A --> E
-    B --> E
-    C -.-> E
-    E --> F
-    F --> G
-
-    style A fill:#e1f5fe
-    style B fill:#e8f5e8
-    style C fill:#fff3e0
-    style D fill:#fce4ec
-{{% /mermaid %}}
-
 #### 软件部署策略
 
 **存储分层设计：**

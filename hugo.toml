@@ -56,6 +56,7 @@ googleAnalytics = "G-WQ5LVXCGRZ"
   TocOpen = true
   customCSS = ["css/custom.css"]
   comments = true
+  # mermaid = true
 
   [params.profileMode]
     enabled = true
@@ -138,6 +139,8 @@ googleAnalytics = "G-WQ5LVXCGRZ"
       unsafe = true
     [markup.goldmark.extensions]
       emoji = true
+    # [markup.goldmark.parser]
+      # wrapStandAloneImageWithinParagraph = false
   [markup.highlight]
     codeFences = true
     guessSyntax = true

@@ -1,0 +1,33 @@
+Watching for changes in D:\GoProject\Hugo\zisai.com\{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in D:\GoProject\Hugo\zisai.com\hugo.toml
+Start building sites … 
+hugo v0.146.7-1ad3d39dc4693434505fc81f91eed57333017e93+extended windows/amd64 BuildDate=2025-04-22T17:26:42Z VendorInfo=gohugoio
+
+INFO  build:  step process substep collect files 46 files_total 46 pages_total 46 resources_total 0 duration 24.958ms
+INFO  build:  step process duration 24.958ms
+INFO  build:  step assemble duration 8.2181ms
+INFO  build:  step render substep pages site zh-cn outputFormat html duration 963.2004ms
+INFO  build:  step render substep pages site zh-cn outputFormat json duration 72.8918ms
+INFO  static: syncing static files to \ duration 1.1856416s
+INFO  build:  step render substep pages site zh-cn outputFormat rss duration 324.7413ms
+INFO  build:  step render pages 283 content 165 duration 1.3613387s
+INFO  build:  step render deferred count 0 duration 0s
+INFO  build:  step postProcess duration 0s
+INFO  build:  duration 1.3968879s
+
+                   | ZH-CN  
+-------------------+--------
+  Pages            |   280  
+  Paginator pages  |     3  
+  Non-page files   |     0  
+  Static files     |   102  
+  Processed images |     0  
+  Aliases          |   114  
+  Cleaned          |     0  
+
+Built in 1397 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1) 
+Press Ctrl+C to stop
