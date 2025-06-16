@@ -92,20 +92,20 @@ tags = ["关于", "技术", "职业", "物联网", "网络安全"]
 我的职业与个人生活交织，记录了成长的点点滴滴：
 
 <div class="timeline">
-  <div class="timeline-item"><span class="timeline-year">1993</span>: 参军</div>
-  <div class="timeline-item"><span class="timeline-year">1994</span>: 担任51406台长</div>
-  <div class="timeline-item"><span class="timeline-year">1995</span>: 继续在51406任职</div>
+  <div class="timeline-item"><span class="timeline-year">1993</span>: 参军 51404</div>
+  <div class="timeline-item"><span class="timeline-year">1994</span>: 51406</div>
+  <div class="timeline-item"><span class="timeline-year">1995</span>: 51406单双边带</div>
   <div class="timeline-item"><span class="timeline-year">1996</span>: 入党</div>
   <div class="timeline-item"><span class="timeline-year">1997</span>: 51406计算机和通信</div>
   <div class="timeline-item"><span class="timeline-year">1998</span>: 央企委培，投身通信运营商</div>
-  <div class="timeline-item"><span class="timeline-year">1999</span>: 负责环境监控</div>
+  <div class="timeline-item"><span class="timeline-year">1999</span>: 负责计算机环境监控</div>
   <div class="timeline-item"><span class="timeline-year">2001</span>: 进入数据分局</div>
   <div class="timeline-item"><span class="timeline-year">2003</span>: 父亲去世</div>
   <div class="timeline-item"><span class="timeline-year">2004</span>: 购买第一辆车</div>
   <div class="timeline-item"><span class="timeline-year">2006</span>: 步入婚姻</div>
   <div class="timeline-item"><span class="timeline-year">2007</span>: 儿子出生</div>
   <div class="timeline-item"><span class="timeline-year">2008</span>: 准备留学</div>
-  <div class="timeline-item"><span class="timeline-year">2011</span>: 在公司担任要职</div>
+  <div class="timeline-item"><span class="timeline-year">2011</span>: 任职主任</div>
   <div class="timeline-item"><span class="timeline-year">2014</span>: 裸辞央企，加入宽广集团，任VP、CIO</div>
   <div class="timeline-item"><span class="timeline-year">2015</span>: 完成半马</div>
   <div class="timeline-item"><span class="timeline-year">2016</span>: 女儿出生</div>
@@ -113,6 +113,7 @@ tags = ["关于", "技术", "职业", "物联网", "网络安全"]
   <div class="timeline-item"><span class="timeline-year">2019</span>: 日本留学，攻读硕士</div>
   <div class="timeline-item"><span class="timeline-year">2021</span>: 硕士毕业</div>
   <div class="timeline-item"><span class="timeline-year">2022</span>: 担任市互联网行业协会主席</div>
+  <div class="timeline-item"><span class="timeline-year">2024</span>: 中百协会数字化工作委员会委员</div>
 </div>
 
 ---
