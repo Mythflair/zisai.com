@@ -2,6 +2,8 @@
 title = "宽广集团的软件硬件化实践：基于BBB单板机的金融级储值卡高可用架构设计"
 date = "2025-06-16"
 tags = ["软件硬件化", "高可用", "架构设计", "BeagleBone Black", "加密", "Go"]
+draft = false
+categories = "信息化", "零售科技", "企业转型"
 description = "一次由授权故障引发的深度思考，探讨如何通过将核心软件功能固化到单板计算机（SBC）中，打造一个稳定、可靠且具备商业潜力的硬件级解决方案。"
 [cover] 
     image = "/images/BBBdanbanji.png" 
