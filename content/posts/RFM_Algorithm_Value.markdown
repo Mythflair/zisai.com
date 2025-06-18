@@ -6,10 +6,10 @@ tags: ["RFM", "客户分群", "精准营销", "数据分析", "客户关系管�
 author: "SHENNAN 沈楠"
 description: "本文深入探讨了宽广集团如何通过引入先进的RFM分箱算法，实现客户的精细化分层，从而优化营销策略，提升客户满意度和经营效益。告别粗放式营销，迈向数据驱动的精准时代！"
 cover:
-    video: "/videos/k-means.mp4"
+#    video: "/videos/k-means.mp4"
     image: "/images/k-means.png"
     alt: "RFM分箱算法"
-    caption: "宽广集团RFM分箱算法：精准营销，驱动增长新引擎"
+#    caption: "宽广集团RFM分箱算法：精准营销，驱动增长新引擎"
 # og_image: "/images/k-means.png" # 强制指定
 ---
 
