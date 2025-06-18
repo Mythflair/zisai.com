@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>职业 on 紫塞 zisai.com</title>
-    <link>http://localhost:1313/tags/%E8%81%8C%E4%B8%9A/</link>
+    <link>http://localhost:1225/tags/%E8%81%8C%E4%B8%9A/</link>
     <description>Recent content in 职业 on 紫塞 zisai.com</description>
     <generator>Hugo -- 0.146.7</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 14 Apr 2024 13:06:25 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E8%81%8C%E4%B8%9A/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1225/tags/%E8%81%8C%E4%B8%9A/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于沈楠</title>
-      <link>http://localhost:1313/about/</link>
+      <link>http://localhost:1225/about/</link>
       <pubDate>Sun, 14 Apr 2024 13:06:25 +0800</pubDate>
-      <guid>http://localhost:1313/about/</guid>
+      <guid>http://localhost:1225/about/</guid>
       <description>沈楠，信息学硕士，30年IT从业经验，专注通信、IDC、ICT、系统集成、软件研发、物联网、大数据与信息化。探索我的职业历程、技术项目与人生故事。</description>
     </item>
   </channel>

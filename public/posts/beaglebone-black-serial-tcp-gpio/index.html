@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1225&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <title>BeagleBone Black 开发笔记：串口 TCP 数据采集与 GPIO 告警控制</title>
     
@@ -34,10 +34,10 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://localhost:1313/posts/beaglebone-black-serial-tcp-gpio/">
+<meta property="og:url" content="http://localhost:1225/posts/beaglebone-black-serial-tcp-gpio/">
 <meta property="og:title" content="BeagleBone Black 开发笔记：串口 TCP 数据采集与 GPIO 告警控制">
 <meta property="og:description" content="记录使用 BeagleBone Black 实现串口服务器 TCP 数据采集、屏幕输出及 GPIO 控制红黄绿灯的开发过程，分享踩坑经验与解决方案。">
-<meta property="og:image" content="http://localhost:1313/images/v2-1c7cfd932d637812f57f33699360243e_1440w.png">
+<meta property="og:image" content="http://localhost:1225/images/v2-1c7cfd932d637812f57f33699360243e_1440w.png">
 <meta property="og:image:alt" content="BeagleBone Black 开发笔记：串口 TCP 数据采集与 GPIO 告警控制">
 <meta property="og:site_name" content="紫塞 zisai.com">
 <meta property="article:published_time" content="2025-06-15T14:05:00&#43;09:00">
@@ -45,15 +45,15 @@
 
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="http://localhost:1313/posts/beaglebone-black-serial-tcp-gpio/">
+<meta name="twitter:url" content="http://localhost:1225/posts/beaglebone-black-serial-tcp-gpio/">
 <meta name="twitter:title" content="BeagleBone Black 开发笔记：串口 TCP 数据采集与 GPIO 告警控制">
 <meta name="twitter:description" content="记录使用 BeagleBone Black 实现串口服务器 TCP 数据采集、屏幕输出及 GPIO 控制红黄绿灯的开发过程，分享踩坑经验与解决方案。">
-<meta name="twitter:image" content="http://localhost:1313/images/v2-1c7cfd932d637812f57f33699360243e_1440w.png">
+<meta name="twitter:image" content="http://localhost:1225/images/v2-1c7cfd932d637812f57f33699360243e_1440w.png">
 <meta name="twitter:image:alt" content="BeagleBone Black 开发笔记：串口 TCP 数据采集与 GPIO 告警控制">
 
 
 <meta name="description" content="记录使用 BeagleBone Black 实现串口服务器 TCP 数据采集、屏幕输出及 GPIO 控制红黄绿灯的开发过程，分享踩坑经验与解决方案。">
-<link rel="image_src" href="http://localhost:1313/images/v2-1c7cfd932d637812f57f33699360243e_1440w.png">
+<link rel="image_src" href="http://localhost:1225/images/v2-1c7cfd932d637812f57f33699360243e_1440w.png">
 
 
 <meta name="format-detection" content="telephone=no">
@@ -71,7 +71,7 @@
 
 <meta name="weibo:title" content="BeagleBone Black 开发笔记：串口 TCP 数据采集与 GPIO 告警控制">
 <meta name="weibo:description" content="记录使用 BeagleBone Black 实现串口服务器 TCP 数据采集、屏幕输出及 GPIO 控制红黄绿灯的开发过程，分享踩坑经验与解决方案。">
-<meta name="weibo:image" content="http://localhost:1313/images/v2-1c7cfd932d637812f57f33699360243e_1440w.png">
+<meta name="weibo:image" content="http://localhost:1225/images/v2-1c7cfd932d637812f57f33699360243e_1440w.png">
 
 
 <meta name="keywords" content="">
@@ -83,16 +83,16 @@
 <meta name="keywords" content="BeagleBone Black, 嵌入式开发, 串口, GPIO, Debian">
 <meta name="description" content="记录使用 BeagleBone Black 实现串口服务器 TCP 数据采集、屏幕输出及 GPIO 控制红黄绿灯的开发过程，分享踩坑经验与解决方案。">
 <meta name="author" content="SHENNAN 沈楠">
-<link rel="canonical" href="http://localhost:1313/posts/beaglebone-black-serial-tcp-gpio/">
+<link rel="canonical" href="http://localhost:1225/posts/beaglebone-black-serial-tcp-gpio/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.6da9a63d25a9608bca2f7f907a030e887a7dd3c3f3918e4cc113129361414bda.css" integrity="sha256-bammPSWpYIvKL3&#43;QegMOiHp908PzkY5MwRMSk2FBS9o=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1225/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1225/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1225/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1225/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1225/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="zh-cn" href="http://localhost:1313/posts/beaglebone-black-serial-tcp-gpio/">
+<link rel="alternate" hreflang="zh-cn" href="http://localhost:1225/posts/beaglebone-black-serial-tcp-gpio/">
 <noscript>
     <style>
         #theme-toggle,
@@ -150,7 +150,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           gtag('js', new Date());
           gtag('config', 'G-WQ5LVXCGRZ');
         }
-      </script><meta property="og:url" content="http://localhost:1313/posts/beaglebone-black-serial-tcp-gpio/">
+      </script><meta property="og:url" content="http://localhost:1225/posts/beaglebone-black-serial-tcp-gpio/">
   <meta property="og:site_name" content="紫塞 zisai.com">
   <meta property="og:title" content="BeagleBone Black 开发笔记：串口 TCP 数据采集与 GPIO 告警控制">
   <meta property="og:description" content="记录使用 BeagleBone Black 实现串口服务器 TCP 数据采集、屏幕输出及 GPIO 控制红黄绿灯的开发过程，分享踩坑经验与解决方案。">
@@ -164,9 +164,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="article:tag" content="串口">
     <meta property="article:tag" content="GPIO">
     <meta property="article:tag" content="Debian">
-    <meta property="og:image" content="http://localhost:1313/images/v2-1c7cfd932d637812f57f33699360243e_1440w.png">
+    <meta property="og:image" content="http://localhost:1225/images/v2-1c7cfd932d637812f57f33699360243e_1440w.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://localhost:1313/images/v2-1c7cfd932d637812f57f33699360243e_1440w.png">
+<meta name="twitter:image" content="http://localhost:1225/images/v2-1c7cfd932d637812f57f33699360243e_1440w.png">
 <meta name="twitter:title" content="BeagleBone Black 开发笔记：串口 TCP 数据采集与 GPIO 告警控制">
 <meta name="twitter:description" content="记录使用 BeagleBone Black 实现串口服务器 TCP 数据采集、屏幕输出及 GPIO 控制红黄绿灯的开发过程，分享踩坑经验与解决方案。">
 
@@ -180,13 +180,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@type": "ListItem",
       "position":  1 ,
       "name": "文章",
-      "item": "http://localhost:1313/posts/"
+      "item": "http://localhost:1225/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "BeagleBone Black 开发笔记：串口 TCP 数据采集与 GPIO 告警控制",
-      "item": "http://localhost:1313/posts/beaglebone-black-serial-tcp-gpio/"
+      "item": "http://localhost:1225/posts/beaglebone-black-serial-tcp-gpio/"
     }
   ]
 }
@@ -204,7 +204,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "articleBody": "BeagleBone Black 开发笔记：串口 TCP 数据采集与 GPIO 告警控制 BeagleBone Black（以下简称 BBB）是一款功能强大的单板计算机，尽管用户群体较树莓派小，但其响应速度和灵活性在特定场景下颇具优势。本文记录了我近期使用 BBB 开发一个项目的经历：通过 TCP 协议采集串口服务器数据，输出到屏幕并标记告警信息，同时通过 GPIO 控制红黄绿三色告警灯。以下分享开发过程中的踩坑经验和解决方案，希望对使用 BBB 的开发者有所帮助。\n项目背景与硬件选择 项目目标是从串口服务器接收 TCP 数据，实时显示并标记告警，同时通过 GPIO 输出控制三色灯。BBB 搭载 AM3358 处理器，内置 4GB eMMC 和 512MB 内存。虽然树莓派的 2GB 内存和更强 GPU 更为主流，但 BBB 在实时响应上表现更优。考虑到我对树莓派和 CentOS 较熟悉，对 Debian 了解有限，BBB 的开发过程充满挑战。\n以下是开发中的关键关注点与解决方案。\n关注点一：按键误标与 MicroSD 引导误区 初次接触 BBB 时，我误以为其未预装系统，尝试按树莓派方式从 MicroSD 卡引导。下载了 TDA4VM Debian 11.3（2022-06-14）镜像，参照网上资料按住 S2 键（Boot 键）启动，却发现四个状态灯未同时亮起，表示未从 SD 卡引导。反复尝试无果，甚至怀疑板载系统有问题。\n问题分析：\n按键误标：网上部分资料将 S2（Boot）键误标为 S3，导致混淆。实际板上印刷清晰，S1=Reset，S2=Boot，S3=Power。 镜像不匹配：TDA4VM 镜像是为 BeagleBone AI-64 设计的，与 BBB 的 AM3358 硬件不兼容，引导失败。 解决方案：下载正确的 AM3358 Debian 10.3（2020-04-06）IoT 镜像，确认硬件匹配后，BBB 板载系统（Debian 10.3）可正常启动，MicroSD 卡并非必需。\n关注点二：镜像烧录与版本选择 烧录镜像时，我最初直接使用 .xz 文件通过 Win32DiskImager 写入 SD 卡，导致引导失败。\n问题分析：\n.xz 文件需解压为 .img 文件再烧录。 BBB 镜像分为“Recommended”和“Flasher”版本： Recommended：可通过 SD 卡引导运行，修改 /boot/uEnv.txt（取消 cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.sh 的注释）后可烧录到 eMMC。 Flasher：自动将镜像烧录到 eMMC，适合快速部署。 解决方案：\n下载 AM3358 Debian 10.3（2020-04-06）4GB SD IoT 镜像，解压 .xz 为 .img。 使用 Win32DiskImager 烧录至 MicroSD 卡。 插入 SD 卡，按住 S2 键启动，烧录至 eMMC： 1 2 3 4 cd /opt/scripts/ git pull sudo ./update_kernel.sh sudo reboot 使用阿里云镜像源加速更新： 1 sudo vim /etc/apt/sources.list 添加以下内容到文件头部： 1 2 3 4 5 6 7 8 deb https://mirrors.aliyun.com/debian/ buster main non-free contrib deb-src https://mirrors.aliyun.com/debian/ buster main non-free contrib deb https://mirrors.aliyun.com/debian-security buster/updates main deb-src https://mirrors.aliyun.com/debian-security buster/updates main deb https://mirrors.aliyun.com/debian/ buster-updates main non-free contrib deb-src https://mirrors.aliyun.com/debian/ buster-updates main non-free contrib deb https://mirrors.aliyun.com/debian/ buster-backports main non-free contrib deb-src https://mirrors.aliyun.com/debian/ buster-backports main non-free contrib 然后执行： 1 2 sudo apt-get update sudo apt-get upgrade 注意：eMMC 容量仅 4GB，建议使用 32GB 以上 MicroSD 卡运行生产环境，以避免空间不足。\n关注点三：系统登录与网络配置 BBB 默认无 WiFi 模块，需通过 USB 或网线连接。\n登录方式：\nUSB 连接：连接电脑后约 10 秒，系统识别为移动设备，可通过 SSH 访问 192.168.7.2，使用 debian/temppwd 登录（root 账户默认禁用）。也可通过浏览器访问 http://192.168.7.2。 网线连接：插入网线后，系统通过 DHCP 分配 IP（如 192.168.3.180），可通过路由器查询。 网络问题：USB 供电联网时，更新常失败。插入网线后，网络稳定，更新顺畅。\n关注点四：系统初始化与软件更新 进入系统后，需进行初始化配置以确保稳定运行。\n设置时区：\n1 sudo timedatectl set-timezone 'Asia/Shanghai' 更新脚本与内核：\n1 2 3 4 5 cd /opt/scripts/ git pull cd tools/ sudo ./update_kernel.sh sudo reboot 更新软件包：\n1 2 sudo apt-get update sudo apt-get upgrade 升级过程中，c9-core-installer 包可能无法更新，需卸载后重装：\n1 2 sudo apt-get purge c9-core-installer sudo apt-get install c9-core-installer LSB 模块问题： 执行 lsb_release -a 显示 No LSB modules are available，虽无大碍，但可通过 lsb_release -cdir 避免提示。不建议安装过时的 lsb-core 包。\n关注点五：MicroHDMI 输出问题 板载系统无法通过 MicroHDMI 输出视频信号，尝试调整分辨率、安装驱动、修改 EDID 配置均无效。\n解决方案：刷写官方 AM3358 Debian 10.3 镜像后，MicroHDMI 输出正常，甚至在树莓派 10.1 寸屏上无需额外驱动即可显示。不同显示器可能因分辨率不匹配导致显示不全，建议测试前确认兼容性。\n项目进展与建议 目前，BBB 已成功配置为接收串口服务器的 TCP 数据并通过 GPIO 控制三色灯。后续需编写 Python 或 C 程序处理 TCP 数据流、解析告警信息并驱动 GPIO。具体实现代码将在后续开发中补充。\n建议：\n优先使用官方镜像：确保硬件与镜像版本匹配，避免引导失败。 选择合适存储：eMMC 容量有限，生产环境推荐 MicroSD 卡。 优化网络环境：使用网线连接以确保更新稳定，阿里云镜像源可显著提升速度。 调试 HDMI 输出：如遇显示问题，直接刷官方镜像，避免无效调试。 结语 BeagleBone Black 的开发充满挑战，从按键误标到镜像烧录，每一步都可能踩坑。但通过耐心试错和查阅资料，这些问题都能迎刃而解。这次经历让我重新拾起嵌入式开发的乐趣，也提醒我：技术探索需要细心与坚持。\n本文改编自2023年3月25日的个人技术记录。\n",
   "wordCount" : "1900",
   "inLanguage": "zh-cn",
-  "image":"http://localhost:1313/images/v2-1c7cfd932d637812f57f33699360243e_1440w.png","datePublished": "2025-06-15T14:05:00+09:00",
+  "image":"http://localhost:1225/images/v2-1c7cfd932d637812f57f33699360243e_1440w.png","datePublished": "2025-06-15T14:05:00+09:00",
   "dateModified": "2025-06-15T14:05:00+09:00",
   "author":{
     "@type": "Person",
@@ -212,14 +212,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://localhost:1313/posts/beaglebone-black-serial-tcp-gpio/"
+    "@id": "http://localhost:1225/posts/beaglebone-black-serial-tcp-gpio/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "紫塞 zisai.com",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+      "url": "http://localhost:1225/favicon.ico"
     }
   }
 }
@@ -245,7 +245,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="紫塞 zisai.com (Alt + H)">紫塞 zisai.com</a>
+            <a href="http://localhost:1225/" accesskey="h" title="紫塞 zisai.com (Alt + H)">紫塞 zisai.com</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -271,27 +271,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/search/" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1225/search/" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
                     <span>🔍 搜索</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/posts/" title="文章">
+                <a href="http://localhost:1225/posts/" title="文章">
                     <span>📚 文章</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="故事">
-                    <span>🏷️ 故事</span>
+                <a href="http://localhost:1225/archives/" title="故事">
+                    <span>🗂️ 故事</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="标签">
+                <a href="http://localhost:1225/tags/" title="标签">
                     <span>🔖 标签</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="ℹ️ 关于">
+                <a href="http://localhost:1225/about/" title="ℹ️ 关于">
                     <span>ℹ️ 关于</span>
                 </a>
             </li>
@@ -302,7 +302,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">文章</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1225/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1225/posts/">文章</a></div>
     <h1 class="post-title entry-hint-parent">
       BeagleBone Black 开发笔记：串口 TCP 数据采集与 GPIO 告警控制
     </h1>
@@ -312,11 +312,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="post-meta"><span title='2025-06-15 14:05:00 +0900 +0900'>2025-06-15</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;SHENNAN 沈楠
 
 </div>
-  </header> 
-<figure class="entry-cover">
-        <img loading="eager" src="http://localhost:1313/images/v2-1c7cfd932d637812f57f33699360243e_1440w.png" alt="BeagleBone Black 开发笔记：串口 TCP 数据采集与 GPIO 告警控制">
-        
-</figure><div class="toc">
+  </header><div class="toc">
     <details  open>
         <summary accesskey="c" title="(Alt + C)">
             <span class="details">Table of Contents</span>
@@ -532,19 +528,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/beaglebone-black/">BeagleBone Black</a></li>
-      <li><a href="http://localhost:1313/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">嵌入式开发</a></li>
-      <li><a href="http://localhost:1313/tags/%E4%B8%B2%E5%8F%A3/">串口</a></li>
-      <li><a href="http://localhost:1313/tags/gpio/">GPIO</a></li>
-      <li><a href="http://localhost:1313/tags/debian/">Debian</a></li>
+      <li><a href="http://localhost:1225/tags/beaglebone-black/">BeagleBone Black</a></li>
+      <li><a href="http://localhost:1225/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">嵌入式开发</a></li>
+      <li><a href="http://localhost:1225/tags/%E4%B8%B2%E5%8F%A3/">串口</a></li>
+      <li><a href="http://localhost:1225/tags/gpio/">GPIO</a></li>
+      <li><a href="http://localhost:1225/tags/debian/">Debian</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/beaglebone-black-go-setup/">
+  <a class="prev" href="http://localhost:1225/posts/beaglebone-black-go-setup/">
     <span class="title">« </span>
     <br>
     <span>BeagleBone Black 配置 Go 语言环境</span>
   </a>
-  <a class="next" href="http://localhost:1313/posts/from-running-to-cycling/">
+  <a class="next" href="http://localhost:1225/posts/from-running-to-cycling/">
     <span class="title"> »</span>
     <br>
     <span>从跑步到骑行：意外解决的健康难题</span>
@@ -575,7 +571,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">紫塞 zisai.com</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1225/">紫塞 zisai.com</a></span> · 
 
     <span>
         Powered by

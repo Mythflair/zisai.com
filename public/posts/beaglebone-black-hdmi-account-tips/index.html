@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1225&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <title>BeagleBone Black 补充笔记：MicroHDMI 与账号配置</title>
     
@@ -34,10 +34,10 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://localhost:1313/posts/beaglebone-black-hdmi-account-tips/">
+<meta property="og:url" content="http://localhost:1225/posts/beaglebone-black-hdmi-account-tips/">
 <meta property="og:title" content="BeagleBone Black 补充笔记：MicroHDMI 与账号配置">
 <meta property="og:description" content="补充 BeagleBone Black 的 MicroHDMI 接口调试和账号配置经验，解决视频输出与 root 远程登录问题。">
-<meta property="og:image" content="http://localhost:1313/images/pr_01_1900.jpg">
+<meta property="og:image" content="http://localhost:1225/images/pr_01_1900.jpg">
 <meta property="og:image:alt" content="BeagleBone Black 补充笔记：MicroHDMI 与账号配置">
 <meta property="og:site_name" content="紫塞 zisai.com">
 <meta property="article:published_time" content="2025-06-15T14:15:00&#43;09:00">
@@ -45,15 +45,15 @@
 
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="http://localhost:1313/posts/beaglebone-black-hdmi-account-tips/">
+<meta name="twitter:url" content="http://localhost:1225/posts/beaglebone-black-hdmi-account-tips/">
 <meta name="twitter:title" content="BeagleBone Black 补充笔记：MicroHDMI 与账号配置">
 <meta name="twitter:description" content="补充 BeagleBone Black 的 MicroHDMI 接口调试和账号配置经验，解决视频输出与 root 远程登录问题。">
-<meta name="twitter:image" content="http://localhost:1313/images/pr_01_1900.jpg">
+<meta name="twitter:image" content="http://localhost:1225/images/pr_01_1900.jpg">
 <meta name="twitter:image:alt" content="BeagleBone Black 补充笔记：MicroHDMI 与账号配置">
 
 
 <meta name="description" content="补充 BeagleBone Black 的 MicroHDMI 接口调试和账号配置经验，解决视频输出与 root 远程登录问题。">
-<link rel="image_src" href="http://localhost:1313/images/pr_01_1900.jpg">
+<link rel="image_src" href="http://localhost:1225/images/pr_01_1900.jpg">
 
 
 <meta name="format-detection" content="telephone=no">
@@ -71,7 +71,7 @@
 
 <meta name="weibo:title" content="BeagleBone Black 补充笔记：MicroHDMI 与账号配置">
 <meta name="weibo:description" content="补充 BeagleBone Black 的 MicroHDMI 接口调试和账号配置经验，解决视频输出与 root 远程登录问题。">
-<meta name="weibo:image" content="http://localhost:1313/images/pr_01_1900.jpg">
+<meta name="weibo:image" content="http://localhost:1225/images/pr_01_1900.jpg">
 
 
 <meta name="keywords" content="">
@@ -83,16 +83,16 @@
 <meta name="keywords" content="BeagleBone Black, 嵌入式开发, MicroHDMI, 账号配置, Debian">
 <meta name="description" content="补充 BeagleBone Black 的 MicroHDMI 接口调试和账号配置经验，解决视频输出与 root 远程登录问题。">
 <meta name="author" content="SHENNAN 沈楠">
-<link rel="canonical" href="http://localhost:1313/posts/beaglebone-black-hdmi-account-tips/">
+<link rel="canonical" href="http://localhost:1225/posts/beaglebone-black-hdmi-account-tips/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.6da9a63d25a9608bca2f7f907a030e887a7dd3c3f3918e4cc113129361414bda.css" integrity="sha256-bammPSWpYIvKL3&#43;QegMOiHp908PzkY5MwRMSk2FBS9o=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1225/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1225/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1225/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1225/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1225/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="zh-cn" href="http://localhost:1313/posts/beaglebone-black-hdmi-account-tips/">
+<link rel="alternate" hreflang="zh-cn" href="http://localhost:1225/posts/beaglebone-black-hdmi-account-tips/">
 <noscript>
     <style>
         #theme-toggle,
@@ -150,7 +150,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           gtag('js', new Date());
           gtag('config', 'G-WQ5LVXCGRZ');
         }
-      </script><meta property="og:url" content="http://localhost:1313/posts/beaglebone-black-hdmi-account-tips/">
+      </script><meta property="og:url" content="http://localhost:1225/posts/beaglebone-black-hdmi-account-tips/">
   <meta property="og:site_name" content="紫塞 zisai.com">
   <meta property="og:title" content="BeagleBone Black 补充笔记：MicroHDMI 与账号配置">
   <meta property="og:description" content="补充 BeagleBone Black 的 MicroHDMI 接口调试和账号配置经验，解决视频输出与 root 远程登录问题。">
@@ -164,9 +164,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="article:tag" content="MicroHDMI">
     <meta property="article:tag" content="账号配置">
     <meta property="article:tag" content="Debian">
-    <meta property="og:image" content="http://localhost:1313/images/pr_01_1900.jpg">
+    <meta property="og:image" content="http://localhost:1225/images/pr_01_1900.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://localhost:1313/images/pr_01_1900.jpg">
+<meta name="twitter:image" content="http://localhost:1225/images/pr_01_1900.jpg">
 <meta name="twitter:title" content="BeagleBone Black 补充笔记：MicroHDMI 与账号配置">
 <meta name="twitter:description" content="补充 BeagleBone Black 的 MicroHDMI 接口调试和账号配置经验，解决视频输出与 root 远程登录问题。">
 
@@ -180,13 +180,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@type": "ListItem",
       "position":  1 ,
       "name": "文章",
-      "item": "http://localhost:1313/posts/"
+      "item": "http://localhost:1225/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "BeagleBone Black 补充笔记：MicroHDMI 与账号配置",
-      "item": "http://localhost:1313/posts/beaglebone-black-hdmi-account-tips/"
+      "item": "http://localhost:1225/posts/beaglebone-black-hdmi-account-tips/"
     }
   ]
 }
@@ -204,7 +204,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "articleBody": "BeagleBone Black 补充笔记：MicroHDMI 与账号配置 在 BeagleBone Black（以下简称 BBB）的开发过程中，MicroHDMI 接口和账号配置是两个常见但易被忽略的细节。继之前的系统配置和 Go 环境搭建后，本文分享了解决 MicroHDMI 无输出问题和启用 root 远程登录的经验，以及 MicroSD 卡空间扩展的简单方法。这些碎片化记录为 BBB 开发者提供实用参考。\n解决 MicroHDMI 输出问题 BBB 的 MicroHDMI 接口常出现无视频输出问题，尤其在使用转接器时。以下是调试经验：\n问题分析：\n直接连接推荐：优先使用 MicroHDMI 转 HDMI 或 MicroHDMI 转 DVI 线，匹配显示器或显卡接口，确保直接点亮屏幕。 转接器电流问题：若转接到 VGA 等老式接口，需注意 BBB 的保险丝（RT1，型号 RXEF010，黄色滴胶状，双脚）。其保持电流为 100mA，短路电流为 200mA。VGA 转接器输出电流常超过 200mA，导致保险丝进入高阻态，切断 HDMI 供电，致无视频信号。 保险丝恢复：RT1 为自恢复保险丝，理论上断开负载后可恢复，但实际恢复情况需视硬件状态而定，建议测试前检查。 解决方案：\n使用 MicroHDMI 转 HDMI/DVI 线，避免 VGA 转接。 若必须使用 VGA，确认转接器电流低于 200mA。 如仍无输出，刷写官方 AM3358 Debian 10.3 镜像（参考前文），确保系统兼容性。 配置账号与远程登录 BBB 默认提供两个账号：\ndebian：密码为 temppwd，支持 SSH 登录。 root：密码为 root，默认禁用远程 SSH 登录，且 sudo 需输入密码。 为方便开发，我启用 root 账号的远程 SSH 登录。\n步骤：\n编辑 SSH 配置文件： 1 vim /etc/ssh/sshd_config 添加： 1 PermitRootLogin yes 重启 SSH 服务： 1 sudo systemctl restart sshd 修改 root 密码（推荐）： 1 passwd root 扩展 MicroSD 卡空间 BBB 的板载 eMMC 仅 4GB，空间有限。使用 MicroSD 卡运行系统时，可扩展分区以充分利用存储。\n步骤：\n运行扩展脚本： 1 2 3 cd /opt/scripts/tools sudo ./grow_partition.sh sudo reboot 验证分区扩展： 1 2 fdisk -l df -h 注意事项 MicroHDMI 调试：避免盲目修改 EDID 或驱动配置，优先尝试官方镜像刷机。 账号安全：启用 root 远程登录后，务必设置强密码，避免安全风险。 存储管理：生产环境建议使用 32GB 以上 MicroSD 卡，以支持复杂应用和环境配置。 结语 MicroHDMI 输出、账号配置和存储扩展是 BeagleBone Black 开发中的常见问题。通过选择合适的接口、启用 root 登录和扩展 MicroSD 空间，这些问题都能轻松解决。这些经验为后续 TCP 数据采集和 GPIO 控制开发奠定了基础。BBB 的开发虽有挑战，但乐趣无穷，期待更多探索！\n本文改编自2023年3月25日的个人技术记录。\n",
   "wordCount" : "914",
   "inLanguage": "zh-cn",
-  "image":"http://localhost:1313/images/pr_01_1900.jpg","datePublished": "2025-06-15T14:15:00+09:00",
+  "image":"http://localhost:1225/images/pr_01_1900.jpg","datePublished": "2025-06-15T14:15:00+09:00",
   "dateModified": "2025-06-15T14:15:00+09:00",
   "author":{
     "@type": "Person",
@@ -212,14 +212,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://localhost:1313/posts/beaglebone-black-hdmi-account-tips/"
+    "@id": "http://localhost:1225/posts/beaglebone-black-hdmi-account-tips/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "紫塞 zisai.com",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+      "url": "http://localhost:1225/favicon.ico"
     }
   }
 }
@@ -245,7 +245,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="紫塞 zisai.com (Alt + H)">紫塞 zisai.com</a>
+            <a href="http://localhost:1225/" accesskey="h" title="紫塞 zisai.com (Alt + H)">紫塞 zisai.com</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -271,27 +271,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/search/" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1225/search/" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
                     <span>🔍 搜索</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/posts/" title="文章">
+                <a href="http://localhost:1225/posts/" title="文章">
                     <span>📚 文章</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="故事">
-                    <span>🏷️ 故事</span>
+                <a href="http://localhost:1225/archives/" title="故事">
+                    <span>🗂️ 故事</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="标签">
+                <a href="http://localhost:1225/tags/" title="标签">
                     <span>🔖 标签</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="ℹ️ 关于">
+                <a href="http://localhost:1225/about/" title="ℹ️ 关于">
                     <span>ℹ️ 关于</span>
                 </a>
             </li>
@@ -302,7 +302,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">文章</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1225/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1225/posts/">文章</a></div>
     <h1 class="post-title entry-hint-parent">
       BeagleBone Black 补充笔记：MicroHDMI 与账号配置
     </h1>
@@ -312,11 +312,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="post-meta"><span title='2025-06-15 14:15:00 +0900 +0900'>2025-06-15</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;SHENNAN 沈楠
 
 </div>
-  </header> 
-<figure class="entry-cover">
-        <img loading="eager" src="http://localhost:1313/images/pr_01_1900.jpg" alt="BeagleBone Black 补充笔记：MicroHDMI 与账号配置">
-        
-</figure><div class="toc">
+  </header><div class="toc">
     <details  open>
         <summary accesskey="c" title="(Alt + C)">
             <span class="details">Table of Contents</span>
@@ -455,19 +451,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/beaglebone-black/">BeagleBone Black</a></li>
-      <li><a href="http://localhost:1313/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">嵌入式开发</a></li>
-      <li><a href="http://localhost:1313/tags/microhdmi/">MicroHDMI</a></li>
-      <li><a href="http://localhost:1313/tags/%E8%B4%A6%E5%8F%B7%E9%85%8D%E7%BD%AE/">账号配置</a></li>
-      <li><a href="http://localhost:1313/tags/debian/">Debian</a></li>
+      <li><a href="http://localhost:1225/tags/beaglebone-black/">BeagleBone Black</a></li>
+      <li><a href="http://localhost:1225/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">嵌入式开发</a></li>
+      <li><a href="http://localhost:1225/tags/microhdmi/">MicroHDMI</a></li>
+      <li><a href="http://localhost:1225/tags/%E8%B4%A6%E5%8F%B7%E9%85%8D%E7%BD%AE/">账号配置</a></li>
+      <li><a href="http://localhost:1225/tags/debian/">Debian</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/kuangguang-group-digital-transformation/">
+  <a class="prev" href="http://localhost:1225/posts/kuangguang-group-digital-transformation/">
     <span class="title">« </span>
     <br>
     <span>宽广集团信息化体系建设：从传统零售到科技零售的蜕变</span>
   </a>
-  <a class="next" href="http://localhost:1313/posts/beaglebone-black-go-setup/">
+  <a class="next" href="http://localhost:1225/posts/beaglebone-black-go-setup/">
     <span class="title"> »</span>
     <br>
     <span>BeagleBone Black 配置 Go 语言环境</span>
@@ -498,7 +494,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">紫塞 zisai.com</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1225/">紫塞 zisai.com</a></span> · 
 
     <span>
         Powered by

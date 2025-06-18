@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1225&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <title>修复Windows 11下L2TP/IPsec VPN连接失败问题</title>
     
@@ -34,10 +34,10 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://localhost:1313/posts/fix-l2tp-windows11/">
+<meta property="og:url" content="http://localhost:1225/posts/fix-l2tp-windows11/">
 <meta property="og:title" content="修复Windows 11下L2TP/IPsec VPN连接失败问题">
 <meta property="og:description" content="修复Windows 11下L2TP/IPsec VPN连接失败问题 今天晚上，需要连接公司内的数据库处理一些工作。恰巧我的办公电脑处于休眠状态无法唤醒。于是改用VPN连接公司的路由网络。但在配置Windows 11的L2TP/IPsec VPN时遇到了“安全层在初始化与远程计算机的协商时遇到处理错 …">
-<meta property="og:image" content="http://localhost:1313/images/Configuration_examples_l2tp_over_ipsec_scheme.png">
+<meta property="og:image" content="http://localhost:1225/images/Configuration_examples_l2tp_over_ipsec_scheme.png">
 <meta property="og:image:alt" content="修复Windows 11下L2TP/IPsec VPN连接失败问题">
 <meta property="og:site_name" content="紫塞 zisai.com">
 <meta property="article:published_time" content="2025-06-05T21:44:00&#43;08:00">
@@ -45,15 +45,15 @@
 
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="http://localhost:1313/posts/fix-l2tp-windows11/">
+<meta name="twitter:url" content="http://localhost:1225/posts/fix-l2tp-windows11/">
 <meta name="twitter:title" content="修复Windows 11下L2TP/IPsec VPN连接失败问题">
 <meta name="twitter:description" content="修复Windows 11下L2TP/IPsec VPN连接失败问题 今天晚上，需要连接公司内的数据库处理一些工作。恰巧我的办公电脑处于休眠状态无法唤醒。于是改用VPN连接公司的路由网络。但在配置Windows 11的L2TP/IPsec VPN时遇到了“安全层在初始化与远程计算机的协商时遇到处理错 …">
-<meta name="twitter:image" content="http://localhost:1313/images/Configuration_examples_l2tp_over_ipsec_scheme.png">
+<meta name="twitter:image" content="http://localhost:1225/images/Configuration_examples_l2tp_over_ipsec_scheme.png">
 <meta name="twitter:image:alt" content="修复Windows 11下L2TP/IPsec VPN连接失败问题">
 
 
 <meta name="description" content="修复Windows 11下L2TP/IPsec VPN连接失败问题 今天晚上，需要连接公司内的数据库处理一些工作。恰巧我的办公电脑处于休眠状态无法唤醒。于是改用VPN连接公司的路由网络。但在配置Windows 11的L2TP/IPsec VPN时遇到了“安全层在初始化与远程计算机的协商时遇到处理错 …">
-<link rel="image_src" href="http://localhost:1313/images/Configuration_examples_l2tp_over_ipsec_scheme.png">
+<link rel="image_src" href="http://localhost:1225/images/Configuration_examples_l2tp_over_ipsec_scheme.png">
 
 
 <meta name="format-detection" content="telephone=no">
@@ -71,7 +71,7 @@
 
 <meta name="weibo:title" content="修复Windows 11下L2TP/IPsec VPN连接失败问题">
 <meta name="weibo:description" content="修复Windows 11下L2TP/IPsec VPN连接失败问题 今天晚上，需要连接公司内的数据库处理一些工作。恰巧我的办公电脑处于休眠状态无法唤醒。于是改用VPN连接公司的路由网络。但在配置Windows 11的L2TP/IPsec VPN时遇到了“安全层在初始化与远程计算机的协商时遇到处理错 …">
-<meta name="weibo:image" content="http://localhost:1313/images/Configuration_examples_l2tp_over_ipsec_scheme.png">
+<meta name="weibo:image" content="http://localhost:1225/images/Configuration_examples_l2tp_over_ipsec_scheme.png">
 
 
 <meta name="keywords" content="">
@@ -84,16 +84,16 @@
 <meta name="description" content="修复Windows 11下L2TP/IPsec VPN连接失败问题
 今天晚上，需要连接公司内的数据库处理一些工作。恰巧我的办公电脑处于休眠状态无法唤醒。于是改用VPN连接公司的路由网络。但在配置Windows 11的L2TP/IPsec VPN时遇到了“安全层在初始化与远程计算机的协商时遇到处理错误”的问题。经过排查，发现是Windows更新禁用了关键服务并需要调整注册表配置。以下是我的解决步骤，分享给遇到类似问题的朋友。">
 <meta name="author" content="SHENNAN 沈楠">
-<link rel="canonical" href="http://localhost:1313/posts/fix-l2tp-windows11/">
+<link rel="canonical" href="http://localhost:1225/posts/fix-l2tp-windows11/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.6da9a63d25a9608bca2f7f907a030e887a7dd3c3f3918e4cc113129361414bda.css" integrity="sha256-bammPSWpYIvKL3&#43;QegMOiHp908PzkY5MwRMSk2FBS9o=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1225/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1225/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1225/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1225/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1225/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="zh-cn" href="http://localhost:1313/posts/fix-l2tp-windows11/">
+<link rel="alternate" hreflang="zh-cn" href="http://localhost:1225/posts/fix-l2tp-windows11/">
 <noscript>
     <style>
         #theme-toggle,
@@ -151,7 +151,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           gtag('js', new Date());
           gtag('config', 'G-WQ5LVXCGRZ');
         }
-      </script><meta property="og:url" content="http://localhost:1313/posts/fix-l2tp-windows11/">
+      </script><meta property="og:url" content="http://localhost:1225/posts/fix-l2tp-windows11/">
   <meta property="og:site_name" content="紫塞 zisai.com">
   <meta property="og:title" content="修复Windows 11下L2TP/IPsec VPN连接失败问题">
   <meta property="og:description" content="修复Windows 11下L2TP/IPsec VPN连接失败问题 今天晚上，需要连接公司内的数据库处理一些工作。恰巧我的办公电脑处于休眠状态无法唤醒。于是改用VPN连接公司的路由网络。但在配置Windows 11的L2TP/IPsec VPN时遇到了“安全层在初始化与远程计算机的协商时遇到处理错误”的问题。经过排查，发现是Windows更新禁用了关键服务并需要调整注册表配置。以下是我的解决步骤，分享给遇到类似问题的朋友。">
@@ -165,9 +165,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="article:tag" content="L2TP">
     <meta property="article:tag" content="IPsec">
     <meta property="article:tag" content="网络配置">
-    <meta property="og:image" content="http://localhost:1313/images/Configuration_examples_l2tp_over_ipsec_scheme.png">
+    <meta property="og:image" content="http://localhost:1225/images/Configuration_examples_l2tp_over_ipsec_scheme.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://localhost:1313/images/Configuration_examples_l2tp_over_ipsec_scheme.png">
+<meta name="twitter:image" content="http://localhost:1225/images/Configuration_examples_l2tp_over_ipsec_scheme.png">
 <meta name="twitter:title" content="修复Windows 11下L2TP/IPsec VPN连接失败问题">
 <meta name="twitter:description" content="修复Windows 11下L2TP/IPsec VPN连接失败问题
 今天晚上，需要连接公司内的数据库处理一些工作。恰巧我的办公电脑处于休眠状态无法唤醒。于是改用VPN连接公司的路由网络。但在配置Windows 11的L2TP/IPsec VPN时遇到了“安全层在初始化与远程计算机的协商时遇到处理错误”的问题。经过排查，发现是Windows更新禁用了关键服务并需要调整注册表配置。以下是我的解决步骤，分享给遇到类似问题的朋友。">
@@ -182,13 +182,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@type": "ListItem",
       "position":  1 ,
       "name": "文章",
-      "item": "http://localhost:1313/posts/"
+      "item": "http://localhost:1225/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "修复Windows 11下L2TP/IPsec VPN连接失败问题",
-      "item": "http://localhost:1313/posts/fix-l2tp-windows11/"
+      "item": "http://localhost:1225/posts/fix-l2tp-windows11/"
     }
   ]
 }
@@ -206,7 +206,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "articleBody": "修复Windows 11下L2TP/IPsec VPN连接失败问题 今天晚上，需要连接公司内的数据库处理一些工作。恰巧我的办公电脑处于休眠状态无法唤醒。于是改用VPN连接公司的路由网络。但在配置Windows 11的L2TP/IPsec VPN时遇到了“安全层在初始化与远程计算机的协商时遇到处理错误”的问题。经过排查，发现是Windows更新禁用了关键服务并需要调整注册表配置。以下是我的解决步骤，分享给遇到类似问题的朋友。\n问题背景 尝试连接L2TP/IPsec VPN时，Windows 11提示错误：“L2TP连接尝试失败，因为安全层在初始化与远程计算机的协商时遇到一个处理错误。”主要原因是某些服务被禁用以及注册表配置不正确，尤其是在Windows更新后。\n解决步骤 1. 修改注册表 注册表调整是解决问题的关键，需启用NAT-T支持并调整IPsec和加密设置。\n步骤： 按 Win + R，输入 regedit.exe，启动注册表编辑器。 导航到以下路径并创建/修改键值： 路径1：HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\PolicyAgent 新建DWORD：AssumeUDPEncapsulationContextOnSendRule，值设为2（启用NAT-T）。 路径2：HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\RasMan\\Parameters 新建DWORD：ProhibitIPSec，值设为1（禁用强制IPsec）。 新建DWORD：AllowL2TPWeakCrypto，值设为1（允许弱加密）。 注意： 键名ProhibitIPSec对大小写敏感，必须精确输入（大写P和S）。若误输入ProhibitIpSec，需先改名为临时名称（如ProhibitI1Sec），再更正为ProhibitIPSec。 修改前建议备份注册表以防万一。 2. 启用关键服务 Windows 11更新可能禁用了VPN所需的服务，需手动启用。\n步骤： 右键“此电脑” \u003e “管理” \u003e “服务”。 找到以下服务，设置为自动并启动： IPsec Policy Agent Routing and Remote Access 3. 配置VPN连接 确保VPN协议和认证设置正确。\n步骤： 按 Win + R，输入 ncpa.cpl，打开“网络连接”。 找到VPN连接，右键 \u003e “属性”。 设置： VPN类型：选择“使用IPsec的第2层隧道协议（L2TP/IPsec）”。 协议：在“安全”选项卡中，仅勾选PAP、CHAP、MS-CHAP v2。 4. 重启系统 完成上述配置后，完全重启电脑以应用更改。不要使用批处理重启资源管理器（如taskkill /im explorer.exe），因为这不足以生效系统级修改。\n注意事项 大小写敏感：注册表键名（如ProhibitIPSec）必须精确，否则会导致配置失败。 服务检查：定期确认IPsec Policy Agent和Routing and Remote Access服务是否被更新禁用。 测试连接：配置后，测试VPN连接是否正常，同时检查外网访问（可能需禁用“默认网关”，详见后续博文）。 适用场景：本方法适用于Windows 11家庭版/专业版，测试于2025年5月环境。 总结 通过调整注册表、启用服务和正确配置VPN，我成功解决了Windows 11的L2TP连接问题。这个方案的关键在于细节（如键名大小写和服务状态）。希望这篇分享能帮到你！\n",
   "wordCount" : "1381",
   "inLanguage": "zh-cn",
-  "image":"http://localhost:1313/images/Configuration_examples_l2tp_over_ipsec_scheme.png","datePublished": "2025-06-05T21:44:00+08:00",
+  "image":"http://localhost:1225/images/Configuration_examples_l2tp_over_ipsec_scheme.png","datePublished": "2025-06-05T21:44:00+08:00",
   "dateModified": "2025-06-05T21:44:00+08:00",
   "author":{
     "@type": "Person",
@@ -214,14 +214,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://localhost:1313/posts/fix-l2tp-windows11/"
+    "@id": "http://localhost:1225/posts/fix-l2tp-windows11/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "紫塞 zisai.com",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+      "url": "http://localhost:1225/favicon.ico"
     }
   }
 }
@@ -247,7 +247,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="紫塞 zisai.com (Alt + H)">紫塞 zisai.com</a>
+            <a href="http://localhost:1225/" accesskey="h" title="紫塞 zisai.com (Alt + H)">紫塞 zisai.com</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -273,27 +273,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/search/" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1225/search/" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
                     <span>🔍 搜索</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/posts/" title="文章">
+                <a href="http://localhost:1225/posts/" title="文章">
                     <span>📚 文章</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="故事">
-                    <span>🏷️ 故事</span>
+                <a href="http://localhost:1225/archives/" title="故事">
+                    <span>🗂️ 故事</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="标签">
+                <a href="http://localhost:1225/tags/" title="标签">
                     <span>🔖 标签</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="ℹ️ 关于">
+                <a href="http://localhost:1225/about/" title="ℹ️ 关于">
                     <span>ℹ️ 关于</span>
                 </a>
             </li>
@@ -304,18 +304,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">文章</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1225/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1225/posts/">文章</a></div>
     <h1 class="post-title entry-hint-parent">
       修复Windows 11下L2TP/IPsec VPN连接失败问题
     </h1>
     <div class="post-meta"><span title='2025-06-05 21:44:00 +0800 CST'>2025-06-05</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;SHENNAN 沈楠
 
 </div>
-  </header> 
-<figure class="entry-cover">
-        <img loading="eager" src="http://localhost:1313/images/Configuration_examples_l2tp_over_ipsec_scheme.png" alt="修复Windows 11下L2TP/IPsec VPN连接失败问题">
-        
-</figure><div class="toc">
+  </header><div class="toc">
     <details  open>
         <summary accesskey="c" title="(Alt + C)">
             <span class="details">Table of Contents</span>
@@ -437,19 +433,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/vpn/">VPN</a></li>
-      <li><a href="http://localhost:1313/tags/windows-11/">Windows 11</a></li>
-      <li><a href="http://localhost:1313/tags/l2tp/">L2TP</a></li>
-      <li><a href="http://localhost:1313/tags/ipsec/">IPsec</a></li>
-      <li><a href="http://localhost:1313/tags/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">网络配置</a></li>
+      <li><a href="http://localhost:1225/tags/vpn/">VPN</a></li>
+      <li><a href="http://localhost:1225/tags/windows-11/">Windows 11</a></li>
+      <li><a href="http://localhost:1225/tags/l2tp/">L2TP</a></li>
+      <li><a href="http://localhost:1225/tags/ipsec/">IPsec</a></li>
+      <li><a href="http://localhost:1225/tags/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">网络配置</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/qr-prepaid-card-design/">
+  <a class="prev" href="http://localhost:1225/posts/qr-prepaid-card-design/">
     <span class="title">« </span>
     <br>
     <span>创新支付体验：二维码储值卡的设计与未来</span>
   </a>
-  <a class="next" href="http://localhost:1313/posts/lifes-echoes/">
+  <a class="next" href="http://localhost:1225/posts/lifes-echoes/">
     <span class="title"> »</span>
     <br>
     <span>人生的回响：开头与结尾的循环</span>
@@ -480,7 +476,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">紫塞 zisai.com</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1225/">紫塞 zisai.com</a></span> · 
 
     <span>
         Powered by
