@@ -2,15 +2,16 @@
 <meta property="og:title" content="{{ .Title | default site.Title }}" />
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | default site.Params.description }}{{ end }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
-<meta property="og:url" content="{{ .Permalink }}" />
+{{- $random := now.Unix }} {{/* 使用时间戳作为随机数 */}}
+<meta property="og:url" content="{{ .Permalink }}?t={{ $random }}" />
 {{- if .Params.cover }}
   {{- if .Params.cover.image }}
-    <meta property="og:image" content="{{ .Params.cover.image | absURL }}" />
+    <meta property="og:image" content="{{ .Params.cover.image | absURL }}?t={{ $random }}" />
   {{- else if .Params.cover.video }}
-    <meta property="og:image" content="{{ "/images/default-poster.jpg" | absURL }}" />
+    <meta property="og:image" content="{{ "/images/default-poster.jpg" | absURL }}?t={{ $random }}" />
   {{- end }}
 {{- else }}
-  <meta property="og:image" content="{{ "/images/default.jpg" | absURL }}" />
+  <meta property="og:image" content="{{ "/images/default.jpg" | absURL }}?t={{ $random }}" />
 {{- end }}
 <meta property="og:site_name" content="{{ site.Title }}" />
 {{- if .IsPage }}
