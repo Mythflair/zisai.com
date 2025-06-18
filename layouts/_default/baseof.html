@@ -33,6 +33,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      crossorigin="anonymous"></script>
 <!-- End Google Adsense (noscript) -->
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+{{ if .Params.math }}
+  {{ partial "mathjax.html" . }}
+{{ end }}
 </body>
 
 </html>
