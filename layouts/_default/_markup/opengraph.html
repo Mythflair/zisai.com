@@ -2,9 +2,11 @@
 <meta property="og:title" content="{{ .Title | default site.Title }}" />
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | default site.Params.description }}{{ end }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
-{{- $random := now.Unix }} {{/* 使用时间戳作为随机数 */}}
+{{- $random := now.Unix }}
 <meta property="og:url" content="{{ .Permalink }}?t={{ $random }}" />
-{{- if .Params.cover }}
+{{- if .Params.og_image }}
+  <meta property="og:image" content="{{ .Params.og_image | absURL }}?t={{ $random }}" />
+{{- else if .Params.cover }}
   {{- if .Params.cover.image }}
     <meta property="og:image" content="{{ .Params.cover.image | absURL }}?t={{ $random }}" />
   {{- else if .Params.cover.video }}
