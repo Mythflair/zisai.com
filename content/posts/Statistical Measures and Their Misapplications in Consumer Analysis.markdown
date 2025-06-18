@@ -7,8 +7,8 @@ categories: ["技术分析"]
 math: true
 draft: false
 cover:
-  image: "/images/central_tendency_and_skewness_featured_image.jpg
-  alt: "统计学中心趋势度量在企业消费者分析中的应用误区与纠正"
+   image: "/images/central_tendency_and_skewness_featured_image.jpg
+   alt: "统计学中心趋势度量在企业消费者分析中的应用误区与纠正"
 ---
 
 # 统计学中的中位数、平均值与宽广集团在消费者分析中的应用误区
