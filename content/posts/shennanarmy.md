@@ -1,7 +1,7 @@
 +++
 title = '我的军旅生涯：五年沉甸甸的回忆'
 date = 2025-05-12T11:00:00+08:00
-draft = false
+draft = true
 tags = ['军旅', '回忆', '战友', '通信技术']
 categories = ['人生絮语']
 [cover] 
