@@ -6,7 +6,6 @@ tags: [商品力, 五维评估模型, BI报表, 零售优化]
 categories: [零售行业, 商业洞察]
 description: 深入解析宽广集团如何通过五维评估模型优化商品结构，介绍BI报表的规划设计与实践案例，探讨未来AI驱动与区域化迭代方向。
 slug: kuanguang-bi-report
-author: 宽广集团研究团队
 cover:
     image: '/images/kuanguang-bi-report.jpg'
     alt: '零售是什么？深度解析其本质与核心要素'
