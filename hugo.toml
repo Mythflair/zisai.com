@@ -33,7 +33,7 @@ googleAnalytics = "G-WQ5LVXCGRZ"
 # 主题参数配置
 [params]
   env = "production"
-  description = "紫塞 zisai.com - SHENNAN 沈楠的个人博客，记录生活、技术与思考。"
+  description = "紫塞 zisai.com - SHENNAN 沈楠 - 曾经的紫塞，现在的Blog，记录生活、技术与思考。"
   keywords = ["沈楠", "紫塞", "ShenNan", "Hugo", "Go", "Blog", "宽广", "联通", "物哀", "幽玄", "侘寂", "热河", "承德", "承德人", "承德博客", "承德个人博客", "承德技术博客", "承德生活博客"]
   author = "SHENNAN 沈楠"
   authorName = "SHENNAN 沈楠"
