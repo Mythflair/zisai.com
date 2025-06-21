@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Go on 紫塞 zisai.com</title>
+    <link>https://zisai.com/tags/go/</link>
+    <description>Recent content in Go on 紫塞 zisai.com</description>
+    <generator>Hugo -- 0.146.7</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 16 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://zisai.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>宽广集团的软件硬件化实践：基于BBB单板机的金融级储值卡高可用架构设计</title>
+      <link>https://zisai.com/posts/bbb_hardware_solution/</link>
+      <pubDate>Mon, 16 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://zisai.com/posts/bbb_hardware_solution/</guid>
+      <description>一次由储值卡核心加解密程序授权故障引发的深度思考，探讨如何通过将核心软件功能固化到单板计算机（SBC）中，打造一个稳定、可靠且具备商业潜力的硬件级解决方案。</description>
+    </item>
+  </channel>
+</rss>

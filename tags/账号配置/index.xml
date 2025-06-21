@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>账号配置 on 紫塞 zisai.com</title>
+    <link>https://zisai.com/tags/%E8%B4%A6%E5%8F%B7%E9%85%8D%E7%BD%AE/</link>
+    <description>Recent content in 账号配置 on 紫塞 zisai.com</description>
+    <generator>Hugo -- 0.146.7</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 15 Jun 2025 14:15:00 +0900</lastBuildDate>
+    <atom:link href="https://zisai.com/tags/%E8%B4%A6%E5%8F%B7%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BeagleBone Black 补充笔记：MicroHDMI 与账号配置</title>
+      <link>https://zisai.com/posts/beaglebone-black-hdmi-account-tips/</link>
+      <pubDate>Sun, 15 Jun 2025 14:15:00 +0900</pubDate>
+      <guid>https://zisai.com/posts/beaglebone-black-hdmi-account-tips/</guid>
+      <description>补充 BeagleBone Black 的 MicroHDMI 接口调试和账号配置经验，解决视频输出与 root 远程登录问题。</description>
+    </item>
+  </channel>
+</rss>

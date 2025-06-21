@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>BeagleBone Black on 紫塞 zisai.com</title>
+    <link>https://zisai.com/tags/beaglebone-black/</link>
+    <description>Recent content in BeagleBone Black on 紫塞 zisai.com</description>
+    <generator>Hugo -- 0.146.7</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 16 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://zisai.com/tags/beaglebone-black/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>宽广集团的软件硬件化实践：基于BBB单板机的金融级储值卡高可用架构设计</title>
+      <link>https://zisai.com/posts/bbb_hardware_solution/</link>
+      <pubDate>Mon, 16 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://zisai.com/posts/bbb_hardware_solution/</guid>
+      <description>一次由储值卡核心加解密程序授权故障引发的深度思考，探讨如何通过将核心软件功能固化到单板计算机（SBC）中，打造一个稳定、可靠且具备商业潜力的硬件级解决方案。</description>
+    </item>
+    <item>
+      <title>BeagleBone Black 补充笔记：MicroHDMI 与账号配置</title>
+      <link>https://zisai.com/posts/beaglebone-black-hdmi-account-tips/</link>
+      <pubDate>Sun, 15 Jun 2025 14:15:00 +0900</pubDate>
+      <guid>https://zisai.com/posts/beaglebone-black-hdmi-account-tips/</guid>
+      <description>补充 BeagleBone Black 的 MicroHDMI 接口调试和账号配置经验，解决视频输出与 root 远程登录问题。</description>
+    </item>
+    <item>
+      <title>BeagleBone Black 配置 Go 语言环境</title>
+      <link>https://zisai.com/posts/beaglebone-black-go-setup/</link>
+      <pubDate>Sun, 15 Jun 2025 14:10:00 +0900</pubDate>
+      <guid>https://zisai.com/posts/beaglebone-black-go-setup/</guid>
+      <description>记录在 BeagleBone Black 的 Debian 10.3 环境中配置 Go 1.20.2 语言环境的完整流程，包含下载、安装和优化国内镜像源。</description>
+    </item>
+    <item>
+      <title>BeagleBone Black 开发笔记：串口 TCP 数据采集与 GPIO 告警控制</title>
+      <link>https://zisai.com/posts/beaglebone-black-serial-tcp-gpio/</link>
+      <pubDate>Sun, 15 Jun 2025 14:05:00 +0900</pubDate>
+      <guid>https://zisai.com/posts/beaglebone-black-serial-tcp-gpio/</guid>
+      <description>记录使用 BeagleBone Black 实现串口服务器 TCP 数据采集、屏幕输出及 GPIO 控制红黄绿灯的开发过程，分享踩坑经验与解决方案。</description>
+    </item>
+  </channel>
+</rss>

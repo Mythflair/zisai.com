@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>网络安全 on 紫塞 zisai.com</title>
+    <link>https://zisai.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</link>
+    <description>Recent content in 网络安全 on 紫塞 zisai.com</description>
+    <generator>Hugo -- 0.146.7</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 21 Jun 2025 21:57:00 +0900</lastBuildDate>
+    <atom:link href="https://zisai.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>刚刚处理了 SPSS 安装中的 Win32/Wacapew.C!ml 病毒检测误报</title>
+      <link>https://zisai.com/posts/handling-win32-wacapew-detection-in-spss-installation/</link>
+      <pubDate>Sat, 21 Jun 2025 21:57:00 +0900</pubDate>
+      <guid>https://zisai.com/posts/handling-win32-wacapew-detection-in-spss-installation/</guid>
+      <description>个人分享在安装 SPSS 时遇到 Win32/Wacapew.C!ml 检测的经历，包括验证和安全处理步骤，以及 SPSS 软件的简要介绍。</description>
+    </item>
+    <item>
+      <title>关于沈楠</title>
+      <link>https://zisai.com/about/</link>
+      <pubDate>Sun, 14 Apr 2024 13:06:25 +0800</pubDate>
+      <guid>https://zisai.com/about/</guid>
+      <description>沈楠，信息学硕士，30年IT从业经验，专注通信、IDC、ICT、系统集成、软件研发、物联网、大数据与信息化。探索我的职业历程、技术项目与人生故事。</description>
+    </item>
+  </channel>
+</rss>

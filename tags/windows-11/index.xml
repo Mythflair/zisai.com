@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Windows 11 on 紫塞 zisai.com</title>
+    <link>https://zisai.com/tags/windows-11/</link>
+    <description>Recent content in Windows 11 on 紫塞 zisai.com</description>
+    <generator>Hugo -- 0.146.7</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 05 Jun 2025 21:44:00 +0800</lastBuildDate>
+    <atom:link href="https://zisai.com/tags/windows-11/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>修复Windows 11下L2TP/IPsec VPN连接失败问题</title>
+      <link>https://zisai.com/posts/fix-l2tp-windows11/</link>
+      <pubDate>Thu, 05 Jun 2025 21:44:00 +0800</pubDate>
+      <guid>https://zisai.com/posts/fix-l2tp-windows11/</guid>
+      <description>&lt;h1 id=&#34;修复windows-11下l2tpipsec-vpn连接失败问题&#34;&gt;修复Windows 11下L2TP/IPsec VPN连接失败问题&lt;/h1&gt;
+&lt;p&gt;今天晚上，需要连接公司内的数据库处理一些工作。恰巧我的办公电脑处于休眠状态无法唤醒。于是改用VPN连接公司的路由网络。但在配置Windows 11的L2TP/IPsec VPN时遇到了“安全层在初始化与远程计算机的协商时遇到处理错误”的问题。经过排查，发现是Windows更新禁用了关键服务并需要调整注册表配置。以下是我的解决步骤，分享给遇到类似问题的朋友。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

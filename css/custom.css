@@ -1,0 +1,29 @@
+.timeline {
+  position: relative;
+  padding-left: 2em;
+  border-left: 2px solid #007bff;
+}
+.timeline-item {
+  margin: 1em 0;
+  padding-left: 1em;
+  position: relative;
+}
+.timeline-item:before {
+  content: "•";
+  position: absolute;
+  left: -0.5em;
+  color: #007bff;
+  font-size: 1.5em;
+}
+.timeline-year {
+  font-weight: bold;
+  color: #007bff;
+}
+@media (prefers-color-scheme: dark) {
+  .timeline {
+    border-left-color: #66b3ff;
+  }
+  .timeline-item:before {
+    color: #66b3ff;
+  }
+}

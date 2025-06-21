@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://zisai.com/sitemap.xml

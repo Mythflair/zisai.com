@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>统计学 on 紫塞 zisai.com</title>
+    <link>https://zisai.com/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</link>
+    <description>Recent content in 统计学 on 紫塞 zisai.com</description>
+    <generator>Hugo -- 0.146.7</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 18 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://zisai.com/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>统计学中心趋势度量在企业消费者分析中的应用误区与纠正</title>
+      <link>https://zisai.com/posts/statistical-measures-and-their-misapplications-in-consumer-analysis/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://zisai.com/posts/statistical-measures-and-their-misapplications-in-consumer-analysis/</guid>
+      <description>&lt;h1 id=&#34;统计学中的中位数平均值与宽广集团在消费者分析中的应用误区&#34;&gt;统计学中的中位数、平均值与宽广集团在消费者分析中的应用误区&lt;/h1&gt;
+&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
+&lt;p&gt;在统计学中，描述性统计量（如平均值、中位数、众数等）是分析数据的核心工具，广泛应用于企业决策、消费者行为分析和市场研究。然而，这些统计量在实际应用中常因误解或不当使用而导致偏差，尤其是在消费者分析领域。本文将探讨平均值、中位数等统计学概念的基本原理、数学特性及其在消费者分析中的常见误区，并以学术和技术视角分析如何科学地选择合适的统计量。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

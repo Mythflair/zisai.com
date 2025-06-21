@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>大数据 on 紫塞 zisai.com</title>
+    <link>https://zisai.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</link>
+    <description>Recent content in 大数据 on 紫塞 zisai.com</description>
+    <generator>Hugo -- 0.146.7</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 15 Jun 2025 19:09:00 +0900</lastBuildDate>
+    <atom:link href="https://zisai.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>宽广集团信息化体系建设：从传统零售到科技零售的蜕变</title>
+      <link>https://zisai.com/posts/kuangguang-group-digital-transformation/</link>
+      <pubDate>Sun, 15 Jun 2025 19:09:00 +0900</pubDate>
+      <guid>https://zisai.com/posts/kuangguang-group-digital-transformation/</guid>
+      <description>回顾宽广集团11年信息化建设历程，探索如何通过顶层设计与技术创新，从传统零售蜕变为科技驱动的现代化企业，并展望人工智能与大数据引领的未来。</description>
+    </item>
+    <item>
+      <title>从单张照片中窥见个人信息：Google Vision API的多维度分析</title>
+      <link>https://zisai.com/posts/googlevisionapi/</link>
+      <pubDate>Sun, 27 Apr 2025 21:26:00 +0800</pubDate>
+      <guid>https://zisai.com/posts/googlevisionapi/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Google Vision API多维度分析示例&#34; loading=&#34;lazy&#34; src=&#34;https://zisai.com/images/GoogleVisionAPIImages.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在计算机视觉领域，一个突破性进展正在悄然发生：通过&lt;strong&gt;Google Vision API&lt;/strong&gt;，我们首次实现了从&lt;strong&gt;单张照片&lt;/strong&gt;中系统化提取个人特征信息的能力。这种技术突破不仅限于传统的人脸识别，更开辟了更高维度的分析路径。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

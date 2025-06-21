@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>SPSS on 紫塞 zisai.com</title>
+    <link>https://zisai.com/tags/spss/</link>
+    <description>Recent content in SPSS on 紫塞 zisai.com</description>
+    <generator>Hugo -- 0.146.7</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 21 Jun 2025 21:57:00 +0900</lastBuildDate>
+    <atom:link href="https://zisai.com/tags/spss/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>刚刚处理了 SPSS 安装中的 Win32/Wacapew.C!ml 病毒检测误报</title>
+      <link>https://zisai.com/posts/handling-win32-wacapew-detection-in-spss-installation/</link>
+      <pubDate>Sat, 21 Jun 2025 21:57:00 +0900</pubDate>
+      <guid>https://zisai.com/posts/handling-win32-wacapew-detection-in-spss-installation/</guid>
+      <description>个人分享在安装 SPSS 时遇到 Win32/Wacapew.C!ml 检测的经历，包括验证和安全处理步骤，以及 SPSS 软件的简要介绍。</description>
+    </item>
+  </channel>
+</rss>
