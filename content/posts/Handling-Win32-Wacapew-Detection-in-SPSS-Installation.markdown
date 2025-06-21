@@ -1,5 +1,5 @@
 ---
-title: "处理 SPSS 安装中的 Win32/Wacapew.C!ml 检测"
+title: "刚刚处理了 SPSS 安装中的 Win32/Wacapew.C!ml 病毒检测误报"
 date: 2025-06-21T21:57:00+09:00
 draft: false
 tags: ["SPSS", "网络安全", "软件安装", "恶意软件检测"]
@@ -12,7 +12,7 @@ cover:
 
 # 处理 SPSS 安装中的 Win32/Wacapew.C!ml 检测
 
-最近，我在安装 IBM SPSS Statistics（一款强大的数据分析工具）时，遇到了一件让人头疼的事：Windows Defender 提示一个可执行文件被标记为 **Program:Win32/Wacapew.C!ml** 并被拦截。这让我担心是否遇到了恶意软件，但通过仔细验证，我确认了文件的安全性并顺利完成了安装。以下旨在记录过程、处理步骤，以及对类似情况的建议，同时简单介绍一下 SPSS 软件。
+刚刚，我在安装 IBM SPSS Statistics（一款强大的数据分析工具）时，遇到了一件让人头疼的事：Windows Defender 提示一个可执行文件被标记为 **Program:Win32/Wacapew.C!ml** 并被拦截。这让我担心是否遇到了恶意软件，但通过仔细验证，我确认了文件的安全性并顺利完成了安装。以下旨在记录过程、处理步骤，以及对类似情况的建议，同时简单介绍一下 SPSS 软件。
 
 ## SPSS 是什么？
 
